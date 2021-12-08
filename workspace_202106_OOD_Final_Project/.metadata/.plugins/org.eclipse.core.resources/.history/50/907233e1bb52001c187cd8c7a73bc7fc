@@ -1,0 +1,7 @@
+package edu.neu.csye6200;
+
+public class EventRegistration {
+	private String type_Of_Event;
+	private String date;
+	private String description;
+}

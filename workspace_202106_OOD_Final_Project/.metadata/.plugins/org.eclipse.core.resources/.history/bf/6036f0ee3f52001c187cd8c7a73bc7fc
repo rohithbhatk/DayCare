@@ -1,0 +1,46 @@
+package edu.neu.csye6200;
+
+import java.util.Vector;
+
+public class ClassRoom {
+private int capacity;
+private Vector<Person> teacherRoster; 
+private Vector<Person> studentRoster;
+public int getCapacity() {
+	return capacity;
+}
+
+public void setCapacity(int capacity) {
+	this.capacity = capacity;
+}
+public Vector<Person> getTeacher() {
+	return teacherRoster;
+}
+public void setTeacher(Vector<Person> teacher) {
+	this.teacherRoster = teacher;
+}
+public Vector<Person> getStudent() {
+	return teacherRoster;
+}
+public void setStudent(Vector<Person> student) {
+	this.teacherRoster = student;
+}
+public ClassRoom(int capacity, Vector<Teacher> teacher, Vector<Student> student) {
+	super();
+	this.capacity = capacity;
+	teacher = new Vector<Teacher>();
+	student = new Vector<Student>();
+	
+}
+public void addStudent(Student std) {
+	studentRoster.add(std);
+}
+public void addTeacher(Teacher tea) {
+	teacherRoster.add(tea);
+}
+@Override
+public String toString() {
+	return "ClassRoom [capacity=" + capacity + ", teacher=" + teacherRoster + ", student=" + studentRoster + "]";
+}
+
+}

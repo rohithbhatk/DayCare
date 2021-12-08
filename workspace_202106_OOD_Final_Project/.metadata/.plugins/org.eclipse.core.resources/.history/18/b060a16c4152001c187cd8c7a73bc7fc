@@ -1,0 +1,139 @@
+package edu.neu.csye6200;
+
+
+
+
+public class NortheasternU extends UniversityBase{
+	
+   public static void demo() {
+	NortheasternU northeasternU = new NortheasternU();
+	EmployeeFactory employeeFactory = EmployeeFactory.getInstance();
+	StudentFactory studentFactory = StudentFactory.getInstance();
+	
+	Student p1 = studentFactory.getObject("bbc", "bef", 12, 2,4.3);
+	Student p2 = studentFactory.getObject("abcd", "deff", 11, 3,3.2);
+	Student p3 = studentFactory.getObject("dbce", "aefe", 10, 1,2.6);
+	
+	Employee p5 =employeeFactory.getObject("abcd", "deff", 11, 3,400);
+	Employee p6 = employeeFactory.getObject("dbce", "aefe", 10, 1,500);
+	Employee p4 = employeeFactory.getObject("bbc", "bef", 12, 2,600);
+	
+	 
+	northeasternU.addEmployee(p4);
+	northeasternU.addEmployee(p5);
+	northeasternU.addEmployee(p6);
+	
+	northeasternU.addStudent(p3);
+	northeasternU.addStudent(p2);
+	northeasternU.addStudent(p1);
+   
+
+	System.out.println("Total northeastern objects");
+	System.out.println(northeasternU.list2);
+	
+	System.out.println("Show northeastern objects");
+	northeasternU.show();
+	
+	
+	System.out.println("Printing Employees");
+	// Compare by id, fn, ln. age, wage 
+	northeasternU.sortEmployees(Person::comparebyID);
+	System.out.println("compare bby id");
+	System.out.println(northeasternU.list);
+	
+	System.out.println("total northeastern objects ");
+	System.out.println(northeasternU.list2);
+	
+	northeasternU.sortEmployees(Person ::compareFirstName);
+	System.out.println("compare Employees first name");
+	System.out.println(northeasternU.list);
+	
+	System.out.println("total northeastern objects ");
+	System.out.println(northeasternU.list2);
+	
+	northeasternU.sortEmployees(Person ::compareLastName);
+	System.out.println("compare Employees last name");
+	System.out.println(northeasternU.list);
+	
+	System.out.println("total northeastern objects ");
+	System.out.println(northeasternU.list2);
+	
+	System.out.println("compare Employees age");
+	northeasternU.sortEmployees( null);
+	System.out.println(northeasternU.list);
+	
+	System.out.println("total northeastern objects ");
+	System.out.println(northeasternU.list2);
+	
+	northeasternU.sortEmployees(Person ::compareEmployeeWage);
+	System.out.println("compare Employees wage");
+	System.out.println(northeasternU.list);
+	
+	System.out.println("total northeastern objects ");
+	System.out.println(northeasternU.list2);
+	
+	
+	
+	//Compare by id, fn, ln, age, gpa
+	
+	System.out.println("Printing Students");
+	System.out.println(northeasternU.list1);
+	
+	System.out.println("total northeasterb objects");
+	System.out.println(northeasternU.list2);
+	
+	northeasternU.sortStudents(Person ::comparebyID);
+	System.out.println("compare Students id");
+	System.out.println(northeasternU.list1);
+	
+	System.out.println("total northeastern objects ");
+	System.out.println(northeasternU.list2);
+	
+	northeasternU.sortStudents(Person ::compareFirstName);
+	System.out.println("compare Students first name");
+	System.out.println(northeasternU.list1);
+	
+	System.out.println("total northeastern objects ");
+	System.out.println(northeasternU.list2);
+	
+	northeasternU.sortStudents(Person ::compareLastName);
+	System.out.println("compare Students last name");
+	System.out.println(northeasternU.list1);
+	
+	System.out.println("total northeastern objects");
+	System.out.println(northeasternU.list2);
+	
+	System.out.println("compare Students age");
+	northeasternU.sortStudents(null);
+	System.out.println(northeasternU.list1);
+	
+	System.out.println("total northeastern objects");
+	System.out.println(northeasternU.list2);
+	
+	System.out.println("compare Students gpa");
+	northeasternU.sortStudents(Person :: compareStudentgpa);
+	System.out.println(northeasternU.list1);
+	
+	System.out.println("total northeastern objects ");
+	System.out.println(northeasternU.list2);
+	
+	String std;
+	String emp;
+	
+	System.out.println("Getting Student Info");
+	std = northeasternU.getStudentsInfo();
+	System.out.println(std);
+	
+		
+	emp = northeasternU.getEmployeesInfo();
+	System.out.println("Getting Employee Info");
+	System.out.println(emp);
+	
+	northeasternU.showEmployees();
+	northeasternU.showStudents();
+	
+	Person p7 = new Person("bbc", "bef", 12, 1);
+	System.out.println("Show Person");
+	p7.show();
+   }
+}
