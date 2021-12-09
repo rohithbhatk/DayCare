@@ -16,35 +16,34 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class FileUtil {
-	//static ClassRoom school = new ClassRoom(0, null, null);
-	
+	// static ClassRoom school = new ClassRoom(0, null, null);
+
 	public static FileReader openFileReader(String filename) throws FileNotFoundException {
 		return new FileReader(filename);
 	}
+
 	public static BufferedReader openBufferedReader(FileReader filenameobject) {
 		return new BufferedReader(filenameobject);
 	}
-	
+
 	public static String readBufferedReader(BufferedReader bufferedReader) throws IOException {
 		return bufferedReader.readLine();
 
 	}
-	
+
 	public static FileWriter openFileWriter(String filename) throws IOException {
 		return new FileWriter(filename);
 	}
+
 	public static BufferedWriter openBufferedWriter(FileWriter filenameobject) {
 		return new BufferedWriter(filenameobject);
 	}
-	
+
 	public static void writeBufferedWriter(BufferedWriter bufferwriter, String lineNo) throws IOException {
 		bufferwriter.write(lineNo);
 		bufferwriter.newLine();
 
 	}
-	
-	
-	
+
 }

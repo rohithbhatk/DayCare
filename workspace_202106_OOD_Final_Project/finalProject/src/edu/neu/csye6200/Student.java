@@ -5,19 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Student extends Person{
+public class Student extends Person {
 
 	private int grade;
-	
-	
 
-	
 	public Student(int age, String name, String first_Name, String last_name, String std, String gender, int grade) {
 		super(age, name, first_Name, last_name, std, gender);
 		this.grade = grade;
 	}
-
-	
 
 	public int getGrade() {
 		return grade;
@@ -27,15 +22,14 @@ public class Student extends Person{
 		this.grade = grade;
 	}
 
-
 	public static Student createStudentFromCSV(String std) throws Exception {
 		Scanner sn = new Scanner(std);
 		sn.useDelimiter(",");
-		
+
 		Student st = null;
 		try {
-			st = new Student(sn.nextInt(), sn.next(),sn.next(), sn.next(), sn.next(),sn.next(), sn.nextInt());
-			//12,Rohith,asdf,asf,11121234,sdfas,1
+			st = new Student(sn.nextInt(), sn.next(), sn.next(), sn.next(), sn.next(), sn.next(), sn.nextInt());
+			// 12,Rohith,asdf,asf,11121234,sdfas,1
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -43,8 +37,6 @@ public class Student extends Person{
 		sn.close();
 		return st;
 	}
-
-
 
 	@Override
 	public String toString() {
