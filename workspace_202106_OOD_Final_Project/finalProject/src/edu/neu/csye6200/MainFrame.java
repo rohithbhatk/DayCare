@@ -13,6 +13,7 @@ import java.awt.CardLayout;
 import javax.swing.JTextField;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import java.awt.SystemColor;
 import javax.swing.BoxLayout;
@@ -29,26 +30,26 @@ import java.awt.Dimension;
 public class MainFrame {
 
 	private JFrame frame;	
-	private JPanel panel;
-	private JTextField textField;
+
 	private JPanel panel_1;
 	private JPanel panel_2;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JPanel panel_5;
-	private JPanel panel_4;
 	private JPanel panel_3;
-	private HintTextField textField_11;
-	private HintTextField textField_12;
-	private JButton btnRegister;
+	private JPanel panel_4;
+	private JPanel panel_5;
 	private JPanel panel_6;
-
+	
+	private JTextField textField_FirstName;
+	private JTextField textField_LastName;
+	private JTextField textField_Gender;
+	private JTextField textField_Immunization_Records;
+	private JTextField textField_ParentFirstName;
+	private JTextField textField_ParentLastName;
+	private JTextField textField_Address;
+	private JTextField textField_DOB;
+	private JTextField textField_DOJ;
+	
+	private JButton btnRegister;
+	private JButton btnView;
 
 	/**
 	 * Launch the application.
@@ -154,54 +155,57 @@ public class MainFrame {
 		gradientPanel.add(panel_5, gbc_panel_5);
 		panel_5.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		textField_1 = new HintTextField("First Name");
-		panel_1.add(textField_1);
+		textField_FirstName = new HintTextField("First Name");
+		panel_1.add(textField_FirstName);
 		
-		textField_2 = new HintTextField("Last Name");
-		panel_1.add(textField_2);
+		textField_LastName = new HintTextField("Last Name");
+		panel_1.add(textField_LastName);
 		
-		textField_3 = new HintTextField("Gender");
-		panel_2.add(textField_3);
+		textField_Gender = new HintTextField("Gender");
+		panel_2.add(textField_Gender);
 		
-		textField_4 = new HintTextField("Immunization Records");
-		panel_2.add(textField_4);
+		textField_Immunization_Records = new HintTextField("Immunization Records");
+		panel_2.add(textField_Immunization_Records);
 		
-		textField_11 = new HintTextField("Date of Birth (MM/DD/YYYY)");
-		panel_3.add(textField_11);
+		textField_DOB = new HintTextField("Date of Birth (MM/DD/YYYY)");
+		panel_3.add(textField_DOB);
 		
-		textField_12 = new HintTextField("Date of Joining (MM/DD/YYYY)");
-		panel_3.add(textField_12);
+		textField_DOJ = new HintTextField("Date of Joining (MM/DD/YYYY)");
+		panel_3.add(textField_DOJ);
 		
-		textField_8 = new HintTextField("Address");
-		panel_5.add(textField_8);
-		textField_8.setColumns(51);
+		textField_Address = new HintTextField("Address");
+		panel_5.add(textField_Address);
+		textField_Address.setColumns(51);
 	
-		textField_6 = new HintTextField("Parent's First Name");
-		panel_4.add(textField_6);
+		textField_ParentFirstName = new HintTextField("Parent's First Name");
+		panel_4.add(textField_ParentFirstName);
 		
-		textField_7 = new HintTextField("Parent's Last Name");
-		panel_4.add(textField_7);
-		
-//		btnRegister = new JButton("REGISTER");
-//		btnRegister.setPreferredSize(new Dimension(120, 40));
-//		btnRegister.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
-//		btnRegister.setForeground(Color.white);
-//		btnRegister.setBorder(new RoundBtn(20));   
-		
-		GridBagConstraints gbc_Register = new GridBagConstraints();
-		gbc_Register.gridx = 0;
-		gbc_Register.gridy = 6;
-		gradientPanel.add(btnRegister, gbc_Register);
+		textField_ParentLastName = new HintTextField("Parent's Last Name");
+		panel_4.add(textField_ParentLastName);
+		  
 		
 		panel_6 = new JPanel();
 		panel_6.setOpaque(false);
 		GridBagConstraints gbc_panel_6 = new GridBagConstraints();
-		gbc_panel_6.fill = GridBagConstraints.BOTH;
+		gbc_panel_6.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_6.gridx = 0;
 		gbc_panel_6.gridy = 6;
 		gradientPanel.add(panel_6, gbc_panel_6);
-
-
+		
+		btnRegister = new JButton("REGISTER");
+		btnRegister.setPreferredSize(new Dimension(160, 40));
+		btnRegister.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
+		btnRegister.setForeground(Color.white);
+		btnRegister.setBorder(new RoundBtn(20)); 
+		panel_6.add(btnRegister);
+		
+		btnView = new JButton("VIEW RECORDS");
+		btnView.setPreferredSize(new Dimension(160, 40));
+		btnView.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
+		btnView.setForeground(Color.white);
+		btnView.setBorder(new LineBorder(Color.white));
+		btnView.setBorder(new RoundBtn(20));  
+		panel_6.add(btnView);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
