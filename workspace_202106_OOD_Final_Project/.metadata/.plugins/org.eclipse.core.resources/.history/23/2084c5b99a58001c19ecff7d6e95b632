@@ -1,0 +1,30 @@
+package edu.neu.csye6200;
+
+public class SetVaccination {
+public static void Vaccine(String vaccine_Name, int doseNum) {
+	Vaccination vaccination;
+	switch (vaccine_Name) {
+	case  "Hib":{
+		vaccination.setHib(doseNum);
+	}
+	case "DtaP":{
+		vaccination.settDaP(doseNum);
+	}
+	case  "Polio":{
+		vaccination.setPolio(doseNum);
+	}
+	case  "Hepatitis_B":{
+		vaccination.setHepatitis_B(doseNum);
+	}
+	case  "MMR":{
+		vaccination.setMMR(doseNum);
+	}
+	case  "Varicella":{
+		vaccination.setVaricella(doseNum);
+	}
+	}
+}
+public void add() {
+	
+}
+}

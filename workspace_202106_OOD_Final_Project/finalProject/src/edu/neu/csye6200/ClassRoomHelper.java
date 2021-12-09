@@ -1,12 +1,17 @@
 package edu.neu.csye6200;
 
+
+
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ClassRoomHelper {
-	public static void demo() {
-		ClassRoom classRoom = new ClassRoom();
+	static ClassRoom classRoom = new ClassRoom();
+	public static void demo() throws Exception {
+		
+		
 		String line = "";  
 		String splitBy = ",";  
 		String student_filename = "./src/edu/neu/csye6200/students.txt";
@@ -16,8 +21,6 @@ public class ClassRoomHelper {
 			while ((line = FileUtil.readBufferedReader(bufferReader)) != null)   //returns a Boolean value  
 			{  
 					Student student = Student.createStudentFromCSV(line);  
-					
-					
 					classRoom.addStudent(student);
 			}		
 			} catch (FileNotFoundException e) {
@@ -49,5 +52,8 @@ public class ClassRoomHelper {
 					e.printStackTrace();
 				}
 			
+			classRoom.room();
+			
 			}
+
 	}

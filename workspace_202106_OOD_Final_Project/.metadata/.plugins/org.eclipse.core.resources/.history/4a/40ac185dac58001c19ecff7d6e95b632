@@ -1,0 +1,14 @@
+package edu.neu.csye6200;
+
+
+public class School {
+		
+			
+public void room() {
+	ClassRoom classroom = new ClassRoom();
+	classroom.getStudent();
+	cassroom.getTeacher();
+}
+
+
+}

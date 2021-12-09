@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;edu.neu.csye6200.VaccinationDemo.java&apos; to &apos;SetVaccination.java&apos;&#x0A;- Original project: &apos;finalProject&apos;&#x0A;- Original element: &apos;edu.neu.csye6200.VaccinationDemo.java&apos;&#x0A;- Renamed element: &apos;edu.neu.csye6200.SetVaccination.java&apos;" description="Rename compilation unit &apos;VaccinationDemo.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;edu.neu.csye6200{VaccinationDemo.java" name="SetVaccination.java" references="false" stamp="1639018002213" version="1.0"/>
+</session>

@@ -1,0 +1,65 @@
+package edu.neu.csye6200;
+
+public class Vaccination {
+	private int doseNumber;
+	
+	private int hib;
+	private int dTaP;
+	private int polio;
+	private int hepatitis_B;
+	private int mMR;
+	private int varicella;
+	public int getDoseNumber() {
+		return doseNumber;
+	}
+	public void setDoseNumber(int doseNumber) {
+		this.doseNumber = doseNumber;
+	}
+	public int getHib() {
+		return hib;
+	}
+	public void setHib(int hib) {
+		this.hib = hib;
+	}
+	public int getdTaP() {
+		return dTaP;
+	}
+	public void setdTaP(int dTaP) {
+		this.dTaP = dTaP;
+	}
+	public int getPolio() {
+		return polio;
+	}
+	public void setPolio(int polio) {
+		this.polio = polio;
+	}
+	public int getHepatitis_B() {
+		return hepatitis_B;
+	}
+	public void setHepatitis_B(int hepatitis_B) {
+		this.hepatitis_B = hepatitis_B;
+	}
+	public int getMMR() {
+		return mMR;
+	}
+	public void setMMR(int mMR) {
+		this.mMR = mMR;
+	}
+	public int getmMR() {
+		return mMR;
+	}
+	public void setmMR(int mMR) {
+		this.mMR = mMR;
+	}
+	public int getVaricella() {
+		return varicella;
+	}
+	public void setVaricella(int varicella) {
+		this.varicella = varicella;
+	}
+	
+
+
+}
+
+

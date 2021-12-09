@@ -1,0 +1,12 @@
+package edu.neu.csye6200;
+
+
+public class School {
+	ClassRoomHelper classroom = new ClassRoomHelper();
+
+public void room() {
+	
+}
+
+
+}

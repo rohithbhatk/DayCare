@@ -31,7 +31,7 @@ public class EventRegistration {
 	@Override
 	public String toString() {
 		return "EventRegistration [type_Of_Event=" + type_Of_Event + ", date=" + date + ", description=" + description
-				+ "]";
+				+ "]/n";
 	}
 	
 }

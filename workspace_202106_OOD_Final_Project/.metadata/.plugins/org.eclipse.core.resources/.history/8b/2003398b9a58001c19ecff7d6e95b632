@@ -1,0 +1,17 @@
+package edu.neu.csye6200;
+
+public class Vaccination {
+	private int doseNumber;
+	
+	private int hib;
+	private int dTaP;
+	private int polio;
+	private int hepatitis_B;
+	private int mMR;
+	private int varicella;
+	
+
+
+}
+
+

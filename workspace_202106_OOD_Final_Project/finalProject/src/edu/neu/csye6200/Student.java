@@ -1,5 +1,8 @@
 package edu.neu.csye6200;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Student extends Person{
@@ -9,10 +12,12 @@ public class Student extends Person{
 	
 
 	
-	public Student(int age, String name, String first_Name, String last_name, String date, String gender, int grade) {
-		super(age, name, first_Name, last_name, date, gender);
+	public Student(int age, String name, String first_Name, String last_name, String std, String gender, int grade) {
+		super(age, name, first_Name, last_name, std, gender);
 		this.grade = grade;
 	}
+
+	
 
 	public int getGrade() {
 		return grade;
@@ -23,11 +28,29 @@ public class Student extends Person{
 	}
 
 
-	public static Student createStudentFromCSV(String std) {
+	public static Student createStudentFromCSV(String std) throws Exception {
 		Scanner sn = new Scanner(std);
 		sn.useDelimiter(",");
-		Student st = new Student(sn.nextInt(), sn.next(),std, std, std, std, sn.nextInt());
+		
+		Student st = null;
+		try {
+			st = new Student(sn.nextInt(), sn.next(),sn.next(), sn.next(), sn.next(),sn.next(), sn.nextInt());
+			//12,Rohith,asdf,asf,11121234,sdfas,1
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		sn.close();
 		return st;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Student [grade=" + grade + ", Age = " + getAge() + ", Name() = " + getName() + ", First_Name = "
+				+ getFirst_Name() + ", Last_name=" + getLast_name() + ", Date = " + getDate() + ", Gender = "
+				+ getGender() + ", EventRegistration = " + getEventRegistration() + "]\n";
+	}
+
 }

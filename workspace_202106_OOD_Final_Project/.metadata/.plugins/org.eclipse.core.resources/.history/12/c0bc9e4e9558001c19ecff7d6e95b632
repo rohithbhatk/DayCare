@@ -1,0 +1,36 @@
+package edu.neu.csye6200;
+
+public class Vaccination {
+public static String Hib() {
+	return null;
+}
+
+
+public static String DTaP() {
+	return null;
+}
+
+
+public static String Polio() {
+	return null;
+}
+
+
+
+public static String Hepatitis_B() {
+	return null;
+}
+
+
+public static String MMR() {
+	return null;
+}
+public static String Varicella() {
+	return null;
+}
+
+
+
+}
+
+
