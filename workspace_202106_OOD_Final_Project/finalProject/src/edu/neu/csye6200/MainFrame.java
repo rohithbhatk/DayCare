@@ -47,6 +47,7 @@ public class MainFrame {
 	private HintTextField textField_11;
 	private HintTextField textField_12;
 	private JButton btnRegister;
+	private JPanel panel_6;
 
 
 	/**
@@ -84,9 +85,9 @@ public class MainFrame {
 		frame.getContentPane().add(gradientPanel, BorderLayout.CENTER);
 		frame.setBounds(100, 100, 1280, 720);
 		GridBagLayout gbl_gradientPanel = new GridBagLayout();
-		gbl_gradientPanel.columnWidths = new int[]{0, 0, 0};
+		gbl_gradientPanel.columnWidths = new int[]{0, 0};
 		gbl_gradientPanel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_gradientPanel.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+		gbl_gradientPanel.columnWeights = new double[]{1.0, Double.MIN_VALUE};
 		gbl_gradientPanel.rowWeights = new double[]{1.0, 0.1, 0.1, 0.1, 0.1, 0.1, 1.0, Double.MIN_VALUE};
 		gradientPanel.setLayout(gbl_gradientPanel);
 		
@@ -97,7 +98,7 @@ public class MainFrame {
 		GridBagConstraints gbc_lblStudentRegistration = new GridBagConstraints();
 		gbc_lblStudentRegistration.fill = GridBagConstraints.VERTICAL;
 		gbc_lblStudentRegistration.insets = new Insets(0, 0, 5, 0);
-		gbc_lblStudentRegistration.gridx = 1;
+		gbc_lblStudentRegistration.gridx = 0;
 		gbc_lblStudentRegistration.gridy = 0;
 		gradientPanel.add(lblStudentRegistration, gbc_lblStudentRegistration);
 		
@@ -106,7 +107,7 @@ public class MainFrame {
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
 		gbc_panel_1.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_1.fill = GridBagConstraints.VERTICAL;
-		gbc_panel_1.gridx = 1;
+		gbc_panel_1.gridx = 0;
 		gbc_panel_1.gridy = 1;
 		gradientPanel.add(panel_1, gbc_panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
@@ -116,7 +117,7 @@ public class MainFrame {
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
 		gbc_panel_2.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_2.fill = GridBagConstraints.VERTICAL;
-		gbc_panel_2.gridx = 1;
+		gbc_panel_2.gridx = 0;
 		gbc_panel_2.gridy = 2;
 		gradientPanel.add(panel_2, gbc_panel_2);
 		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
@@ -126,19 +127,18 @@ public class MainFrame {
 		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
 		gbc_panel_3.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_3.fill = GridBagConstraints.VERTICAL;
-		gbc_panel_3.gridx = 1;
+		gbc_panel_3.gridx = 0;
 		gbc_panel_3.gridy = 3;
 		gradientPanel.add(panel_3, gbc_panel_3);
 		panel_3.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		panel_4 = new JPanel();
 		panel_4.setOpaque(false);
-		panel_4.setOpaque(false);
 		
 		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
 		gbc_panel_4.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_4.fill = GridBagConstraints.VERTICAL;
-		gbc_panel_4.gridx = 1;
+		gbc_panel_4.gridx = 0;
 		gbc_panel_4.gridy = 4;
 		gradientPanel.add(panel_4, gbc_panel_4);
 		panel_4.setLayout(new GridLayout(1, 0, 0, 0));
@@ -149,7 +149,7 @@ public class MainFrame {
 		GridBagConstraints gbc_panel_5 = new GridBagConstraints();
 		gbc_panel_5.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_5.fill = GridBagConstraints.VERTICAL;
-		gbc_panel_5.gridx = 1;
+		gbc_panel_5.gridx = 0;
 		gbc_panel_5.gridy = 5;
 		gradientPanel.add(panel_5, gbc_panel_5);
 		panel_5.setLayout(new GridLayout(1, 0, 0, 0));
@@ -182,19 +182,25 @@ public class MainFrame {
 		textField_7 = new HintTextField("Parent's Last Name");
 		panel_4.add(textField_7);
 		
-		btnRegister = new JButton("REGISTER");
-		btnRegister.setPreferredSize(new Dimension(120, 40));
-//		btnRegister.setOpaque(false);
-//		btnRegister.setContentAreaFilled(false);
-//		btnRegister.setBorderPainted(false);
-		btnRegister.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
-		btnRegister.setForeground(Color.white);
-		btnRegister.setBorder(new RoundBtn(20));   
+//		btnRegister = new JButton("REGISTER");
+//		btnRegister.setPreferredSize(new Dimension(120, 40));
+//		btnRegister.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
+//		btnRegister.setForeground(Color.white);
+//		btnRegister.setBorder(new RoundBtn(20));   
 		
 		GridBagConstraints gbc_Register = new GridBagConstraints();
-		gbc_Register.gridx = 1;
+		gbc_Register.gridx = 0;
 		gbc_Register.gridy = 6;
 		gradientPanel.add(btnRegister, gbc_Register);
+		
+		panel_6 = new JPanel();
+		panel_6.setOpaque(false);
+		GridBagConstraints gbc_panel_6 = new GridBagConstraints();
+		gbc_panel_6.fill = GridBagConstraints.BOTH;
+		gbc_panel_6.gridx = 0;
+		gbc_panel_6.gridy = 6;
+		gradientPanel.add(panel_6, gbc_panel_6);
+
 
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
