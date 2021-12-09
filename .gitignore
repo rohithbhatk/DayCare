@@ -1,5 +1,6 @@
 workspace_202106_OOD_Final_Project/.metadata
 .metadata
+.settings
 bin/
 tmp/
 *.tmp
