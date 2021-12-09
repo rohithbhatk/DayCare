@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;Project_Learning1&apos;&#x0A;- Original project: &apos;Project_Learning1&apos;&#x0A;- Original element: &apos;edu.neu.csye6200.DoublyLinkedList.java&apos;" description="Delete element" element1="/src&lt;edu.neu.csye6200{DoublyLinkedList.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1638571811096" subPackages="false" version="1.0"/>
-</session>
