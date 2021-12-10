@@ -16,6 +16,9 @@ import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.BoxLayout;
 import javax.swing.SwingConstants;
 import java.awt.GridBagLayout;
@@ -50,6 +53,8 @@ public class MainFrame {
 	
 	private JButton btnRegister;
 	private JButton btnView;
+	
+	private ViewingPage viewingPage = ViewingPage.getInstance();
 
 	/**
 	 * Launch the application.
@@ -135,7 +140,6 @@ public class MainFrame {
 		
 		panel_4 = new JPanel();
 		panel_4.setOpaque(false);
-		
 		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
 		gbc_panel_4.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_4.fill = GridBagConstraints.VERTICAL;
@@ -146,7 +150,6 @@ public class MainFrame {
 		
 		panel_5 = new JPanel();
 		panel_5.setOpaque(false);
-		
 		GridBagConstraints gbc_panel_5 = new GridBagConstraints();
 		gbc_panel_5.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_5.fill = GridBagConstraints.VERTICAL;
@@ -198,6 +201,18 @@ public class MainFrame {
 		btnRegister.setForeground(Color.white);
 		btnRegister.setBorder(new RoundBtn(20)); 
 		panel_6.add(btnRegister);
+		btnRegister.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// add registration data
+				
+				viewingPage = ViewingPage.getInstance();
+				viewingPage.rerender();
+				gradientPanel.setVisible(false);
+				frame.getContentPane().removeAll();
+				frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
+			}
+		});
 		
 		btnView = new JButton("VIEW RECORDS");
 		btnView.setPreferredSize(new Dimension(160, 40));
@@ -206,6 +221,20 @@ public class MainFrame {
 		btnView.setBorder(new LineBorder(Color.white));
 		btnView.setBorder(new RoundBtn(20));  
 		panel_6.add(btnView);
+		btnView.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				gradientPanel.setVisible(false);
+				viewingPage.setVisible(true);
+				frame.getContentPane().removeAll();
+				frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
+			}
+		});
+		
+		
+		viewingPage.initialize();
+		viewingPage.addBtnListener(frame, gradientPanel);
+
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
