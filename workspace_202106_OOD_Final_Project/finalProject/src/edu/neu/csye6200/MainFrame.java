@@ -208,6 +208,7 @@ public class MainFrame {
 				
 				viewingPage = ViewingPage.getInstance();
 				viewingPage.rerender();
+				viewingPage.setVisible(true);
 				gradientPanel.setVisible(false);
 				frame.getContentPane().removeAll();
 				frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
