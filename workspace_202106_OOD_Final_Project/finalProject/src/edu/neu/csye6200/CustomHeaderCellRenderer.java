@@ -11,9 +11,9 @@ import javax.swing.table.TableCellRenderer;
 
 public class CustomHeaderCellRenderer extends JLabel implements TableCellRenderer {
 	public CustomHeaderCellRenderer() {
-		setFont(new Font("Consolas", Font.BOLD, 13));
-		setBackground(new Color(0,0,0,0));
-		setHorizontalAlignment(SwingConstants.CENTER);
+		setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		setBackground(new Color(20, 20, 20));
+		setForeground(Color.WHITE);
 	}
 
 	@Override

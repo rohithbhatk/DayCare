@@ -195,7 +195,7 @@ public class ViewFrame {
 	        if(width > 300)
 	            width=300;
 	        columnModel.getColumn(column).setPreferredWidth(width);
-	    }
+	    } 
 	}
 
 }

@@ -33,6 +33,7 @@ import java.awt.Dimension;
 public class MainFrame {
 
 	private JFrame frame;	
+	private GradientPanel gradientPanel;
 
 	private JPanel panel_1;
 	private JPanel panel_2;
@@ -65,6 +66,7 @@ public class MainFrame {
 	private String getAddress;
 	
 	private ViewFrame viewFrame;
+	private ViewingPage viewingPage;
 	
 //	private ViewingPage viewingPage = ViewingPage.getInstance();
 
@@ -99,7 +101,7 @@ public class MainFrame {
 		frame.setAutoRequestFocus(false);
 		frame.getContentPane().setFont(new Font("Roboto Condensed", Font.PLAIN, 13));
 		
-		GradientPanel gradientPanel = new GradientPanel();
+		gradientPanel = new GradientPanel();
 		frame.getContentPane().add(gradientPanel, BorderLayout.CENTER);
 		frame.setBounds(100, 100, 1280, 720);
 		GridBagLayout gbl_gradientPanel = new GridBagLayout();
@@ -213,19 +215,6 @@ public class MainFrame {
 		btnRegister.setForeground(Color.white);
 		btnRegister.setBorder(new RoundBtn(20)); 
 		panel_6.add(btnRegister);
-//		btnRegister.addActionListener(new ActionListener() {
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				// add registration data
-//				
-//				viewingPage = ViewingPage.getInstance();
-//				viewingPage.rerender();
-//				viewingPage.setVisible(true);
-//				gradientPanel.setVisible(false);
-//				frame.getContentPane().removeAll();
-//				frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
-//			}
-//		});
 		
 		btnView = new JButton("VIEW RECORDS");
 		btnView.setPreferredSize(new Dimension(160, 40));
@@ -234,23 +223,10 @@ public class MainFrame {
 		btnView.setBorder(new LineBorder(Color.white));
 		btnView.setBorder(new RoundBtn(20));  
 		panel_6.add(btnView);
-//		btnView.addActionListener(new ActionListener() {
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				gradientPanel.setVisible(false);
-//				viewingPage.setVisible(true);
-//				frame.getContentPane().removeAll();
-//				frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
-//			}
-//		});
 		
 		btnRegister.addActionListener(e -> registerButtonPressed());
 		btnView.addActionListener(e -> viewButtonPressed());
 		
-		
-//		viewingPage.initialize();
-//		viewingPage.addBtnListener(frame, gradientPanel);
-
 		
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
@@ -278,6 +254,17 @@ public class MainFrame {
 	}
 	
 	private void viewButtonPressed() {
-		ViewFrame.demo();
+		if(!ViewingPage.isInitialized()) {
+			viewingPage = ViewingPage.getInstance();
+			viewingPage.initialize();
+			viewingPage.addBtnListener(frame, gradientPanel);
+		} else {
+			viewingPage.rerender();
+		}
+		
+		viewingPage.setVisible(true);
+		gradientPanel.setVisible(false);
+		frame.getContentPane().removeAll();
+		frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
 	}
 }
