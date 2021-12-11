@@ -65,7 +65,7 @@ public class SchoolHelper {
 		classrooms[1] = classroom.createGroup(4, 3, teacher, student); //this will put all the classrooms of different age groups in an array 
 	}
 
-
+	public void getClassrooms() {}
 
 
 
