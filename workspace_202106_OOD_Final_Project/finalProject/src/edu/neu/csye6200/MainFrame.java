@@ -54,7 +54,19 @@ public class MainFrame {
 	private JButton btnRegister;
 	private JButton btnView;
 	
-	private ViewingPage viewingPage = ViewingPage.getInstance();
+	private String getFirstName;
+	private String getLastName;
+	private String getGender;
+	private String getImmunizationRecords;
+	private String getDOB;
+	private String getDOJ;
+	private String getParentFirstName;
+	private String getParentLastName;
+	private String getAddress;
+	
+	private ViewFrame viewFrame;
+	
+//	private ViewingPage viewingPage = ViewingPage.getInstance();
 
 	/**
 	 * Launch the application.
@@ -201,19 +213,19 @@ public class MainFrame {
 		btnRegister.setForeground(Color.white);
 		btnRegister.setBorder(new RoundBtn(20)); 
 		panel_6.add(btnRegister);
-		btnRegister.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// add registration data
-				
-				viewingPage = ViewingPage.getInstance();
-				viewingPage.rerender();
-				viewingPage.setVisible(true);
-				gradientPanel.setVisible(false);
-				frame.getContentPane().removeAll();
-				frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
-			}
-		});
+//		btnRegister.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				// add registration data
+//				
+//				viewingPage = ViewingPage.getInstance();
+//				viewingPage.rerender();
+//				viewingPage.setVisible(true);
+//				gradientPanel.setVisible(false);
+//				frame.getContentPane().removeAll();
+//				frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
+//			}
+//		});
 		
 		btnView = new JButton("VIEW RECORDS");
 		btnView.setPreferredSize(new Dimension(160, 40));
@@ -222,21 +234,50 @@ public class MainFrame {
 		btnView.setBorder(new LineBorder(Color.white));
 		btnView.setBorder(new RoundBtn(20));  
 		panel_6.add(btnView);
-		btnView.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				gradientPanel.setVisible(false);
-				viewingPage.setVisible(true);
-				frame.getContentPane().removeAll();
-				frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
-			}
-		});
+//		btnView.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				gradientPanel.setVisible(false);
+//				viewingPage.setVisible(true);
+//				frame.getContentPane().removeAll();
+//				frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
+//			}
+//		});
+		
+		btnRegister.addActionListener(e -> registerButtonPressed());
+		btnView.addActionListener(e -> viewButtonPressed());
 		
 		
-		viewingPage.initialize();
-		viewingPage.addBtnListener(frame, gradientPanel);
+//		viewingPage.initialize();
+//		viewingPage.addBtnListener(frame, gradientPanel);
 
 		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
+	
+	private void registerButtonPressed() {
+		// TODO Auto-generated method stub
+		getFirstName = textField_FirstName.getText();
+		getLastName = textField_LastName.getText();
+		getGender = textField_Gender.getText();
+		getImmunizationRecords = textField_Immunization_Records.getText();
+		getDOB = textField_DOB.getText();
+		getDOJ = textField_DOJ.getText();
+		getParentFirstName = textField_ParentFirstName.getText();
+		getParentLastName = textField_ParentLastName.getText();
+		getAddress = textField_Address.getText();
+		System.out.println(getFirstName);
+		System.out.println(getLastName);
+		System.out.println(getGender);
+		System.out.println(getImmunizationRecords);
+		System.out.println(getDOB);
+		System.out.println(getDOJ);
+		System.out.println(getParentFirstName);
+		System.out.println(getParentLastName);
+		System.out.println(getAddress);
+	}
+	
+	private void viewButtonPressed() {
+		ViewFrame.demo();
 	}
 }
