@@ -23,6 +23,7 @@ class HintTextField extends JTextField implements FocusListener {
 		this.setFont(new Font("Roboto Condensed", Font.PLAIN, 13));
 		this.setColumns(25);
 		this.setHorizontalAlignment(SwingConstants.CENTER);
+		this.setCaretColor(new Color(255, 255, 255));
 	  }
 
 	  @Override
