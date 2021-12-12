@@ -28,21 +28,22 @@ public class VaccineDAO extends DatabaseConnector{
         }
     }
 
-    public List<ClassRoom> get(){
+    public List<Vaccine> get(){
         String sql = "Select * from "+ TABLE_NAME;
-        List<ClassRoom> list = new ArrayList<>();
+        List<Vaccine> list = new ArrayList<>();
         try {
             this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
-                ClassRoom classRoom =  new ClassRoom();
-//                classRoom.setId(resultSet.getString(1));
-//                classRoom.getString(resultSet.getString(1));
-//                classRoom.getString(resultSet.getString(1));
-//                classRoom.getString(resultSet.getString(1));
-//                classRoom.setDescription(resultSet.getString("classroom_id"));
-                list.add(classRoom);
+                Vaccine vaccine =  new Vaccine();
+                vaccine.setId(resultSet.getInt(1));
+                vaccine.setVaccine_name(resultSet.getString(2));
+                vaccine.setDose1(resultSet.getInt(3));
+                vaccine.setDose2(resultSet.getInt(4));
+                vaccine.setDose3(resultSet.getInt(5));
+
+                list.add(vaccine);
             }
             resultSet.close();
             this.closeConnection();

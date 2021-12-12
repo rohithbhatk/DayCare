@@ -1,10 +1,19 @@
 package edu.neu.csye6200.models;
 
 public class Vaccine {
+    private  int id;
     private String Vaccine_name;
     private int dose1;
     private int dose2;
     private int dose3;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getVaccine_name() {
         return Vaccine_name;

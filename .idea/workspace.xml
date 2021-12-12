@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="Updated File structure">
-      <change afterPath="$PROJECT_DIR$/finalProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineStatusDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/VaccineStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/SchoolHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/SchoolHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/SchoolHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Vaccine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Vaccine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639267299824</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated File structure">
+      <created>1639268036575</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639268036575</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

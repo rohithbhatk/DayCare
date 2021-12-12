@@ -13,15 +13,18 @@ public class StudentDAO extends DatabaseConnector {
     private static final String TABLE_NAME = "student";
 
     public void insertStudent(Student student) {
-        String sql = "INSERT INTO " + TABLE_NAME + " ( name, age, gender, grade, group_id) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO " + TABLE_NAME + " ( first_name, last_name, age, gender, grade, group_id, parent_last_name, parent_first_name, address, dob ) VALUES(?,?,?,?,?,?,?,?,?,?)";
         try {
             this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
-            preparedStatement.setString(1, student.getName());
-            preparedStatement.setInt(2, student.getAge());
-            preparedStatement.setString(3, student.getGender());
-            preparedStatement.setInt(4, student.getGrade());
-            preparedStatement.setInt(5, student.getGroupId());
+            preparedStatement.setString(1, student.getFirst_Name());
+            preparedStatement.setString(2, student.getLast_name());
+            preparedStatement.setInt(3, student.getAge());
+            preparedStatement.setString(4, student.getGender());
+            preparedStatement.setInt(5, student.getGrade());
+            preparedStatement.setInt(6, student.getGroupId());
+//            preparedStatement.setInt(7, student.get());
+            preparedStatement.setInt(6, student.getGroupId());
 
             preparedStatement.execute();
             this.closeConnection();
