@@ -35,12 +35,18 @@ public class MainFrame {
 	private JTextField textField_FirstName;
 	private JTextField textField_LastName;
 	private JTextField textField_Gender;
-	private JTextField textField_Immunization_Records;
 	private JTextField textField_ParentFirstName;
 	private JTextField textField_ParentLastName;
 	private JTextField textField_Address;
 	private JTextField textField_DOB;
 	private JTextField textField_DOJ;
+	private JTextField textField_Varicella;
+	private JTextField textField_Hepatitis_B;
+	private JTextField textField_MMR;
+	private JTextField textField_DtaP;
+	private JTextField textField_Polio;
+	private JTextField textField_Age;
+	private JTextField textField_Hib;
 	
 	private JButton btnRegister;
 	private JButton btnView;
@@ -49,12 +55,18 @@ public class MainFrame {
 	private String getFirstName;
 	private String getLastName;
 	private String getGender;
-	private String getImmunizationRecords;
+	private String getVaricella;
 	private String getDOB;
 	private String getDOJ;
 	private String getParentFirstName;
 	private String getParentLastName;
 	private String getAddress;
+	private String getHib;
+	private String getDtaP;
+	private String getPolio;
+	private String getHepatitis_B;
+	private String getMMR;
+	private String getAge;
 
 	private ViewingPage viewingPage;
 	
@@ -120,7 +132,7 @@ public class MainFrame {
 		gbc_panel_1.gridx = 0;
 		gbc_panel_1.gridy = 1;
 		gradientPanel.add(panel_1, gbc_panel_1);
-		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
+		panel_1.setLayout(new GridLayout(0, 3, 0, 0));
 		
 		panel_2 = new JPanel();
 		panel_2.setOpaque(false);
@@ -130,7 +142,7 @@ public class MainFrame {
 		gbc_panel_2.gridx = 0;
 		gbc_panel_2.gridy = 2;
 		gradientPanel.add(panel_2, gbc_panel_2);
-		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
+		panel_2.setLayout(new GridLayout(0, 3, 0, 0));
 		
 		panel_3 = new JPanel();
 		panel_3.setOpaque(false);
@@ -140,7 +152,7 @@ public class MainFrame {
 		gbc_panel_3.gridx = 0;
 		gbc_panel_3.gridy = 3;
 		gradientPanel.add(panel_3, gbc_panel_3);
-		panel_3.setLayout(new GridLayout(0, 2, 0, 0));
+		panel_3.setLayout(new GridLayout(0, 3, 0, 0));
 		
 		panel_4 = new JPanel();
 		panel_4.setOpaque(false);
@@ -150,7 +162,7 @@ public class MainFrame {
 		gbc_panel_4.gridx = 0;
 		gbc_panel_4.gridy = 4;
 		gradientPanel.add(panel_4, gbc_panel_4);
-		panel_4.setLayout(new GridLayout(1, 0, 0, 0));
+		panel_4.setLayout(new GridLayout(0, 3, 0, 0));
 		
 		panel_5 = new JPanel();
 		panel_5.setOpaque(false);
@@ -160,7 +172,7 @@ public class MainFrame {
 		gbc_panel_5.gridx = 0;
 		gbc_panel_5.gridy = 5;
 		gradientPanel.add(panel_5, gbc_panel_5);
-		panel_5.setLayout(new GridLayout(1, 0, 0, 0));
+		panel_5.setLayout(new GridLayout(0, 3, 0, 0));
 		
 		textField_FirstName = new HintTextField("First Name");
 		panel_1.add(textField_FirstName);
@@ -169,10 +181,16 @@ public class MainFrame {
 		panel_1.add(textField_LastName);
 		
 		textField_Gender = new HintTextField("Gender");
-		panel_2.add(textField_Gender);
-		
-		textField_Immunization_Records = new HintTextField("Immunization Records");
-		panel_2.add(textField_Immunization_Records);
+		panel_1.add(textField_Gender);
+
+		textField_ParentFirstName = new HintTextField("Parent's First Name");
+		panel_2.add(textField_ParentFirstName);
+
+		textField_ParentLastName = new HintTextField("Parent's Last Name");
+		panel_2.add(textField_ParentLastName);
+
+		textField_Age = new HintTextField("Age (Months)");
+		panel_2.add(textField_Age);
 		
 		textField_DOB = new HintTextField("Date of Birth (MM/DD/YYYY)");
 		panel_3.add(textField_DOB);
@@ -181,14 +199,25 @@ public class MainFrame {
 		panel_3.add(textField_DOJ);
 		
 		textField_Address = new HintTextField("Address");
-		panel_5.add(textField_Address);
-		textField_Address.setColumns(51);
-	
-		textField_ParentFirstName = new HintTextField("Parent's First Name");
-		panel_4.add(textField_ParentFirstName);
-		
-		textField_ParentLastName = new HintTextField("Parent's Last Name");
-		panel_4.add(textField_ParentLastName);
+		panel_3.add(textField_Address);
+
+		textField_Hib = new HintTextField("Hib");
+		panel_4.add(textField_Hib);
+
+		textField_DtaP = new HintTextField("DtaP");
+		panel_4.add(textField_DtaP);
+
+		textField_Polio = new HintTextField("Polio");
+		panel_4.add(textField_Polio);
+
+		textField_Hepatitis_B = new HintTextField("Hepatitis_B");
+		panel_5.add(textField_Hepatitis_B);
+
+		textField_MMR = new HintTextField("MMR");
+		panel_5.add(textField_MMR);
+
+		textField_Varicella = new HintTextField("Varicella");
+		panel_5.add(textField_Varicella);
 		  
 		
 		panel_6 = new JPanel();
@@ -233,21 +262,34 @@ public class MainFrame {
 		getFirstName = textField_FirstName.getText();
 		getLastName = textField_LastName.getText();
 		getGender = textField_Gender.getText();
-		getImmunizationRecords = textField_Immunization_Records.getText();
-		getDOB = textField_DOB.getText();
-		getDOJ = textField_DOJ.getText();
 		getParentFirstName = textField_ParentFirstName.getText();
 		getParentLastName = textField_ParentLastName.getText();
+		getAge = textField_Age.getText();
+		getDOB = textField_DOB.getText();
+		getDOJ = textField_DOJ.getText();
 		getAddress = textField_Address.getText();
+		getHib = textField_Hib.getText();
+		getDtaP = textField_DtaP.getText();
+		getPolio = textField_Polio.getText();
+		getHepatitis_B = textField_Hepatitis_B.getText();
+		getMMR = textField_MMR.getText();
+		getVaricella = textField_Varicella.getText();
+
 		System.out.println(getFirstName);
 		System.out.println(getLastName);
 		System.out.println(getGender);
-		System.out.println(getImmunizationRecords);
-		System.out.println(getDOB);
-		System.out.println(getDOJ);
 		System.out.println(getParentFirstName);
 		System.out.println(getParentLastName);
+		System.out.println(getAge);
+		System.out.println(getDOB);
+		System.out.println(getDOJ);
 		System.out.println(getAddress);
+		System.out.println(getHib);
+		System.out.println(getDtaP);
+		System.out.println(getPolio);
+		System.out.println(getHepatitis_B);
+		System.out.println(getMMR);
+		System.out.println(getVaricella);
 
 		// check for vaccination
 		// if it's eligible -> create the objects
