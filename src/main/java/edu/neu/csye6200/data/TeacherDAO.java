@@ -4,11 +4,14 @@ import edu.neu.csye6200.controller.Vaccination;
 import edu.neu.csye6200.models.Student;
 import edu.neu.csye6200.models.Teacher;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 
 public class TeacherDAO extends DatabaseConnector{
@@ -59,6 +62,8 @@ public class TeacherDAO extends DatabaseConnector{
                 teacher.setParents_Last_Name(resultSet.getString(10));
                 teacher.setAddress(resultSet.getString(10));
 
+                list.add(teacher);
+
             }
             resultSet.close();
             this.closeConnection();
@@ -68,6 +73,58 @@ public class TeacherDAO extends DatabaseConnector{
         return list;
     }
 
+    public Queue<Teacher> getQueue(){
+        String sql = "Select * from "+ TABLE_NAME;
+        Queue<Teacher> list = new LinkedList<>();
+        try {
+
+            PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Teacher teacher =  new Teacher();
+
+                teacher.setId(resultSet.getInt(1));
+                teacher.setAge(resultSet.getInt(2));
+                teacher.setFirst_Name(resultSet.getString(3));
+                teacher.setLast_name(resultSet.getString(4));
+                teacher.setDate(resultSet.getString(5));
+                teacher.setCredits(resultSet.getInt(6));
+                teacher.setSalary(resultSet.getInt(7));
+                teacher.setTrack_Student_Record(resultSet.getString(8));
+                teacher.setParents_First_Name(resultSet.getString(9));
+                teacher.setParents_Last_Name(resultSet.getString(10));
+                teacher.setAddress(resultSet.getString(10));
+                list.add(teacher);
+            }
+            resultSet.close();
+            this.closeConnection();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public void setReview(int id, int credits){
+//        String sql = "Select * from "+ TABLE_NAME;
+        String sql = "UPDATE " +TABLE_NAME+ " set credits = ? where id=?";
+//        VaccineStatusDAO vaccineStatusDAO = new VaccineStatusDAO();
+//        List<Student> list = new ArrayList<>();
+        try {
+            Connection connection = this.openConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, credits);
+            preparedStatement.setInt(2, id);
+
+            preparedStatement.executeUpdate();
+
+            this.closeConnection();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static void main(String[] args) {
 
         TeacherDAO teacherDAO = new TeacherDAO();
@@ -75,8 +132,8 @@ public class TeacherDAO extends DatabaseConnector{
         Vaccination vaccination = new Vaccination();
 //     public Teacher(int id, int age, String first_Name, String last_name,  String date, String gender, int credits, int salary, String track_Student_Record, String parents_first_name, String parents_last_name, String address) {
 
-            Teacher teacher = new Teacher(0, 26, "Akhil","Sirra","12/12/20","M", 4, 100, "A", "Sirra", "Akira", "100 Heath St");
-        teacherDAO.insertTeacher(teacher);
+//            Teacher teacher = new Teacher(0, 26, "Akhil","Sirra","12/12/20","M", 4, 100, "A", "Sirra", "Akira", "100 Heath St");
+        teacherDAO.setReview(1,5);
 //        List<Student>  student_list = studentDAO.get();
 //        for(int i=0;i<student_list.size();i++){
 //            System.out.println(student_list.get(i));

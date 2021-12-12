@@ -160,6 +160,27 @@ public class StudentDAO extends DatabaseConnector {
         return list;
     }
 
+    public void setGrade(int id, String grade){
+//        String sql = "Select * from "+ TABLE_NAME;
+        String sql = "UPDATE " +TABLE_NAME+ " set grade = ? where id=?";
+//        VaccineStatusDAO vaccineStatusDAO = new VaccineStatusDAO();
+//        List<Student> list = new ArrayList<>();
+        try {
+            Connection connection = this.openConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, grade);
+            preparedStatement.setInt(2, id);
+
+            preparedStatement.executeUpdate();
+
+            this.closeConnection();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
 
     public static void main(String[] args) {
@@ -176,10 +197,10 @@ public class StudentDAO extends DatabaseConnector {
         Vaccination vaccination = new Vaccination();
 //        Student student = new Student(0, 25, "Akhil","Sirra","12/12/20","M", vaccination, "A", 1, "Parentname", "Sirra", "99 Washington st", "08/08/2021");
 //        studentDAO.insertStudent(student);
-        List<String>  student_list = studentDAO.getStudentString("Akhil");
-        for(int i=0;i<student_list.size();i++){
-            System.out.println(student_list.get(i));
-        }
+        studentDAO.setGrade(1, "A+");
+//        for(int i=0;i<student_list.size();i++){
+//            System.out.println(student_list.get(i));
+//        }
     }
 
 

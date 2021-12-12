@@ -11,6 +11,7 @@ public class Student extends Person{
 	private String date_of_joining;
 	private Vaccination immunization_Records;
 
+
 	public Student() {
 		super();
 	}
