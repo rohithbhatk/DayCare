@@ -14,7 +14,6 @@ public class Vaccination {
 	private List<Date> varicella = new ArrayList<>();
 
 	public List getHib() {
-		
 		return hib;
 	}
 	public void setHib(Date date) {

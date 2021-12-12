@@ -1,5 +1,7 @@
 package edu.neu.csye6200.view;
+
 import edu.neu.csye6200.controller.SchoolHelper;
+import edu.neu.csye6200.controller.Vaccination;
 import edu.neu.csye6200.models.Student;
 import edu.neu.csye6200.models.Teacher;
 
@@ -14,6 +16,8 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.BorderFactory;
@@ -30,181 +34,217 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 
 public class ViewingPage extends GradientPanel {
-	private static final ViewingPage instance = new ViewingPage();
-	private static boolean isInitialized = false;
+    private static final ViewingPage instance = new ViewingPage();
+    private static boolean isInitialized = false;
 
-	private ViewingPage() {
-		super();
-	}
-	
-	public static boolean isInitialized() {
-		return isInitialized;
-	}
+    private ViewingPage() {
+        super();
+    }
 
-	public static ViewingPage getInstance() {
-		return instance;
-	}
+    public static boolean isInitialized() {
+        return isInitialized;
+    }
 
-	public void initialize() {
-		isInitialized = true;
-		GridBagLayout gbl_gradientPanel = new GridBagLayout();
-		gbl_gradientPanel.columnWidths = new int[]{0, 0, 0, 0};
-		gbl_gradientPanel.rowHeights = new int[]{0, 0, 0};
-		gbl_gradientPanel.columnWeights = new double[]{0.1, 1.0, 0.1, Double.MIN_VALUE};
-		gbl_gradientPanel.rowWeights = new double[]{0.25, 1.0, 0.25};
-		
-		createLabel();
-		createTable();
-		createScrollPane();
-		createButton();
-		
-		
-		instance.setLayout(gbl_gradientPanel);
-		instance.add(lblRecords, gbc_label);
-		instance.add(scrollPane, gbc_scrollPane);
-		instance.add(btnBack, gbc_button);
-	}
+    public static ViewingPage getInstance() {
+        return instance;
+    }
 
-	public void rerender() {
-		instance.remove(scrollPane);
-		createTable();
-		createScrollPane();
-		instance.add(scrollPane, gbc_scrollPane, 1);
-	}
+    public void initialize() {
+        isInitialized = true;
+        GridBagLayout gbl_gradientPanel = new GridBagLayout();
+        gbl_gradientPanel.columnWidths = new int[]{0, 0, 0, 0};
+        gbl_gradientPanel.rowHeights = new int[]{0, 0, 0};
+        gbl_gradientPanel.columnWeights = new double[]{0.1, 1.0, 0.1, Double.MIN_VALUE};
+        gbl_gradientPanel.rowWeights = new double[]{0.25, 1.0, 0.25};
 
-	public void createLabel() {
-		lblRecords = new JLabel("RECORDS");
-		lblRecords.setHorizontalAlignment(SwingConstants.CENTER);
-		lblRecords.setForeground(Color.WHITE);
-		lblRecords.setFont(new Font("Roboto Condensed", Font.BOLD, 24));
-		
-		gbc_label = new GridBagConstraints();
-		gbc_label.fill = GridBagConstraints.VERTICAL;
-		gbc_label.insets = new Insets(50, 0, 5, 0);
-		gbc_label.gridx = 1;
-		gbc_label.gridy = 0;
-	}
-	public void createScrollPane() {
-		scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBackground(new Color(20, 20, 20));
-		
-		gbc_scrollPane = new GridBagConstraints();
-		gbc_scrollPane.fill = GridBagConstraints.HORIZONTAL;
-		gbc_scrollPane.gridx = 1;
-		gbc_scrollPane.gridy = 1;
-	}
+        createLabel();
+        createTable();
+        createScrollPane();
+        createButton();
 
-	public void getTableData() {
-		// Todo: get table data from ClassRoom(?
-		Object[][] classrooms = SchoolHelper.getClassrooms();
-		for(int i = 0; i < classrooms.length; i++) {
-			for(int j = 0; j < classrooms[i].length; j++) {
-				System.out.println(i + " " + j);
-				Map<Teacher, ArrayList<Student>> map = (Map<Teacher, ArrayList<Student>>)classrooms[i][j];
-				map.forEach((key, value) -> {
 
-				});
-			}
-		}
-	};
+        instance.setLayout(gbl_gradientPanel);
+        instance.add(lblRecords, gbc_label);
+        instance.add(scrollPane, gbc_scrollPane);
+        instance.add(btnBack, gbc_button);
+    }
+
+    public void rerender() {
+        instance.remove(scrollPane);
+        createTable();
+        createScrollPane();
+        instance.add(scrollPane, gbc_scrollPane, 1);
+    }
+
+    public void createLabel() {
+        lblRecords = new JLabel("RECORDS");
+        lblRecords.setHorizontalAlignment(SwingConstants.CENTER);
+        lblRecords.setForeground(Color.WHITE);
+        lblRecords.setFont(new Font("Roboto Condensed", Font.BOLD, 24));
+
+        gbc_label = new GridBagConstraints();
+        gbc_label.fill = GridBagConstraints.VERTICAL;
+        gbc_label.insets = new Insets(50, 0, 5, 0);
+        gbc_label.gridx = 1;
+        gbc_label.gridy = 0;
+    }
+
+    public void createScrollPane() {
+        scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setBackground(new Color(20, 20, 20));
+
+        gbc_scrollPane = new GridBagConstraints();
+        gbc_scrollPane.fill = GridBagConstraints.HORIZONTAL;
+        gbc_scrollPane.gridx = 1;
+        gbc_scrollPane.gridy = 1;
+    }
+
+    public void getTableData() {
+        Object[][] classrooms = SchoolHelper.getClassrooms();
+        List<String[]> list = new ArrayList<>();
+        for (int i = 0; i < classrooms.length; i++) {
+            for (int j = 0; j < classrooms[i].length; j++) {
+                Map<Teacher, ArrayList<Student>> map = (Map<Teacher, ArrayList<Student>>) classrooms[i][j];
+                if (map != null)
+                    map.forEach((key, value) -> {
+                        Teacher t = key;
+                        String[] row = new String[15];
+                        for (Student s : value) {
+                            row[0] = Integer.toString(s.getId());
+                            row[1] = s.getFirst_Name() + " " + s.getLast_name();
+                            row[2] = s.getGender() == null ? "" : s.getGender();
+                            row[3] = Integer.toString(s.getAge());
+                            row[4] = Integer.toString(s.getGrade());
+                            row[5] = s.getDate_of_joining() == null ? "" : s.getDate_of_joining();
+                            row[6] = "";
+                            row[7] = t.getFirst_Name() + " " + s.getLast_name();
+                            row[8] = s.getParents_First_Name() + " " + s.getParents_Last_Name();
+
+                            Vaccination v = s.getImmunization_Records();
+                            row[9] = v == null ? "" : String.join(",", v.getHib());
+                            row[10] = v == null ? "" : String.join(",", v.getdTaP());
+                            row[11] = v == null ? "" : String.join(",", v.getPolio());
+                            row[12] = v == null ? "" : String.join(",", v.getHepatitis_B());
+                            row[13] = v == null ? "" : String.join(",", v.getmMR());
+                            row[14] = v == null ? "" : String.join(",", v.getVaricella());
+                            list.add(row);
+                        }
+                    });
+            }
+        }
+
+        data = new String[list.size() + defaultData.length][15];
+        int i = 0;
+        for (int j = 0; j < list.size(); j++, i++) {
+            data[i] = list.get(j);
+        }
+        for (int k = 0; k < defaultData.length; k++, i++) {
+            data[i] = defaultData[k];
+        }
+		Arrays.stream(data).forEach(d -> {
+			System.out.println(Arrays.toString(d));
+		});
+    }
 
 	public void createTable() {
-		getTableData();
-		table = new JTable(data, columnNames){
-			public boolean isCellEditable(int data,int columns) {
-				return false;
-			}
-		};
-		table.setFillsViewportHeight(true);
-		table.setRowHeight(25);
-		table.setShowVerticalLines(false);
-		table.setBackground(new Color(0, 0, 0, 0));
-		
-		TableColumnModel columnModel = table.getColumnModel();
-		for (int i = 0; i < columnNames.length; i++) {
-			columnModel.getColumn(i).setCellRenderer(new CustomTableCellRenderer());
-		}
-		
-		table.getTableHeader().setDefaultRenderer(new CustomHeaderCellRenderer());
-		table.getTableHeader().setBackground(new Color(0,0,0,0));
-		
-		
-		resizeColumnWidth(table);
-	}
+        getTableData();
+        table = new JTable(data, columnNames) {
+            public boolean isCellEditable(int data, int columns) {
+                return false;
+            }
+        };
+        table.setFillsViewportHeight(true);
+        table.setRowHeight(25);
+        table.setShowVerticalLines(false);
+        table.setBackground(new Color(0, 0, 0, 0));
 
-	public void createButton() {
+        TableColumnModel columnModel = table.getColumnModel();
+        for (int i = 0; i < columnNames.length; i++) {
+            columnModel.getColumn(i).setCellRenderer(new CustomTableCellRenderer());
+        }
 
-		btnBack = new JButton("BACK");
-		btnBack.setPreferredSize(new Dimension(160, 40));
-		btnBack.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
-		btnBack.setForeground(Color.white);
-		btnBack.setBorder(new LineBorder(Color.white));
-		btnBack.setBorder(new RoundBtn(20));
-		
-		gbc_button = new GridBagConstraints();
-		gbc_button.insets = new Insets(0, 0, 20, 0);
-		gbc_button.gridx = 1;
-		gbc_button.gridy = 2;
+        table.getTableHeader().setDefaultRenderer(new CustomHeaderCellRenderer());
+        table.getTableHeader().setBackground(new Color(0, 0, 0, 0));
 
-	}
 
-	public void addBtnListener(JFrame frame, GradientPanel gradientPanel) {
-		btnBack.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				instance.setVisible(false);
-				frame.getContentPane().removeAll();
-				gradientPanel.setVisible(true);
-				frame.getContentPane().add(gradientPanel, BorderLayout.CENTER);
-			}
-		});
-	}
-	
-	public void resizeColumnWidth(JTable table) {
-	    final TableColumnModel columnModel = table.getColumnModel();
-	    for (int column = 0; column < table.getColumnCount(); column++) {
-	        int width = 15; // Min width
-	        for (int row = 0; row < table.getRowCount(); row++) {
-	            TableCellRenderer renderer = table.getCellRenderer(row, column);
-	            Component comp = table.prepareRenderer(renderer, row, column);
-	            width = Math.max(comp.getPreferredSize().width +1 , width);
-	        }
-	        if(width > 300)
-	            width=300;
-	        columnModel.getColumn(column).setPreferredWidth(width);
-	    }
-	}
-	
-	private String[] columnNames = new String[] { "ID", "Name", "Gender", "Age", "Grade", "Date of Joining",
-			"Annunal Renewal", "Hib", "DtaP", "Polio", "Hepatitis_B", "MMR", "Varicella" };
-	private String[][] data = new String[][] {
-			{ "1", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "2", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "3", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "4", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "5", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "6", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "7", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "8", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "9", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "10", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "11", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "12", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "13", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "14", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "15", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "16", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "17", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "18", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "19", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-			{ "20", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"}, };
-	
-	private JScrollPane scrollPane;
-	private JTable table;
-	private JButton btnBack;
-	private JLabel lblRecords;
-	private GridBagConstraints gbc_label;
-	private GridBagConstraints gbc_scrollPane;
-	private GridBagConstraints gbc_button;
+        resizeColumnWidth(table);
+    }
+
+    public void createButton() {
+
+        btnBack = new JButton("BACK");
+        btnBack.setPreferredSize(new Dimension(160, 40));
+        btnBack.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
+        btnBack.setForeground(Color.white);
+        btnBack.setBorder(new LineBorder(Color.white));
+        btnBack.setBorder(new RoundBtn(20));
+
+        gbc_button = new GridBagConstraints();
+        gbc_button.insets = new Insets(0, 0, 20, 0);
+        gbc_button.gridx = 1;
+        gbc_button.gridy = 2;
+
+    }
+
+    public void addBtnListener(JFrame frame, GradientPanel gradientPanel) {
+        btnBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                instance.setVisible(false);
+                frame.getContentPane().removeAll();
+                gradientPanel.setVisible(true);
+                frame.getContentPane().add(gradientPanel, BorderLayout.CENTER);
+            }
+        });
+    }
+
+    public void resizeColumnWidth(JTable table) {
+        final TableColumnModel columnModel = table.getColumnModel();
+        for (int column = 0; column < table.getColumnCount(); column++) {
+            int width = 15; // Min width
+            for (int row = 0; row < table.getRowCount(); row++) {
+                TableCellRenderer renderer = table.getCellRenderer(row, column);
+                Component comp = table.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1, width);
+            }
+            if (width > 300)
+                width = 300;
+            columnModel.getColumn(column).setPreferredWidth(width);
+        }
+    }
+
+    private final String[] columnNames = new String[]{"ID", "Name", "Gender", "Age", "Grade", "Date of Joining",
+            "Annunal Renewal", "Teacher", "Parent", "Hib", "DtaP", "Polio", "Hepatitis_B", "MMR", "Varicella"};
+    private String[][] data;
+	// Todo: add default student data for demo
+    private final String[][] defaultData = new String[][]{
+            {"1", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"2", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"3", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"4", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"5", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"6", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"7", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"8", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"9", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"10", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"11", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"12", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"13", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"14", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"15", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"16", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"17", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"18", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"19", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"20", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},};
+
+    private JScrollPane scrollPane;
+    private JTable table;
+    private JButton btnBack;
+    private JLabel lblRecords;
+    private GridBagConstraints gbc_label;
+    private GridBagConstraints gbc_scrollPane;
+    private GridBagConstraints gbc_button;
 }
