@@ -17,7 +17,6 @@ public class StudentDAO extends DatabaseConnector {
         try {
             this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
-            preparedStatement.setString(1, student.getName());
             preparedStatement.setInt(2, student.getAge());
             preparedStatement.setString(3, student.getGender());
             preparedStatement.setInt(4, student.getGrade());
@@ -42,7 +41,7 @@ public class StudentDAO extends DatabaseConnector {
             while (resultSet.next()){
                 Student student =  new Student();
 
-                student.setName(resultSet.getString(2));
+
                 student.setAge(resultSet.getInt(3));
                 student.setGender(resultSet.getString(4));
                 student.setGrade(resultSet.getInt(5));

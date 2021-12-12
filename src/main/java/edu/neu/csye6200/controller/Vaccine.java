@@ -1,4 +1,4 @@
-package edu.neu.csye6200.models;
+package edu.neu.csye6200.controller;
 
 public class Vaccine {
     private String Vaccine_name;

@@ -1,6 +1,6 @@
 package edu.neu.csye6200.data;
 
-import edu.neu.csye6200.models.ClassRoom;
+import edu.neu.csye6200.controller.ClassRoomController;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,15 +26,15 @@ public class ClassroomDAO extends DatabaseConnector{
         }
     }
 
-    public List<ClassRoom> get(){
+    public List<ClassRoomController> get(){
         String sql = "Select * from "+ TABLE_NAME;
-        List<ClassRoom> list = new ArrayList<>();
+        List<ClassRoomController> list = new ArrayList<>();
         try {
             this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
-                ClassRoom classRoom =  new ClassRoom();
+                ClassRoomController classRoom =  new ClassRoomController();
 //                classRoom.setId(resultSet.getInt(1));
 //                classRoom.setDescription(resultSet.getString("classroom_id"));
                 list.add(classRoom);

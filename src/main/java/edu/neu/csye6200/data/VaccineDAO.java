@@ -1,6 +1,6 @@
 package edu.neu.csye6200.data;
-import edu.neu.csye6200.models.ClassRoom;
-import edu.neu.csye6200.models.Vaccine;
+import edu.neu.csye6200.controller.ClassRoomController;
+import edu.neu.csye6200.controller.Vaccine;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,15 +28,15 @@ public class VaccineDAO extends DatabaseConnector{
         }
     }
 
-    public List<ClassRoom> get(){
+    public List<ClassRoomController> get(){
         String sql = "Select * from "+ TABLE_NAME;
-        List<ClassRoom> list = new ArrayList<>();
+        List<ClassRoomController> list = new ArrayList<>();
         try {
             this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
-                ClassRoom classRoom =  new ClassRoom();
+                ClassRoomController classRoom =  new ClassRoomController();
 //                classRoom.setId(resultSet.getString(1));
 //                classRoom.getString(resultSet.getString(1));
 //                classRoom.getString(resultSet.getString(1));

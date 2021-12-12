@@ -1,4 +1,4 @@
-package edu.neu.csye6200.models;
+package edu.neu.csye6200.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,17 +12,7 @@ public class Vaccination {
 	private List<Date> hepatitis_B = new ArrayList<>();
 	private List<Date> mMR = new ArrayList<>();
 	private List<Date> varicella = new ArrayList<>();
-	/*
-	private Integer hibCount = 0;
-	private Integer dTaPCount= 0;
-	private Integer polioCount= 0;
-	private Integer hepatitis_BCount= 0;
-	private Integer mMRCount= 0;
-	private Integer varicellaCount= 0;
-	*/
-	
 
-	
 	public List getHib() {
 		
 		return hib;

@@ -16,7 +16,6 @@ public class TeacherDAO extends DatabaseConnector{
         try {
             this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
-            preparedStatement.setString(1, teacher.getName());
             preparedStatement.setInt(2, teacher.getAge());
             preparedStatement.execute();
             this.closeConnection();
