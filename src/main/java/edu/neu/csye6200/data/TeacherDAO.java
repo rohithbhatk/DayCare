@@ -1,5 +1,6 @@
 package edu.neu.csye6200.data;
 
+import edu.neu.csye6200.controller.Vaccination;
 import edu.neu.csye6200.models.Student;
 import edu.neu.csye6200.models.Teacher;
 
@@ -19,17 +20,16 @@ public class TeacherDAO extends DatabaseConnector{
         try {
             this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
-            preparedStatement.setInt(2, teacher.getAge());
-            preparedStatement.setString(3, teacher.getFirst_Name());
-            preparedStatement.setString(4, teacher.getLast_name());
-            preparedStatement.setString(5, teacher.getDate());
-            preparedStatement.setInt(6, teacher.getCredits());
-            preparedStatement.setInt(7, teacher.getSalary());
-            preparedStatement.setString(8, teacher.getTrack_Student_Record());
-            preparedStatement.setString(9, teacher.getParents_First_Name());
-            preparedStatement.setString(10, teacher.getParents_Last_Name());
-            preparedStatement.setString(11, teacher.getParents_First_Name());
-            preparedStatement.setString(12, teacher.getAddress());
+            preparedStatement.setInt(1, teacher.getAge());
+            preparedStatement.setString(2, teacher.getFirst_Name());
+            preparedStatement.setString(3, teacher.getLast_name());
+            preparedStatement.setString(4, teacher.getDate());
+            preparedStatement.setInt(5, teacher.getCredits());
+            preparedStatement.setInt(6, teacher.getSalary());
+            preparedStatement.setString(7, teacher.getTrack_Student_Record());
+            preparedStatement.setString(8, teacher.getParents_First_Name());
+            preparedStatement.setString(9, teacher.getParents_Last_Name());
+            preparedStatement.setString(10, teacher.getAddress());
             preparedStatement.execute();
             this.closeConnection();
         } catch (ClassNotFoundException | SQLException e) {
@@ -66,6 +66,21 @@ public class TeacherDAO extends DatabaseConnector{
             e.printStackTrace();
         }
         return list;
+    }
+
+    public static void main(String[] args) {
+
+        TeacherDAO teacherDAO = new TeacherDAO();
+
+        Vaccination vaccination = new Vaccination();
+//     public Teacher(int id, int age, String first_Name, String last_name,  String date, String gender, int credits, int salary, String track_Student_Record, String parents_first_name, String parents_last_name, String address) {
+
+            Teacher teacher = new Teacher(0, 25, "Akhil","Sirra","12/12/20","M", 4, 100, "A", "Sirra", "Akira", "100 Heath St");
+        teacherDAO.insertTeacher(teacher);
+//        List<Student>  student_list = studentDAO.get();
+//        for(int i=0;i<student_list.size();i++){
+//            System.out.println(student_list.get(i));
+//        }
     }
 
 }

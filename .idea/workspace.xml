@@ -4,28 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="Working on DAO">
+    <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="Updated immunization DAO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/Vaccine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/ClassGroupDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/ClassGroupDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/ClassroomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/ClassroomDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/DatabaseConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/TeacherDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/TeacherDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineStatusDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineStatusDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/VaccineStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/VaccineStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/ClassGroupDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/ClassGroupDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/ClassroomDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/ClassroomDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/DatabaseConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/DatabaseConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/StudentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/StudentDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/TeacherDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/TeacherDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/VaccineDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/VaccineDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Teacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/HintTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/HintTextField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +45,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DayCare" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
-  <component name="RunManager" selected="Application.StudentDAO">
+  <component name="RunManager" selected="Application.TeacherDAO">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.neu.csye6200.Driver" />
       <module name="finalProject" />
@@ -81,8 +74,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TeacherDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.neu.csye6200.data.TeacherDAO" />
+      <module name="finalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.neu.csye6200.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TeacherDAO" />
         <item itemvalue="Application.StudentDAO" />
         <item itemvalue="Application.Driver" />
       </list>
@@ -132,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639275027187</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated immunization DAO">
+      <created>1639295531435</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639295531435</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,16 +164,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated File structure" />
     <MESSAGE value="Working on DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on DAO" />
+    <MESSAGE value="Updated immunization DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated immunization DAO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java</url>
-          <line>121</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="15" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
