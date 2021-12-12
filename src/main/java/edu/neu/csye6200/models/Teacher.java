@@ -1,5 +1,10 @@
 package edu.neu.csye6200.models;
 
+import edu.neu.csye6200.controller.Vaccination;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class Teacher extends Person {
@@ -52,14 +57,16 @@ public class Teacher extends Person {
 
 
 	public static Teacher createTeacherFromCSV(String std) {
-		Scanner sn = new Scanner(std);
-		sn.useDelimiter(",");
-		Teacher tea = null;
-		tea = new Teacher(sn.nextInt(), sn.next());
-		//to-do
-		sn.close();
-		return tea;
+		String[] data = std.split(",");
 
+		Teacher tea = null;
+		try {
+			tea = new Teacher(Integer.parseInt(data[0]), Integer.parseInt(data[1]), data[2], data[3], "", data[4], 0, 0, "", "", "", "");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tea;
 	}
 
 	@Override

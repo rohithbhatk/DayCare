@@ -103,6 +103,7 @@ public class ViewingPage extends GradientPanel {
     }
 
     public void getTableData() {
+        SchoolHelper.setClassrooms();
         Object[][] classrooms = SchoolHelper.getClassrooms();
         List<String[]> list = new ArrayList<>();
         if (classrooms != null)
@@ -142,15 +143,11 @@ public class ViewingPage extends GradientPanel {
                 }
             }
 
-        data = new String[list.size() + defaultData.length][14];
+        data = new String[list.size()][14];
         int i = 0;
         for (int j = 0; j < list.size(); j++, i++) {
             data[i] = list.get(j);
         }
-        for (int k = 0; k < defaultData.length; k++, i++) {
-            data[i] = defaultData[k];
-        }
-
     }
 
     public void createTable() {
@@ -166,7 +163,9 @@ public class ViewingPage extends GradientPanel {
         table.setBackground(new Color(0, 0, 0, 0));
 
         TableColumnModel columnModel = table.getColumnModel();
+
         for (int i = 0; i < columnNames.length; i++) {
+            if(i >= 8) columnModel.getColumn(i).setPreferredWidth(20);
             columnModel.getColumn(i).setCellRenderer(new CustomTableCellRenderer());
         }
 
