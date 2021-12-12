@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="login credentials">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="updated student and teacher dao">
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/TeacherDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/TeacherDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639257991477</updated>
-      <workItem from="1639329586534" duration="12680000" />
+      <workItem from="1639329586534" duration="13165000" />
     </task>
     <task id="LOCAL-00001" summary="Updated File structure">
       <created>1639259133764</created>
@@ -194,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639342898455</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="updated student and teacher dao">
+      <created>1639346193683</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1639346193683</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +221,8 @@
     <MESSAGE value="Updated DAO" />
     <MESSAGE value="Updated immunization DAO" />
     <MESSAGE value="login credentials" />
-    <option name="LAST_COMMIT_MESSAGE" value="login credentials" />
+    <MESSAGE value="updated student and teacher dao" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated student and teacher dao" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

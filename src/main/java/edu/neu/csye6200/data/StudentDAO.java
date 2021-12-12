@@ -9,7 +9,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class StudentDAO extends DatabaseConnector {
 
@@ -78,7 +80,40 @@ public class StudentDAO extends DatabaseConnector {
         }
         return list;
     }
-    String sql = "Select * from "+ TABLE_NAME +"where first_name=? limit 1";
+
+    public Queue<Student> getQueue(){
+        String sql = "Select * from "+ TABLE_NAME;
+        Queue<Student> list = new LinkedList<>();
+        try {
+            this.openConnection();
+            PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Student student =  new Student();
+
+                student.setId(resultSet.getInt(1));
+                student.setFirst_Name(resultSet.getString(2));
+                student.setAge(resultSet.getInt(3));
+                student.setGender(resultSet.getString(4));
+                student.setGrade(resultSet.getString(5));
+                student.setGroupId(resultSet.getInt(6));
+                student.setLast_name(resultSet.getString(7));
+                student.setParents_First_Name(resultSet.getString(8));
+                student.setParents_Last_Name(resultSet.getString(9));
+                student.setAddress(resultSet.getString(10));
+                student.setDate(resultSet.getString(11));
+                student.setDate_of_joining(resultSet.getString(12));
+
+                list.add(student);
+            }
+            resultSet.close();
+            this.closeConnection();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 
 
     public List<String> getStudentString(String name){
