@@ -5,37 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="Updated File structure">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Vaccine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/ClassGroupDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/ClassGroupDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/ClassroomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/ClassroomDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/TeacherDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/TeacherDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/ClassRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/ClassRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/School.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finalProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/SchoolHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/SchoolHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/SetVaccination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/SetVaccination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/students.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/teachers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/teachers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/ClassRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/EventRegistration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/FileUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/School.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/SchoolHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/SetVaccination.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/Teacher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/Utils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/Vaccination.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/database/ClassGroupDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/database/ClassroomDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/database/DatabaseConnector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/database/StudentDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/database/TeacherDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/SchoolHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DayCare" />
   </component>
   <component name="RunManager">
@@ -99,7 +77,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639259133764</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated File structure">
+      <created>1639267258849</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639267258849</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated File structure">
+      <created>1639267299824</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639267299824</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

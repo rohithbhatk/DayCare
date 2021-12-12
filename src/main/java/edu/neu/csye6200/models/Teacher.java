@@ -2,9 +2,6 @@ package edu.neu.csye6200.models;
 
 import java.util.Scanner;
 
-
-import java.util.Scanner;
-
 public class Teacher extends Person {
 	private int credits;
 	private Double salary;
