@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="Updated File structure">
-      <change afterPath="$PROJECT_DIR$/finalProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/ClassGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/ClassGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/School.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/SchoolHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/SchoolHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/SchoolHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/students.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/ClassGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/ClassGroup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/School.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/School.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/SchoolHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/SchoolHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Teacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/GradientPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/GradientPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/HintTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/HintTextField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/students.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +53,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="MAIN_CLASS_NAME" value="edu.neu.csye6200.Driver" />
       <module name="finalProject" />
       <extension name="coverage">

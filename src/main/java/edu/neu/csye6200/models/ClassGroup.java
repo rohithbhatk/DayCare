@@ -1,5 +1,7 @@
 package edu.neu.csye6200.models;
 
+// WE ARE NOT USING THIS CLASS --> DUMMY CLASS
+
 public class ClassGroup {
     private int groupId;
     private int teacherId;

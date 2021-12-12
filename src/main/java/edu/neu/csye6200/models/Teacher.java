@@ -11,8 +11,10 @@ public class Teacher extends Person {
 		super(id, name);
 
 	}
-	public Teacher(int id, int age, String name, String first_Name, String last_name, String date, String gender, Vaccination immunization_Records, int credits, Double salary, String track_Student_Record) {
-		super(id, age, name, first_Name, last_name, date, gender, immunization_Records);
+	public Teacher(int id, int age, String name, String first_Name, String last_name,
+				   String date, String gender, Vaccination immunization_Records,
+				   int credits, Double salary, String track_Student_Record, String parents_first_name, String parents_last_name, String address) {
+		super(id, age, name, first_Name, last_name, date, gender, immunization_Records, parents_first_name, parents_last_name, address);
 		this.credits = credits;
 		this.salary = salary;
 		this.track_Student_Record = track_Student_Record;

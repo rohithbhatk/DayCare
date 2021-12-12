@@ -40,6 +40,7 @@ public class School {
 	}
 
 	public void addStudent(Student std) {
+
 		studentRoster.add(std);
 	}
 

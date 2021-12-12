@@ -32,10 +32,13 @@ public class SchoolHelper {
 
 			while ((line = FileUtil.readBufferedReader(bufferReader)) != null)   //returns a Boolean value
 			{
+				System.out.println(line);
 				Student student = Student.createStudentFromCSV(line);
 
+				System.out.println(student);
 				school.addStudent(student);
-				System.out.println("Here"+school);
+
+				System.out.println("Here "+school);
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -55,6 +58,8 @@ public class SchoolHelper {
 				// Add student object to a list, so that we can store and sort or perform any operations on that data
 
 				school.addTeacher(teacher);
+
+				System.out.println("Here 2 "+school);
 
 			}
 			System.out.println(school);
