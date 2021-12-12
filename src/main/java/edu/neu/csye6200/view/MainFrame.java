@@ -8,9 +8,10 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 
 import java.awt.Color;
-import javax.swing.JTextField;
+import javax.swing.JTextField;;
 import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
+
 import javax.swing.SwingConstants;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -22,6 +23,7 @@ import java.awt.Dimension;
 public class MainFrame {
 
 	private JFrame frame;	
+	private GradientPanel gradientPanel;
 
 	private JPanel panel_1;
 	private JPanel panel_2;
@@ -42,6 +44,20 @@ public class MainFrame {
 	
 	private JButton btnRegister;
 	private JButton btnView;
+	
+	private String getFirstName;
+	private String getLastName;
+	private String getGender;
+	private String getImmunizationRecords;
+	private String getDOB;
+	private String getDOJ;
+	private String getParentFirstName;
+	private String getParentLastName;
+	private String getAddress;
+
+	private ViewingPage viewingPage;
+	
+//	private ViewingPage viewingPage = ViewingPage.getInstance();
 
 	/**
 	 * Launch the application.
@@ -74,7 +90,7 @@ public class MainFrame {
 		frame.setAutoRequestFocus(false);
 		frame.getContentPane().setFont(new Font("Roboto Condensed", Font.PLAIN, 13));
 		
-		GradientPanel gradientPanel = new GradientPanel();
+		gradientPanel = new GradientPanel();
 		frame.getContentPane().add(gradientPanel, BorderLayout.CENTER);
 		frame.setBounds(100, 100, 1280, 720);
 		GridBagLayout gbl_gradientPanel = new GridBagLayout();
@@ -127,7 +143,6 @@ public class MainFrame {
 		
 		panel_4 = new JPanel();
 		panel_4.setOpaque(false);
-		
 		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
 		gbc_panel_4.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_4.fill = GridBagConstraints.VERTICAL;
@@ -138,7 +153,6 @@ public class MainFrame {
 		
 		panel_5 = new JPanel();
 		panel_5.setOpaque(false);
-		
 		GridBagConstraints gbc_panel_5 = new GridBagConstraints();
 		gbc_panel_5.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_5.fill = GridBagConstraints.VERTICAL;
@@ -199,6 +213,51 @@ public class MainFrame {
 		btnView.setBorder(new RoundBtn(20));  
 		panel_6.add(btnView);
 		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		btnRegister.addActionListener(e -> registerButtonPressed());
+		btnView.addActionListener(e -> viewButtonPressed());
+		
+		
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
+	
+	private void registerButtonPressed() {
+		// TODO Auto-generated method stub
+		getFirstName = textField_FirstName.getText();
+		getLastName = textField_LastName.getText();
+		getGender = textField_Gender.getText();
+		getImmunizationRecords = textField_Immunization_Records.getText();
+		getDOB = textField_DOB.getText();
+		getDOJ = textField_DOJ.getText();
+		getParentFirstName = textField_ParentFirstName.getText();
+		getParentLastName = textField_ParentLastName.getText();
+		getAddress = textField_Address.getText();
+		System.out.println(getFirstName);
+		System.out.println(getLastName);
+		System.out.println(getGender);
+		System.out.println(getImmunizationRecords);
+		System.out.println(getDOB);
+		System.out.println(getDOJ);
+		System.out.println(getParentFirstName);
+		System.out.println(getParentLastName);
+		System.out.println(getAddress);
+
+		// check for vaccination
+		// if it's eligible -> create the objects
+		// if not -> pop up the alert
+	}
+	
+	private void viewButtonPressed() {
+		if(!ViewingPage.isInitialized()) {
+			viewingPage = ViewingPage.getInstance();
+			viewingPage.initialize();
+			viewingPage.addBtnListener(frame, gradientPanel);
+		} else {
+			viewingPage.rerender();
+		}
+		
+		viewingPage.setVisible(true);
+		gradientPanel.setVisible(false);
+		frame.getContentPane().removeAll();
+		frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
 	}
 }

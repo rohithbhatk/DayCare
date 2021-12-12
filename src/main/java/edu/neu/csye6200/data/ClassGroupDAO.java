@@ -49,14 +49,14 @@ public class ClassGroupDAO extends DatabaseConnector{
         return list;
     }
 
-    public static void main(String[] args) {
-        ClassGroupDAO classGroupDAO = new ClassGroupDAO();
-        classGroupDAO.insertClassGroup(1,1);
-        classGroupDAO.insertClassGroup(1,2);
-        classGroupDAO.get().forEach(group->{
-            System.out.println(group.getGroupId());
-        });
-    }
+//    public static void main(String[] args) {
+//        ClassGroupDAO classGroupDAO = new ClassGroupDAO();
+//        classGroupDAO.insertClassGroup(1,1);
+//        classGroupDAO.insertClassGroup(1,2);
+//        classGroupDAO.get().forEach(group->{
+//            System.out.println(group.getGroupId());
+//        });
+//    }
 
 }
 

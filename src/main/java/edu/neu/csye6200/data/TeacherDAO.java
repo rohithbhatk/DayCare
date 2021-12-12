@@ -18,10 +18,6 @@ public class TeacherDAO extends DatabaseConnector{
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
             preparedStatement.setString(1, teacher.getName());
             preparedStatement.setInt(2, teacher.getAge());
-
-
-
-            ;
             preparedStatement.execute();
             this.closeConnection();
         } catch (ClassNotFoundException | SQLException e) {
