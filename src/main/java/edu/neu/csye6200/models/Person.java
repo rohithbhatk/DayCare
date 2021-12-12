@@ -1,35 +1,49 @@
 package edu.neu.csye6200.models;
 
-import edu.neu.csye6200.utils.Utils;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import edu.neu.csye6200.controller.Vaccination;
 
 public class Person {
 	private  int id;
 	private int age;
-	private String name;
 	private String first_Name;
 	private String last_name;
-	private String date;
+	private String date;  // date_of_Birth
 	private String gender;
+	private String parents_First_Name;
+	private String parents_Last_Name;
+	private String address;
+
 	protected static EventRegistration eventRegistration;
 	private Vaccination immunization_Records;
 
-	public Person(int id, int age, String name, String first_Name, String last_name, String date, String gender, Vaccination immunization_Records) {
+	public Person(int id, int age, String first_Name, String last_name, String date,
+				  String gender, String parents_First_Name,
+				  String parents_last_name, String address) {
 		this.id = id;
 		this.age = age;
-		this.name = name;
 		this.first_Name = first_Name;
 		this.last_name = last_name;
 		this.date = date;
 		this.gender = gender;
-		this.immunization_Records = immunization_Records;
+		this.address = address;
+		this.parents_First_Name = parents_First_Name;
+		this.parents_Last_Name = parents_last_name;
+	}
+
+	public String getParents_First_Name() {
+		return parents_First_Name;
+	}
+
+	public String getParents_Last_Name() {
+		return parents_Last_Name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public Vaccination getImmunization_Records() {
+		return immunization_Records;
 	}
 
 	public Person() {
@@ -38,7 +52,6 @@ public class Person {
 
 	public Person(int id, String name) {
 		this.id = id;
-		this.name = name;
 	}
 
 	public int getId() {
@@ -63,14 +76,6 @@ public class Person {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getFirst_Name() {
@@ -116,8 +121,8 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "Person [age=" + age + ", name=" + name + ", first_Name=" + first_Name + ", last_name=" + last_name
+		return "Person [age=" + age  + ", first_Name=" + first_Name + ", last_name=" + last_name
 				+ ", date=" + date + ", gender=" + gender + ", eventRegistration=" + eventRegistration + "]";
 	}
-	
+
 }

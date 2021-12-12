@@ -1,26 +1,19 @@
-package edu.neu.csye6200.models;
+package edu.neu.csye6200.controller;
 
 
 
 
+import edu.neu.csye6200.models.Student;
+import edu.neu.csye6200.models.Teacher;
 import edu.neu.csye6200.utils.FileUtil;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Queue;
-
-
-
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Queue;
 
 public class SchoolHelper {
 	static School school = new School();
-	ClassRoom classroom = new ClassRoom();
+	ClassRoomController classroom = new ClassRoomController();
 	public static void demo() throws Exception {
 
 
@@ -32,10 +25,13 @@ public class SchoolHelper {
 
 			while ((line = FileUtil.readBufferedReader(bufferReader)) != null)   //returns a Boolean value
 			{
+				System.out.println(line);
 				Student student = Student.createStudentFromCSV(line);
 
+				System.out.println(student);
 				school.addStudent(student);
-				System.out.println("Here"+school);
+
+				System.out.println("Here "+school);
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -56,6 +52,8 @@ public class SchoolHelper {
 
 				school.addTeacher(teacher);
 
+				System.out.println("Here 2 "+school);
+
 			}
 			System.out.println(school);
 		} catch (FileNotFoundException e) {
@@ -67,7 +65,7 @@ public class SchoolHelper {
 		}
 	}
 
-	public void setClassrooms()
+	public void  setClassrooms()
 	{
 		Object[][] classrooms = new Object[6][];
 		//if age in between 6 to 12

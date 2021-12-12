@@ -11,8 +11,10 @@ public class Teacher extends Person {
 		super(id, name);
 
 	}
-	public Teacher(int id, int age, String name, String first_Name, String last_name, String date, String gender, Vaccination immunization_Records, int credits, Double salary, String track_Student_Record) {
-		super(id, age, name, first_Name, last_name, date, gender, immunization_Records);
+	public Teacher(int id, int age, String first_Name, String last_name,
+				   String date, String gender,
+				   int credits, Double salary, String track_Student_Record, String parents_first_name, String parents_last_name, String address) {
+		super(id, age, first_Name, last_name, date, gender, parents_first_name, parents_last_name, address);
 		this.credits = credits;
 		this.salary = salary;
 		this.track_Student_Record = track_Student_Record;
@@ -59,7 +61,7 @@ public class Teacher extends Person {
 	@Override
 	public String toString() {
 		return "Teacher [credits=" + credits + ", id=" + getId() + ", salary=" + salary + ", track_Student_Record="
-				+ track_Student_Record + ", Age = " + getAge() + ", Name = " + getName() + ", First_Name = "
+				+ track_Student_Record + ", Age = " + getAge() + ", First_Name = "
 				+ getFirst_Name() + ", Last_name = " + getLast_name() + ", Date = " + getDate() + ", Gender = "
 				+ getGender() + ", EventRegistration = " + getEventRegistration() + "]\n";
 	}

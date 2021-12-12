@@ -25,6 +25,10 @@ public class StudentDAO extends DatabaseConnector {
             preparedStatement.setInt(6, student.getGroupId());
 //            preparedStatement.setInt(7, student.get());
             preparedStatement.setInt(6, student.getGroupId());
+            preparedStatement.setInt(2, student.getAge());
+            preparedStatement.setString(3, student.getGender());
+            preparedStatement.setInt(4, student.getGrade());
+            preparedStatement.setInt(5, student.getGroupId());
 
             preparedStatement.execute();
             this.closeConnection();

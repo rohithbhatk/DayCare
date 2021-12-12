@@ -1,24 +1,16 @@
-package edu.neu.csye6200.models;
+package edu.neu.csye6200.controller;
 
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Vector;
+import edu.neu.csye6200.models.Student;
+import edu.neu.csye6200.models.Teacher;
 
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Queue;
 
-public class ClassRoom {
+public class ClassRoomController {
 
 	protected int groupSize; //max students per classroom
 	protected int maxGroups; //max teachers per room

@@ -1,6 +1,6 @@
 package edu.neu.csye6200;
 
-import edu.neu.csye6200.models.SchoolHelper;
+import edu.neu.csye6200.controller.SchoolHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

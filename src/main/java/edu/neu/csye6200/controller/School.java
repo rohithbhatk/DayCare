@@ -1,4 +1,7 @@
-package edu.neu.csye6200.models;
+package edu.neu.csye6200.controller;
+
+import edu.neu.csye6200.models.Student;
+import edu.neu.csye6200.models.Teacher;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -17,8 +20,8 @@ import java.util.Vector;
 
 public class School {
 
-	protected static Queue<Teacher> teacherRoster = new LinkedList<>();
-	protected static Queue<Student> studentRoster = new LinkedList<>();
+	public static Queue<Teacher> teacherRoster = new LinkedList<>();
+	public static Queue<Student> studentRoster = new LinkedList<>();
 
 	public Queue<Teacher> getTeacher() {
 		return teacherRoster;
@@ -40,10 +43,12 @@ public class School {
 	}
 
 	public void addStudent(Student std) {
+
 		studentRoster.add(std);
 	}
 
 	public void addTeacher(Teacher tea) {
+
 		teacherRoster.add(tea);
 	}
 

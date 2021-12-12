@@ -12,6 +12,9 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+.idea/
+target/
+*.iml
 
 # External tool builders
 .externalToolBuilders/
