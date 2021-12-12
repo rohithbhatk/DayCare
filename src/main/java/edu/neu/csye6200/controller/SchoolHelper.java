@@ -1,4 +1,8 @@
 package edu.neu.csye6200.controller;
+
+
+
+
 import edu.neu.csye6200.models.Student;
 import edu.neu.csye6200.models.Teacher;
 import edu.neu.csye6200.utils.FileUtil;
@@ -10,8 +14,10 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class SchoolHelper {
-		ClassRoomController classroom = new ClassRoomController();
-	public static void demo() throws Exception {
+		private static ClassRoomController classroom = new ClassRoomController();
+		private static Object[][] classrooms;
+
+		public static void demo() throws Exception {
 		School school = SchoolFactory.getInstance().getObject();
 		// Implementing Design Pattern
 		String line = "";
@@ -61,7 +67,7 @@ public class SchoolHelper {
 	}
 
 	public void  setClassrooms() {
-		Object[][] classrooms = new Object[6][10]; // Max 10 sections in a class
+		classrooms = new Object[6][10]; // Max 10 sections in a class
 
 		//if age in between 6 to 12
 		//classrooms [Freshman][section1]
@@ -96,11 +102,11 @@ public class SchoolHelper {
 
 
 	}
-//	public void getClassrooms()
-//	{
-//		//return this.classrooms;
-//
-//	}
+	public static Object[][] getClassrooms()
+	{
+		return classrooms;
+
+	}
 }
 
 
