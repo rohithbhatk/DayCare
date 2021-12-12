@@ -92,9 +92,13 @@ public class MainFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) throws Exception {
+	public static void demo() {
 		// read default data from CSV (students, teachers)
-		SchoolHelper.demo();
+		try {
+			SchoolHelper.demo();
+		} catch (Exception e) {
+			System.out.println(e.getStackTrace());
+		}
 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -261,7 +265,7 @@ public class MainFrame {
 		btnCreate.setForeground(Color.white);
 		btnCreate.setBorder(new RoundBtn(20));
 		panel_6.add(btnCreate);
-		
+
 		btnView = new JButton("VIEW RECORDS");
 		btnView.setPreferredSize(new Dimension(160, 40));
 		btnView.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
