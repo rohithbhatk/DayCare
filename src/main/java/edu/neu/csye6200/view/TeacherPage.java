@@ -157,7 +157,6 @@ public class TeacherPage extends GradientPanel {
     }
 
     private void addStudentstoClassroomsPressed() {
-        //todo: assign students to classroom
         try {
             SchoolHelper.setClassrooms();
             successMessage("", "Create classrooms successfully!");
@@ -165,7 +164,6 @@ public class TeacherPage extends GradientPanel {
             // Todo: handle exception
             System.out.println(e.getStackTrace());
         }
-        JOptionPane.showMessageDialog(null, "Students assigned to classrooms");
     }
     private void setImmunizationPressed() {
         if(!SetImmunizationPage.isInitialized()) {

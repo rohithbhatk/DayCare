@@ -1,5 +1,7 @@
 package edu.neu.csye6200.view;
 
+import edu.neu.csye6200.controller.SchoolHelper;
+
 import java.awt.EventQueue;
 
 import javax.swing.*;
@@ -87,6 +89,12 @@ public class LoginFrame {
      * Launch the application.
      */
     public static void main(String[] args) {
+        try {
+            SchoolHelper.demo();
+        } catch (Exception e) {
+            System.out.println(e.getStackTrace());
+        }
+
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -227,7 +235,6 @@ public class LoginFrame {
 
         studentPage.setVisible(true);
         gradientPanel.setVisible(false);
-        System.out.println(frame.getContentPane());
         frame.getContentPane().removeAll();
         frame.getContentPane().add(studentPage, BorderLayout.CENTER);
     }
@@ -243,7 +250,7 @@ public class LoginFrame {
 
         teacherPage.setVisible(true);
         gradientPanel.setVisible(false);
-        System.out.println(frame.getContentPane());
+
         frame.getContentPane().removeAll();
         frame.getContentPane().add(teacherPage, BorderLayout.CENTER);
     }

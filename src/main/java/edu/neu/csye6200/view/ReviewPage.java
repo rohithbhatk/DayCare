@@ -34,19 +34,14 @@ public class ReviewPage extends GradientPanel {
         gbl_gradientPanel.rowWeights = new double[]{1.0, 0.1, 0.1, 1.0};
 
         createLabel();
-//        createTable();
-//        createScrollPane();
         createButton();
 
 
         instance.setLayout(gbl_gradientPanel);
         instance.add(lblRecords, gbc_label);
-        //instance.add(scrollPane, gbc_scrollPane);
         instance.add(btnSubmit, gbc_button);
         instance.add(btnBack, gbc_button2);
         instance.add(textField_Rating, gbc_Options);
-        //instance.add(btnTrackImmunization,gbc_Options2);
-//        instance.add(panel, gbc_Options);
     }
 
     public void rerender() {
@@ -100,34 +95,13 @@ public class ReviewPage extends GradientPanel {
         gbc_button2.gridx = 1;
         gbc_button2.gridy = 3;
 
-//        btnTeacherReview = new JButton("TEACHER REVIEW");
-//        btnTeacherReview.setPreferredSize(new Dimension(250, 40));
-//        btnTeacherReview.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
-//        btnTeacherReview.setForeground(Color.white);
-//        btnTeacherReview.setBorder(new LineBorder(Color.white));
-//        btnTeacherReview.setBorder(new RoundBtn(20));
-
         textField_Rating = new HintTextField("Enter Rating (Out of 5)");
-        //textField_Rating.setColumns(50);
 
         gbc_Options = new GridBagConstraints();
         gbc_Options.insets = new Insets(0, 0, 20, 0);
         gbc_Options.gridx = 1;
         gbc_Options.gridy = 1;
         gbc_Options.fill = GridBagConstraints.VERTICAL;
-
-//        btnTrackImmunization = new JButton("TRACK IMMUNIZATION");
-//        btnTrackImmunization.setPreferredSize(new Dimension(250, 40));
-//        btnTrackImmunization.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
-//        btnTrackImmunization.setForeground(Color.white);
-//        btnTrackImmunization.setBorder(new LineBorder(Color.white));
-//        btnTrackImmunization.setBorder(new RoundBtn(20));
-//
-//        gbc_Options2 = new GridBagConstraints();
-//        gbc_Options2.insets = new Insets(0, 0, 20, 0);
-//        gbc_Options2.gridx = 1;
-//        gbc_Options2.gridy = 2;
-//        gbc_Options2.fill = GridBagConstraints.VERTICAL;
 
         btnSubmit.addActionListener(e -> submitButtonPressed());
     }

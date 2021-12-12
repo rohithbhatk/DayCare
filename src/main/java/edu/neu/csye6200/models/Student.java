@@ -70,23 +70,28 @@ public class Student extends Person{
 
 
 	public static Student createStudentFromCSV(String std) throws Exception {
-		Scanner sn = new Scanner(std);
-		sn.useDelimiter(",");
+		String[] data = std.split(",");
+
+		Vaccination v = new Vaccination();
+		List<Date> dates = new ArrayList<Date>();
+		dates.add(new Date( 2019, 02, 03));
+		dates.add(new Date( 2020, 03, 03));
+		v.setVaricella(dates);
+		v.setmMR(dates);
+		v.setHepatitis_B(dates);
+		v.setdTaP(dates);
+		v.setPolio(dates);
+		v.setHib(dates);
 
 		Student st = null;
 		try {
-			st = new Student(sn.nextInt(), sn.next());
-			// TO-Do
-			//12,Rohith,asdf,asf,11121234,sdfas,1
+			st = new Student(Integer.parseInt(data[0]), Integer.parseInt(data[1]), data[2], data[3], data[4], data[5], v, "0", data[6], data[7], data[8], data[9]);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		sn.close();
 		return st;
 	}
-
-
 
 	@Override
 	public String toString() {

@@ -94,12 +94,6 @@ public class MainFrame {
 	 */
 	public static void demo() {
 		// read default data from CSV (students, teachers)
-		try {
-			SchoolHelper.demo();
-		} catch (Exception e) {
-			System.out.println(e.getStackTrace());
-		}
-
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -260,11 +254,11 @@ public class MainFrame {
 		panel_6.add(btnRegister);
 
 		btnCreate = new JButton("CREATE CLASSROOMS");
-		btnCreate.setPreferredSize(new Dimension(240, 40));
-		btnCreate.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
-		btnCreate.setForeground(Color.white);
-		btnCreate.setBorder(new RoundBtn(20));
-		panel_6.add(btnCreate);
+//		btnCreate.setPreferredSize(new Dimension(240, 40));
+//		btnCreate.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
+//		btnCreate.setForeground(Color.white);
+//		btnCreate.setBorder(new RoundBtn(20));
+//		panel_6.add(btnCreate);
 
 		btnView = new JButton("VIEW RECORDS");
 		btnView.setPreferredSize(new Dimension(160, 40));
@@ -276,7 +270,7 @@ public class MainFrame {
 		
 		btnRegister.addActionListener(e -> registerButtonPressed());
 		btnView.addActionListener(e -> viewButtonPressed());
-		btnCreate.addActionListener(e -> createButtonPressed());
+//		btnCreate.addActionListener(e -> createButtonPressed());
 
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
@@ -425,7 +419,7 @@ public class MainFrame {
 		System.out.println(getVaricella);
 
 		try {
-			int id = School.studentRoster.size();
+			int id = School.studentRoster.size() + 1;
 			Vaccination vaccination = new Vaccination();
 			vaccination.setHib(Hib);
 			vaccination.setPolio(Polio);
@@ -439,8 +433,6 @@ public class MainFrame {
 		} catch (Exception e) {
 			errorMessage("Registration Failed", "Please try again.");
 		}
-
-
 	}
 
 
@@ -450,6 +442,10 @@ public class MainFrame {
 			viewingPage.initialize();
 			viewingPage.addBtnListener(frame, gradientPanel);
 		} else {
+			if(viewingPage == null) {
+				viewingPage = ViewingPage.getInstance();
+				viewingPage.addBtnListener(frame, gradientPanel);
+			}
 			viewingPage.rerender();
 		}
 		
@@ -459,16 +455,16 @@ public class MainFrame {
 		frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
 	}
 
-	private void createButtonPressed() {
-		try {
-			SchoolHelper.setClassrooms();
-			successMessage("", "Create classrooms successfully!");
-		} catch (Exception e) {
-			// Todo: handle exception
-			System.out.println(e.getStackTrace());
-		}
-
-	}
+//	private void createButtonPressed() {
+//		try {
+//			SchoolHelper.setClassrooms();
+//			successMessage("", "Create classrooms successfully!");
+//		} catch (Exception e) {
+//			// Todo: handle exception
+//			System.out.println(e.getStackTrace());
+//		}
+//
+//	}
 
 	private void errorMessage(String title, String error){
 		JOptionPane.showMessageDialog(null, error, title, JOptionPane.WARNING_MESSAGE);
