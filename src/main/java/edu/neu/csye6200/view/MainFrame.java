@@ -44,6 +44,7 @@ public class MainFrame {
 	
 	private JButton btnRegister;
 	private JButton btnView;
+	private JButton btnCreate;
 	
 	private String getFirstName;
 	private String getLastName;
@@ -204,6 +205,13 @@ public class MainFrame {
 		btnRegister.setForeground(Color.white);
 		btnRegister.setBorder(new RoundBtn(20)); 
 		panel_6.add(btnRegister);
+
+		btnCreate = new JButton("CREATE CLASSROOMS");
+		btnCreate.setPreferredSize(new Dimension(240, 40));
+		btnCreate.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
+		btnCreate.setForeground(Color.white);
+		btnCreate.setBorder(new RoundBtn(20));
+		panel_6.add(btnCreate);
 		
 		btnView = new JButton("VIEW RECORDS");
 		btnView.setPreferredSize(new Dimension(160, 40));
@@ -215,8 +223,8 @@ public class MainFrame {
 		
 		btnRegister.addActionListener(e -> registerButtonPressed());
 		btnView.addActionListener(e -> viewButtonPressed());
-		
-		
+		btnCreate.addActionListener(e -> createButtonPressed());
+
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
@@ -259,5 +267,9 @@ public class MainFrame {
 		gradientPanel.setVisible(false);
 		frame.getContentPane().removeAll();
 		frame.getContentPane().add(viewingPage, BorderLayout.CENTER);
+	}
+
+	private void createButtonPressed() {
+
 	}
 }
