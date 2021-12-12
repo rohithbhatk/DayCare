@@ -2,23 +2,24 @@ package edu.neu.csye6200.view;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.Font;
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
 
 import java.awt.Color;
-import javax.swing.JTextField;;
+;
 import javax.swing.border.LineBorder;
-import javax.swing.JLabel;
 
-import javax.swing.SwingConstants;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.GridLayout;
-import javax.swing.JButton;
 import java.awt.Dimension;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class MainFrame {
 
@@ -69,7 +70,20 @@ public class MainFrame {
 	private String getAge;
 
 	private ViewingPage viewingPage;
-	
+
+	private int age;
+	private SimpleDateFormat formatter;
+
+	private Date DOB;
+	private Date DOJ;
+
+	private List<Date> Hib;
+	private List<Date> DtaP;
+	private List<Date> Polio;
+	private List<Date> Hepatitis_B;
+	private List<Date> MMR;
+	private List<Date> Varicella;
+
 //	private ViewingPage viewingPage = ViewingPage.getInstance();
 
 	/**
@@ -259,21 +273,138 @@ public class MainFrame {
 	
 	private void registerButtonPressed() {
 		// TODO Auto-generated method stub
+		formatter=new SimpleDateFormat("MM/dd/yyyy");
 		getFirstName = textField_FirstName.getText();
+		if(getFirstName.isEmpty()){
+			errorMessage("Please enter First Name");
+			return;
+		}
 		getLastName = textField_LastName.getText();
+		if(getLastName.isEmpty()){
+			errorMessage("Please enter Last Name");
+			return;
+		}
 		getGender = textField_Gender.getText();
+		if(getGender.isEmpty()){
+			errorMessage("Please enter Gender");
+			return;
+		}
 		getParentFirstName = textField_ParentFirstName.getText();
+		if(getParentFirstName.isEmpty()){
+			errorMessage("Please enter Parent's First Name");
+			return;
+		}
+
 		getParentLastName = textField_ParentLastName.getText();
-		getAge = textField_Age.getText();
+		if(getParentLastName.isEmpty()){
+			errorMessage("Please enter Parent's Last Name");
+			return;
+		}
+
+		try {
+			getAge = textField_Age.getText();
+			age = Integer.parseInt(getAge);
+		}
+		catch(Exception e) {
+			errorMessage("Please enter valid Age");
+			return;
+		}
+
 		getDOB = textField_DOB.getText();
+		try {
+			DOB=formatter.parse(getDOB);
+		} catch (ParseException e) {
+			errorMessage("Please enter valid Date of Birth");
+			return;
+		}
+
 		getDOJ = textField_DOJ.getText();
+		try {
+			DOJ=formatter.parse(getDOJ);
+		} catch (ParseException e) {
+			errorMessage("Please enter valid Date of Joining");
+			return;
+		}
+
 		getAddress = textField_Address.getText();
+		if(getAddress.isEmpty()){
+			errorMessage("Please enter Address");
+			return;
+		}
+
 		getHib = textField_Hib.getText();
+		try{
+			String[] tokens=getHib.split(",");
+			Hib = new ArrayList<>();
+			for(String s: tokens) {
+				Hib.add(formatter.parse(s));
+			}
+		}
+		catch(ParseException e){
+			errorMessage("Please enter valid Hib dates");
+			return;
+		}
+
 		getDtaP = textField_DtaP.getText();
+		try{
+			String[] tokens=getDtaP.split(",");
+			DtaP = new ArrayList<>();
+			for(String s: tokens) {
+				DtaP.add(formatter.parse(s));
+			}
+		}
+		catch(ParseException e){
+			errorMessage("Please enter valid DtaP dates");
+			return;
+		}
 		getPolio = textField_Polio.getText();
+		try{
+			String[] tokens=getPolio.split(",");
+			Polio = new ArrayList<>();
+			for(String s: tokens) {
+				Polio.add(formatter.parse(s));
+			}
+		}
+		catch(ParseException e){
+			errorMessage("Please enter valid Polio dates");
+			return;
+		}
 		getHepatitis_B = textField_Hepatitis_B.getText();
+		try{
+			String[] tokens=getHepatitis_B.split(",");
+			Hepatitis_B = new ArrayList<>();
+			for(String s: tokens) {
+				Hepatitis_B.add(formatter.parse(s));
+			}
+		}
+		catch(ParseException e){
+			errorMessage("Please enter valid Hepatitis B dates");
+			return;
+		}
 		getMMR = textField_MMR.getText();
+		try{
+			String[] tokens=getMMR.split(",");
+			MMR = new ArrayList<>();
+			for(String s: tokens) {
+				MMR.add(formatter.parse(s));
+			}
+		}
+		catch(ParseException e){
+			errorMessage("Please enter valid MMR dates");
+			return;
+		}
 		getVaricella = textField_Varicella.getText();
+		try{
+			String[] tokens=getVaricella.split(",");
+			Varicella = new ArrayList<>();
+			for(String s: tokens) {
+				Varicella.add(formatter.parse(s));
+			}
+		}
+		catch(ParseException e){
+			errorMessage("Please enter valid Varicella dates");
+			return;
+		}
 
 		System.out.println(getFirstName);
 		System.out.println(getLastName);
@@ -313,5 +444,9 @@ public class MainFrame {
 
 	private void createButtonPressed() {
 
+	}
+
+	private void errorMessage(String error){
+		JOptionPane.showMessageDialog(null,error,"Invalid Input",JOptionPane.WARNING_MESSAGE);
 	}
 }
