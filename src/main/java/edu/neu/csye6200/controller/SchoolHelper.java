@@ -84,6 +84,11 @@ public class SchoolHelper {
             System.out.println("CLASS ROOM MAX SIZE REACHED");
         }
         Map<Teacher, ArrayList<Student>> actualHashMap = classroom.createGroup(4, 3);
+        actualHashMap.forEach((key, value) -> {
+            value.forEach(v -> {
+                System.out.println("Actual Hash Map: " + v.getFirst_Name() + " " + v.getLast_name());
+            });
+        });
         if ((actualHashMap.keySet().size() * (actualHashMap.values().size())) > 12) {
             classrooms[1][i] = actualHashMap;
             i++;

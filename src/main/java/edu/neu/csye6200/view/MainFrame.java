@@ -420,16 +420,22 @@ public class MainFrame {
 		System.out.println(getMMR);
 		System.out.println(getVaricella);
 
-		int id = School.studentRoster.size();
-		Vaccination vaccination = new Vaccination();
-		vaccination.setHib(Hib);
-		vaccination.setPolio(Polio);
-		vaccination.setdTaP(DtaP);
-		vaccination.setHepatitis_B(Hepatitis_B);
-		vaccination.setmMR(MMR);
-		vaccination.setVaricella(Varicella);
-		Student student = new Student(id, age, getFirstName, getLastName, getDOB, getGender, vaccination, "1", getParentFirstName, getParentLastName, getAddress, getDOJ);
-		School.addStudent(student);
+		try {
+			int id = School.studentRoster.size();
+			Vaccination vaccination = new Vaccination();
+			vaccination.setHib(Hib);
+			vaccination.setPolio(Polio);
+			vaccination.setdTaP(DtaP);
+			vaccination.setHepatitis_B(Hepatitis_B);
+			vaccination.setmMR(MMR);
+			vaccination.setVaricella(Varicella);
+			Student student = new Student(id, age, getFirstName, getLastName, getDOB, getGender, vaccination, "1", getParentFirstName, getParentLastName, getAddress, getDOJ);
+			School.addStudent(student);
+			successMessage("", "Register successfully!");
+		} catch (Exception e) {
+			errorMessage("Registration Failed", "Please try again.");
+		}
+
 
 	}
 

@@ -112,8 +112,9 @@ public class ViewingPage extends GradientPanel {
                     if (map != null)
                         map.forEach((key, value) -> {
                             Teacher t = key;
-                            String[] row = new String[14];
+
                             for (Student s : value) {
+                                String[] row = new String[14];
                                 row[0] = Integer.toString(s.getId());
                                 row[1] = s.getFirst_Name() + " " + s.getLast_name();
                                 row[2] = s.getGender() == null ? "" : s.getGender();
@@ -135,7 +136,6 @@ public class ViewingPage extends GradientPanel {
                                         : String.join(",", (String[]) v.getmMR().stream().map(d -> formatter.format(d)).toArray(String[]::new));
                                 row[12] = v == null || v.getVaricella() == null ? ""
                                         : String.join(",", (String[]) v.getVaricella().stream().map(d -> formatter.format(d)).toArray(String[]::new));
-
                                 list.add(row);
                             }
                         });
