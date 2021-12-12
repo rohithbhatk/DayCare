@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Student extends Person{
 
-	private int grade;
+	private String grade;
 	private int groupId;
 	private String date_of_joining;
 	private Vaccination immunization_Records;
@@ -28,18 +28,25 @@ public class Student extends Person{
 	}
 
 	public Student(int id, int age, String first_Name, String last_name, String date, String gender, Vaccination immunization_Records,
-				   int grade, int groupId, String parents_first_name, String parents_last_name, String address,String date_of_joining) {
+				   String grade, int groupId, String parents_first_name, String parents_last_name, String address,String date_of_joining) {
 		super(id, age, first_Name, last_name, date, gender, parents_first_name, parents_last_name, address);
 		this.grade = grade;
 		this.groupId = groupId;
 		this.date_of_joining = date_of_joining;
 	}
 
-	public int getGrade() {
+	public Student(int id, int age, String first_Name, String last_name, String date, String gender, Vaccination immunization_Records,
+				   String grade, String parents_first_name, String parents_last_name, String address,String date_of_joining) {
+		super(id, age, first_Name, last_name, date, gender, parents_first_name, parents_last_name, address);
+		this.grade = grade;
+		this.date_of_joining = date_of_joining;
+	}
+
+	public String getGrade() {
 		return grade;
 	}
 
-	public void setGrade(int grade) {
+	public void setGrade(String grade) {
 		this.grade = grade;
 	}
 
