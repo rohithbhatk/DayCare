@@ -19,12 +19,15 @@ public class Student extends Person{
 		this.groupId = groupId;
 	}
 
-	public Student(int age, String name, String first_Name, String last_name, String std, String gender, int grade) {
-		super(age, name, first_Name, last_name, std, gender);
-		this.grade = grade;
+	public  Student(int id, String name){
+		super(id, name);
 	}
 
-	
+	public Student(int id, int age, String name, String first_Name, String last_name, String date, String gender, Vaccination immunization_Records, int grade, int groupId) {
+		super(id, age, name, first_Name, last_name, date, gender, immunization_Records);
+		this.grade = grade;
+		this.groupId = groupId;
+	}
 
 	public int getGrade() {
 		return grade;
@@ -41,7 +44,8 @@ public class Student extends Person{
 		
 		Student st = null;
 		try {
-			st = new Student(sn.nextInt(), sn.next(),sn.next(), sn.next(), sn.next(),sn.next(), sn.nextInt());
+//			st = new Student(sn.nextInt(), sn.next(),sn.next(), sn.next(), sn.next(),sn.next(), sn.nextInt());
+			// TO-Do
 			//12,Rohith,asdf,asf,11121234,sdfas,1
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

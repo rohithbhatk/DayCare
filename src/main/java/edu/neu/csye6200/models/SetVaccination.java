@@ -14,79 +14,43 @@ import java.util.List;
 // Studenet object --> All the vaccines checks during Registration
 
 public class SetVaccination {
-	static List<Date> vaccinationList = new ArrayList<>();
-public static void Vaccine(String vaccine_Name, Date date) {
-	Vaccination vaccination = new Vaccination();
-	
-	switch (vaccine_Name) {
-	case  "Hib":{
-		
-		vaccinationList = vaccination.getHib();	
-		if (vaccinationList.size() == 0) {
-			vaccination.setHib(date);
+	public static void Vaccine(String vaccine_Name, Date date) {
+		Vaccination vaccination = new Vaccination();
+		switch (vaccine_Name) {
+			case "Hib": {
+				List gethib = vaccination.getHib();
+				if (gethib.size() < 4) // Some condition
+					vaccination.setHib(date);
+			}
+			case "DtaP": {
+				List getdtap = vaccination.getdTaP();
+				if (getdtap.size() < 2)
+					vaccination.setdTaP(date);
+			}
+			case "Polio": {
+				List getpolio = vaccination.getPolio();
+				if (getpolio.size() < 4)
+					vaccination.setPolio(date);
+			}
+			case "Hepatitis_B": {
+				List gethepatitis_B = vaccination.getHepatitis_B();
+				if (gethepatitis_B.size() < 4)
+					vaccination.setHepatitis_B(date);
+			}
+			case "MMR": {
+				List getmmr = vaccination.getmMR();
+				if (getmmr.size() < 4)
+					vaccination.setmMR(date);
+			}
+			case "Varicella": {
+				List getvaricella = vaccination.getVaricella();
+				if (getvaricella.size() < 4)
+					vaccination.setVaricella(date);
+			}
 		}
-		else if ((vaccinationList.size() < 4) && (Utils.differenceDate(vaccinationList.get(vaccinationList.size()-1)) > 180)) // Some condition
-			
-		vaccination.setHib(date);
-		break;
 	}
-	case "DtaP":{
-		vaccinationList = vaccination.getdTaP();	
-		if (vaccinationList.size() == 0) {
-			vaccination.setdTaP(date);
-		}
-		else if ((vaccinationList.size() < 4) && (Utils.differenceDate(vaccinationList.get(vaccinationList.size()-1)) > 180)) // Some condition
-			
-		vaccination.setdTaP(date);
-		break;
+
+	public void add() {
+
 	}
-	case  "Polio":{
-		vaccinationList = vaccination.getPolio();	
-		if (vaccinationList.size() == 0) {
-			vaccination.setPolio(date);
-		}
-		else if ((vaccinationList.size() < 4) && (Utils.differenceDate(vaccinationList.get(vaccinationList.size()-1)) > 180)) // Some condition
-			
-		vaccination.setPolio(date);
-		break;
-	}
-	case  "Hepatitis_B":{
-		
-		vaccinationList = vaccination.getHepatitis_B();	
-		if (vaccinationList.size() == 0) {
-			vaccination.setHepatitis_B(date);
-		}
-		else if ((vaccinationList.size() < 4) && (Utils.differenceDate(vaccinationList.get(vaccinationList.size()-1)) > 180)) // Some condition
-			
-		vaccination.setHepatitis_B(date);
-		break;
-		
-	}
-	case  "MMR":{
-		
-		
-		vaccinationList = vaccination.getmMR();	
-		if (vaccinationList.size() == 0) {
-			vaccination.setmMR(date);
-		}
-		else if ((vaccinationList.size() < 4) && (Utils.differenceDate(vaccinationList.get(vaccinationList.size()-1)) > 180)) // Some condition
-			
-		vaccination.setmMR(date);
-		break;
-	}
-	case  "Varicella":{
-		vaccinationList = vaccination.getVaricella();	
-		if (vaccinationList.size() == 0) {
-			vaccination.setVaricella(date);
-		}
-		else if ((vaccinationList.size() < 4) && (Utils.differenceDate(vaccinationList.get(vaccinationList.size()-1)) > 180)) // Some condition
-			
-		vaccination.setVaricella(date);
-		break;
-	}
-	}
-}
-public void add() {
-	
-}
 }
