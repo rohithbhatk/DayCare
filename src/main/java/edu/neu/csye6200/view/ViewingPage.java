@@ -115,7 +115,7 @@ public class ViewingPage extends GradientPanel {
                             row[1] = s.getFirst_Name() + " " + s.getLast_name();
                             row[2] = s.getGender() == null ? "" : s.getGender();
                             row[3] = Integer.toString(s.getAge());
-                            row[4] = Integer.toString(s.getGrade());
+                            row[4] = s.getGrade();
                             row[5] = s.getDate_of_joining() == null ? "" : s.getDate_of_joining();
                             row[6] = "";
                             row[7] = t.getFirst_Name() + " " + s.getLast_name();
