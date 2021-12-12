@@ -14,7 +14,6 @@ public class Person {
 	private String address;
 
 	protected static EventRegistration eventRegistration;
-	private Vaccination immunization_Records;
 
 	public Person(int id, int age, String first_Name, String last_name, String date,
 				  String gender, String parents_First_Name,
@@ -50,16 +49,9 @@ public class Person {
 		this.address = address;
 	}
 
-	public void setImmunization_Records(Vaccination immunization_Records) {
-		this.immunization_Records = immunization_Records;
-	}
 
 	public String getAddress() {
 		return address;
-	}
-
-	public Vaccination getImmunization_Records() {
-		return immunization_Records;
 	}
 
 	public Person() {
@@ -76,14 +68,6 @@ public class Person {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public Vaccination getImmunization_Records(Student s1) {
-		return immunization_Records;
-	}
-
-	public void setImmunization_Records(Vaccination immunization_Records, Student s1) {
-		this.immunization_Records = immunization_Records;
 	}
 
 	public int getAge() {

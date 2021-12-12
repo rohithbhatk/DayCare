@@ -15,10 +15,12 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -109,32 +111,39 @@ public class ViewingPage extends GradientPanel {
                 if (map != null)
                     map.forEach((key, value) -> {
                         Teacher t = key;
-                        String[] row = new String[15];
+                        String[] row = new String[14];
                         for (Student s : value) {
                             row[0] = Integer.toString(s.getId());
                             row[1] = s.getFirst_Name() + " " + s.getLast_name();
                             row[2] = s.getGender() == null ? "" : s.getGender();
                             row[3] = Integer.toString(s.getAge());
-                            row[4] = s.getGrade();
-                            row[5] = s.getDate_of_joining() == null ? "" : s.getDate_of_joining();
-                            row[6] = "";
-                            row[7] = t.getFirst_Name() + " " + s.getLast_name();
-                            row[8] = s.getParents_First_Name() + " " + s.getParents_Last_Name();
+                            row[4] = s.getDate_of_joining() == null ? "" : s.getDate_of_joining();
+                            row[5] = "";
+                            row[6] = t.getFirst_Name() + " " + t.getLast_name();
+                            row[7] = s.getParents_First_Name() + " " + s.getParents_Last_Name();
 
                             Vaccination v = s.getImmunization_Records();
-                            row[9] = v == null ? "" : String.join(",", v.getHib());
-                            row[10] = v == null ? "" : String.join(",", v.getdTaP());
-                            row[11] = v == null ? "" : String.join(",", v.getPolio());
-                            row[12] = v == null ? "" : String.join(",", v.getHepatitis_B());
-                            row[13] = v == null ? "" : String.join(",", v.getmMR());
-                            row[14] = v == null ? "" : String.join(",", v.getVaricella());
+
+
+                            row[8] = v == null || v.getHib() == null  ? ""
+                                    : String.join(",", (String[])v.getHib().stream().map(d -> formatter.format(d)).toArray(String[]::new));
+                            row[9] = v == null || v.getdTaP() == null ? ""
+                                    : String.join(",", (String[])v.getdTaP().stream().map(d -> formatter.format(d)).toArray(String[]::new));
+                            row[10] = v == null || v.getPolio() == null ? ""
+                                    : String.join(",", (String[])v.getPolio().stream().map(d -> formatter.format(d)).toArray(String[]::new));
+                            row[11] = v == null || v.getHepatitis_B() == null ? ""
+                                    : String.join(",", (String[])v.getHepatitis_B().stream().map(d -> formatter.format(d)).toArray(String[]::new));
+                            row[12] = v == null || v.getmMR() == null ? ""
+                                    : String.join(",", (String[])v.getmMR().stream().map(d -> formatter.format(d)).toArray(String[]::new));
+                            row[13] = v == null || v.getVaricella() == null ? ""
+                                    : String.join(",", (String[])v.getVaricella().stream().map(d -> formatter.format(d)).toArray(String[]::new));
                             list.add(row);
                         }
                     });
             }
         }
 
-        data = new String[list.size() + defaultData.length][15];
+        data = new String[list.size() + defaultData.length][14];
         int i = 0;
         for (int j = 0; j < list.size(); j++, i++) {
             data[i] = list.get(j);
@@ -214,31 +223,31 @@ public class ViewingPage extends GradientPanel {
         }
     }
 
-    private final String[] columnNames = new String[]{"ID", "Name", "Gender", "Age", "Grade", "Date of Joining",
+    private final String[] columnNames = new String[]{"ID", "Name", "Gender", "Age", "Date of Joining",
             "Annunal Renewal", "Teacher", "Parent", "Hib", "DtaP", "Polio", "Hepatitis_B", "MMR", "Varicella"};
     private String[][] data;
 	// Todo: add default student data for demo
     private final String[][] defaultData = new String[][]{
-            {"1", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"2", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"3", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"4", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"5", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"6", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"7", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"8", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"9", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"10", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"11", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"12", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"13", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"14", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"15", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"16", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"17", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"18", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"19", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
-            {"20", "Akhil", "Male", "20", "2", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},};
+            {"1", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"2", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"3", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"4", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"5", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"6", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"7", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"8", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"9", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"10", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"11", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"12", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"13", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"14", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"15", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"16", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"17", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"18", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"19", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},
+            {"20", "Akhil", "Male", "20", "15/11/2020", "15/11/2022", "Teacher", "Parent", "hib=0", "dTap=0", "polio=1", "hepatitis_B=0", "mMR=0", "varicella=0"},};
 
     private JScrollPane scrollPane;
     private JTable table;
@@ -247,4 +256,5 @@ public class ViewingPage extends GradientPanel {
     private GridBagConstraints gbc_label;
     private GridBagConstraints gbc_scrollPane;
     private GridBagConstraints gbc_button;
+    private SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 }

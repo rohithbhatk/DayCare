@@ -16,7 +16,7 @@ public class SchoolHelper {
     private static Object[][] classrooms;
 
     public static void demo() throws Exception {
-        School school = SchoolFactory.getInstance().getObject();
+//        School school = SchoolFactory.getInstance().getObject();
         // Implementing Design Pattern
         String line = "";
         String splitBy = ",";
@@ -30,9 +30,11 @@ public class SchoolHelper {
                 Student student = Student.createStudentFromCSV(line);
 
 //                System.out.println(student);
-                school.addStudent(student);
+                School.addStudent(student);
+                System.out.println(student);
+                System.out.println(School.studentRoster.size());
 
-                System.out.println("Here " + school);
+//                System.out.println("Here " + school);
             }
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -50,11 +52,13 @@ public class SchoolHelper {
                 //System.out.println(person[8]);
                 Teacher teacher = Teacher.createTeacherFromCSV(line);   // To Create Student object From CSV file
                 // Add student object to a list, so that we can store and sort or perform any operations on that data
-                school.addTeacher(teacher);
-                System.out.println("Here 2 " + school);
+                School.addTeacher(teacher);
+                System.out.println(teacher);
+                System.out.println(School.teacherRoster.size());
+//                System.out.println("Here 2 " + school);
 
             }
-            System.out.println(school);
+//            System.out.println(school);
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

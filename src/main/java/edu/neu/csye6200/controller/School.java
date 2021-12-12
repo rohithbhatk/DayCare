@@ -20,8 +20,8 @@ import java.util.Vector;
 
 public class School {
 
-	public static Queue<Teacher> teacherRoster;
-	public static Queue<Student> studentRoster;
+	public static Queue<Teacher> teacherRoster = new LinkedList<>();
+	public static Queue<Student> studentRoster = new LinkedList<>();
 
 	public Queue<Teacher> getTeacher() {
 		return teacherRoster;
@@ -36,18 +36,17 @@ public class School {
 		this.studentRoster = student;
 	}
 
-	public School(Vector<Teacher> teacher, Vector<Student> student) {
-		super();
-		this.studentRoster= new LinkedList<>();
-		this.teacherRoster=new LinkedList<>();
-	}
+//	public School(Vector<Teacher> teacher, Vector<Student> student) {
+//		super();
+//		this.studentRoster= new LinkedList<>();
+//		this.teacherRoster=new LinkedList<>();
+//	}
 
-
-	public void addStudent(Student std) {
+	public static void addStudent(Student std) {
 		studentRoster.add(std);
 	}
 
-	public void addTeacher(Teacher tea) {
+	public static void addTeacher(Teacher tea) {
 		teacherRoster.add(tea);
 	}
 
@@ -56,11 +55,6 @@ public class School {
 		return "School lo teacher=" + teacherRoster + ", student=" + studentRoster + "]";
 	}
 
-	public School() {
-		// default constructor
-		this.studentRoster= new LinkedList<>();
-		this.teacherRoster=new LinkedList<>();
-	}
 
 
 //comprises of Teachers and Students satisfying the conditions
