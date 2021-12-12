@@ -14,6 +14,8 @@ import java.util.List;
 public class StudentDAO extends DatabaseConnector {
 
     private static final String TABLE_NAME = "student";
+    VaccineStatusDAO vaccineStatusDAO = new VaccineStatusDAO();
+
 
     public void insertStudent(Student student) {
         String sql = "INSERT INTO " + TABLE_NAME + " ( first_name, last_name, age, gender, grade, parent_first_name, parent_last_name, address, dob, date_of_joining ) VALUES(?,?,?,?,?,?,?,?,?,?)";
@@ -76,6 +78,48 @@ public class StudentDAO extends DatabaseConnector {
         }
         return list;
     }
+    String sql = "Select * from "+ TABLE_NAME +"where first_name=? limit 1";
+
+
+    public List<String> getStudentString(String name){
+        String sql = "Select * from "+ TABLE_NAME +" where first_name = ? limit 1";
+        List<String> list = new ArrayList<>();
+        try {
+            Connection connection = this.openConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, name);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+
+                StringBuilder sb = new StringBuilder();
+
+                sb.append(resultSet.getInt("id")).append(",");
+                sb.append(resultSet.getString("first_name"))
+                        .append(" ")
+                        .append(resultSet.getString("last_name"))
+                        .append(',');
+                sb.append(resultSet.getString("gender")+',');
+                sb.append(resultSet.getInt("age")).append(',');
+                sb.append(resultSet.getString("grade")+',');
+                sb.append(resultSet.getString("date_of_joining")+',');
+                sb.append(resultSet.getString(8)).append(',');
+                sb.append(resultSet.getString(9)).append(',');
+                sb.append(resultSet.getString(10)).append(',');
+                sb.append(resultSet.getString(11)).append(',');
+                sb.append(resultSet.getString(12)).append(',');
+                sb.append(vaccineStatusDAO.getVaccineStatusStudent(resultSet.getInt("id"), connection));
+                list.add(sb.toString().replaceAll("null","NA"));
+            }
+            resultSet.close();
+            this.closeConnection();
+            return list;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
     public List<String> getStudentString(){
         String sql = "Select * from "+ TABLE_NAME;
@@ -100,10 +144,10 @@ public class StudentDAO extends DatabaseConnector {
                 sb.append(resultSet.getString("grade")+',');
                 sb.append(resultSet.getString("date_of_joining")+',');
                 sb.append(resultSet.getString(8)).append(',');
-                sb.append(resultSet.getString(9)+',');
-                sb.append(resultSet.getString(10)+',');
-                sb.append(resultSet.getString(11)+',');
-                sb.append(resultSet.getString(12)+',');
+                sb.append(resultSet.getString(9)).append(',');
+                sb.append(resultSet.getString(10)).append(',');
+                sb.append(resultSet.getString(11)).append(',');
+                sb.append(resultSet.getString(12)).append(',');
                 sb.append(vaccineStatusDAO.getVaccineStatusStudent(resultSet.getInt("id"), connection));
                 list.add(sb.toString().replaceAll("null","NA"));
             }
@@ -118,25 +162,25 @@ public class StudentDAO extends DatabaseConnector {
 
 
 
-//    public static void main(String[] args) {
-//
-////        VaccineStatusDAO vaccineStatusDAO = new VaccineStatusDAO();
-////        vaccineStatusDAO.insertStudentVaccine(1,1,"12/01/2021");
-////        vaccineStatusDAO.insertStudentVaccine(1,2,"12/01/2021");
-////        vaccineStatusDAO.insertStudentVaccine(1,1,"12/08/2021");
-//
-//        StudentDAO studentDAO = new StudentDAO();
+    public static void main(String[] args) {
+
+//        VaccineStatusDAO vaccineStatusDAO = new VaccineStatusDAO();
+//        vaccineStatusDAO.insertStudentVaccine(1,1,"12/01/2021");
+//        vaccineStatusDAO.insertStudentVaccine(1,2,"12/01/2021");
+//        vaccineStatusDAO.insertStudentVaccine(1,1,"12/08/2021");
+
+        StudentDAO studentDAO = new StudentDAO();
 //        List<String> strings = studentDAO.getStudentString();
 //        System.out.println(strings);
-//
-//        Vaccination vaccination = new Vaccination();
+
+        Vaccination vaccination = new Vaccination();
 //        Student student = new Student(0, 25, "Akhil","Sirra","12/12/20","M", vaccination, "A", 1, "Parentname", "Sirra", "99 Washington st", "08/08/2021");
 //        studentDAO.insertStudent(student);
-//        List<Student>  student_list = studentDAO.get();
-//        for(int i=0;i<student_list.size();i++){
-//            System.out.println(student_list.get(i));
-//        }
-//    }
+        List<String>  student_list = studentDAO.getStudentString("Akhil");
+        for(int i=0;i<student_list.size();i++){
+            System.out.println(student_list.get(i));
+        }
+    }
 
 
 }
