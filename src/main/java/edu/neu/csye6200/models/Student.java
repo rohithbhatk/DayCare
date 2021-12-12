@@ -33,6 +33,7 @@ public class Student extends Person{
 		this.grade = grade;
 		this.groupId = groupId;
 		this.date_of_joining = date_of_joining;
+		this.immunization_Records = immunization_Records;
 	}
 
 	public int getGrade() {
@@ -50,6 +51,15 @@ public class Student extends Person{
 	public void setDate_of_joining(String date_of_joining) {
 		this.date_of_joining = date_of_joining;
 	}
+
+	public Vaccination getImmunization_Records() {
+		return immunization_Records;
+	}
+
+	public void setImmunization_Records(Vaccination immunization_Records, Student s1) {
+		this.immunization_Records = immunization_Records;
+	}
+
 
 	public static Student createStudentFromCSV(String std) throws Exception {
 		Scanner sn = new Scanner(std);

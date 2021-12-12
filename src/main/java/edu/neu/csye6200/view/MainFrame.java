@@ -1,6 +1,9 @@
 package edu.neu.csye6200.view;
 
+import edu.neu.csye6200.controller.School;
 import edu.neu.csye6200.controller.SchoolHelper;
+import edu.neu.csye6200.controller.Vaccination;
+import edu.neu.csye6200.models.Student;
 
 import java.awt.EventQueue;
 
@@ -85,8 +88,6 @@ public class MainFrame {
 	private List<Date> Hepatitis_B;
 	private List<Date> MMR;
 	private List<Date> Varicella;
-
-//	private ViewingPage viewingPage = ViewingPage.getInstance();
 
 	/**
 	 * Launch the application.
@@ -277,32 +278,30 @@ public class MainFrame {
 	}
 	
 	private void registerButtonPressed() {
-		// TODO Auto-generated method stub
 		formatter=new SimpleDateFormat("MM/dd/yyyy");
 		getFirstName = textField_FirstName.getText();
 		if(getFirstName.isEmpty()){
-			errorMessage("Please enter First Name");
+			errorMessage("Invalid Input","Please enter First Name");
 			return;
 		}
 		getLastName = textField_LastName.getText();
 		if(getLastName.isEmpty()){
-			errorMessage("Please enter Last Name");
+			errorMessage("Invalid Input","Please enter Last Name");
 			return;
 		}
 		getGender = textField_Gender.getText();
 		if(getGender.isEmpty()){
-			errorMessage("Please enter Gender");
+			errorMessage("Invalid Input","Please enter Gender");
 			return;
 		}
 		getParentFirstName = textField_ParentFirstName.getText();
 		if(getParentFirstName.isEmpty()){
-			errorMessage("Please enter Parent's First Name");
+			errorMessage("Invalid Input","Please enter Parent's First Name");
 			return;
 		}
-
 		getParentLastName = textField_ParentLastName.getText();
 		if(getParentLastName.isEmpty()){
-			errorMessage("Please enter Parent's Last Name");
+			errorMessage("Invalid Input","Please enter Parent's Last Name");
 			return;
 		}
 
@@ -311,7 +310,7 @@ public class MainFrame {
 			age = Integer.parseInt(getAge);
 		}
 		catch(Exception e) {
-			errorMessage("Please enter valid Age");
+			errorMessage("Invalid Input","Please enter valid Age");
 			return;
 		}
 
@@ -319,7 +318,7 @@ public class MainFrame {
 		try {
 			DOB=formatter.parse(getDOB);
 		} catch (ParseException e) {
-			errorMessage("Please enter valid Date of Birth");
+			errorMessage("Invalid Input","Please enter valid Date of Birth");
 			return;
 		}
 
@@ -327,13 +326,13 @@ public class MainFrame {
 		try {
 			DOJ=formatter.parse(getDOJ);
 		} catch (ParseException e) {
-			errorMessage("Please enter valid Date of Joining");
+			errorMessage("Invalid Input","Please enter valid Date of Joining");
 			return;
 		}
 
 		getAddress = textField_Address.getText();
 		if(getAddress.isEmpty()){
-			errorMessage("Please enter Address");
+			errorMessage("Invalid Input","Please enter Address");
 			return;
 		}
 
@@ -344,9 +343,8 @@ public class MainFrame {
 			for(String s: tokens) {
 				Hib.add(formatter.parse(s));
 			}
-		}
-		catch(ParseException e){
-			errorMessage("Please enter valid Hib dates");
+		} catch(ParseException e){
+			errorMessage("Invalid Input","Please enter valid Hib dates");
 			return;
 		}
 
@@ -357,9 +355,8 @@ public class MainFrame {
 			for(String s: tokens) {
 				DtaP.add(formatter.parse(s));
 			}
-		}
-		catch(ParseException e){
-			errorMessage("Please enter valid DtaP dates");
+		} catch(ParseException e){
+			errorMessage("Invalid Input","Please enter valid DtaP dates");
 			return;
 		}
 		getPolio = textField_Polio.getText();
@@ -369,9 +366,8 @@ public class MainFrame {
 			for(String s: tokens) {
 				Polio.add(formatter.parse(s));
 			}
-		}
-		catch(ParseException e){
-			errorMessage("Please enter valid Polio dates");
+		} catch(ParseException e){
+			errorMessage("Invalid Input","Please enter valid Polio dates");
 			return;
 		}
 		getHepatitis_B = textField_Hepatitis_B.getText();
@@ -381,9 +377,8 @@ public class MainFrame {
 			for(String s: tokens) {
 				Hepatitis_B.add(formatter.parse(s));
 			}
-		}
-		catch(ParseException e){
-			errorMessage("Please enter valid Hepatitis B dates");
+		} catch(ParseException e){
+			errorMessage( "Invalid Input","Please enter valid Hepatitis B dates");
 			return;
 		}
 		getMMR = textField_MMR.getText();
@@ -393,9 +388,8 @@ public class MainFrame {
 			for(String s: tokens) {
 				MMR.add(formatter.parse(s));
 			}
-		}
-		catch(ParseException e){
-			errorMessage("Please enter valid MMR dates");
+		} catch(ParseException e){
+			errorMessage("Invalid Input", "Please enter valid MMR dates");
 			return;
 		}
 		getVaricella = textField_Varicella.getText();
@@ -405,9 +399,8 @@ public class MainFrame {
 			for(String s: tokens) {
 				Varicella.add(formatter.parse(s));
 			}
-		}
-		catch(ParseException e){
-			errorMessage("Please enter valid Varicella dates");
+		} catch(ParseException e){
+			errorMessage("Invalid Input", "Please enter valid Varicella dates");
 			return;
 		}
 
@@ -427,11 +420,30 @@ public class MainFrame {
 		System.out.println(getMMR);
 		System.out.println(getVaricella);
 
-		// check for vaccination
-		// if it's eligible -> create the objects
-		// if not -> pop up the alert
+		// int id, int age, String first_Name, String last_name, String date, String gender, Vaccination immunization_Records,
+		//				   int grade, int groupId, String parents_first_name, String parents_last_name, String address,String date_of_joining
+		//private List<Date> Hib;
+		//	private List<Date> DtaP;
+		//	private List<Date> Polio;
+		//	private List<Date> Hepatitis_B;
+		//	private List<Date> MMR;
+		//	private List<Date> Varicella;
+
+		int id = School.studentRoster.size();
+		Vaccination vaccination = new Vaccination();
+		vaccination.setHib(Hib);
+		vaccination.setPolio(Polio);
+		vaccination.setdTaP(DtaP);
+		vaccination.setHepatitis_B(Hepatitis_B);
+		vaccination.setmMR(MMR);
+		vaccination.setVaricella(Varicella);
+		System.out.println("vaccination size: " + vaccination.getdTaP().size());
+		Student student = new Student(id, age, getFirstName, getLastName, getDOB, getGender, vaccination, 0, 0, getParentFirstName, getParentLastName, getAddress, getDOJ);
+		School.addStudent(student);
+
 	}
-	
+
+
 	private void viewButtonPressed() {
 		if(!ViewingPage.isInitialized()) {
 			viewingPage = ViewingPage.getInstance();
@@ -454,12 +466,13 @@ public class MainFrame {
 			successMessage("", "Create classrooms successfully!");
 		} catch (Exception e) {
 			// Todo: handle exception
+			System.out.println(e.getStackTrace());
 		}
 
 	}
 
-	private void errorMessage(String error){
-		JOptionPane.showMessageDialog(null,error,"Invalid Input",JOptionPane.WARNING_MESSAGE);
+	private void errorMessage(String title, String error){
+		JOptionPane.showMessageDialog(null, error, title, JOptionPane.WARNING_MESSAGE);
 	}
 
 	private void successMessage(String title, String msg) {
