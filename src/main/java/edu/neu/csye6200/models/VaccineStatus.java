@@ -18,6 +18,16 @@ public class VaccineStatus {
         return vaccineId;
     }
 
+    public VaccineStatus(){
+
+    }
+
+    public VaccineStatus(int vaccineId, int studentId, String date) {
+        this.vaccineId = vaccineId;
+        this.studentId = studentId;
+        this.date = date;
+    }
+
     public void setVaccineId(int vaccineId) {
         this.vaccineId = vaccineId;
     }

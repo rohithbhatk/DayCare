@@ -31,7 +31,6 @@ public class ClassGroupDAO extends DatabaseConnector{
         String sql = "Select * from "+ TABLE_NAME;
         List<ClassGroup> list = new ArrayList<>();
         try {
-            this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
@@ -49,14 +48,6 @@ public class ClassGroupDAO extends DatabaseConnector{
         return list;
     }
 
-//    public static void main(String[] args) {
-//        ClassGroupDAO classGroupDAO = new ClassGroupDAO();
-//        classGroupDAO.insertClassGroup(1,1);
-//        classGroupDAO.insertClassGroup(1,2);
-//        classGroupDAO.get().forEach(group->{
-//            System.out.println(group.getGroupId());
-//        });
-//    }
 
 }
 

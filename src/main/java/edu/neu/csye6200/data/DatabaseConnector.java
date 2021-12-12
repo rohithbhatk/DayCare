@@ -8,7 +8,7 @@ public class DatabaseConnector {
     private static final String DB_URL = "jdbc:mysql://localhost/daycare";
 
 
-    private Connection dbConnection = null;
+    protected Connection dbConnection = null;
 
     static final String USER = "root";
     static final String PASS = "1234";

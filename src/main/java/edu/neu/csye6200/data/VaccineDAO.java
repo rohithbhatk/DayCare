@@ -1,5 +1,4 @@
 package edu.neu.csye6200.data;
-import edu.neu.csye6200.models.ClassRoom;
 import edu.neu.csye6200.models.Vaccine;
 
 import java.sql.PreparedStatement;
@@ -17,7 +16,7 @@ public class VaccineDAO extends DatabaseConnector{
         try {
             this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
-            preparedStatement.setString(1,vaccine.getVaccine_name());
+            preparedStatement.setString(1,vaccine.getVaccineName());
             preparedStatement.setInt(2,vaccine.getDose1());
             preparedStatement.setInt(3,vaccine.getDose2());
             preparedStatement.setInt(4,vaccine.getDose3());
@@ -32,13 +31,12 @@ public class VaccineDAO extends DatabaseConnector{
         String sql = "Select * from "+ TABLE_NAME;
         List<Vaccine> list = new ArrayList<>();
         try {
-            this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 Vaccine vaccine =  new Vaccine();
                 vaccine.setId(resultSet.getInt(1));
-                vaccine.setVaccine_name(resultSet.getString(2));
+                vaccine.setVaccineName(resultSet.getString(2));
                 vaccine.setDose1(resultSet.getInt(3));
                 vaccine.setDose2(resultSet.getInt(4));
                 vaccine.setDose3(resultSet.getInt(5));

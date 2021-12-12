@@ -30,7 +30,6 @@ public class ClassroomDAO extends DatabaseConnector{
         String sql = "Select * from "+ TABLE_NAME;
         List<ClassRoomController> list = new ArrayList<>();
         try {
-            this.openConnection();
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){

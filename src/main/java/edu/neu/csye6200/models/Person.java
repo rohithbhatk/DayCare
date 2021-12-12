@@ -38,6 +38,22 @@ public class Person {
 		return parents_Last_Name;
 	}
 
+	public void setParents_First_Name(String parents_First_Name) {
+		this.parents_First_Name = parents_First_Name;
+	}
+
+	public void setParents_Last_Name(String parents_Last_Name) {
+		this.parents_Last_Name = parents_Last_Name;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public void setImmunization_Records(Vaccination immunization_Records) {
+		this.immunization_Records = immunization_Records;
+	}
+
 	public String getAddress() {
 		return address;
 	}

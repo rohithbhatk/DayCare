@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Teacher extends Person {
 	private int credits;
-	private Double salary;
+	private int salary;
 	private String track_Student_Record;
 
 	public Teacher(int id, String name){
@@ -13,11 +13,15 @@ public class Teacher extends Person {
 	}
 	public Teacher(int id, int age, String first_Name, String last_name,
 				   String date, String gender,
-				   int credits, Double salary, String track_Student_Record, String parents_first_name, String parents_last_name, String address) {
+				   int credits, int salary, String track_Student_Record, String parents_first_name, String parents_last_name, String address) {
 		super(id, age, first_Name, last_name, date, gender, parents_first_name, parents_last_name, address);
 		this.credits = credits;
 		this.salary = salary;
 		this.track_Student_Record = track_Student_Record;
+	}
+
+	public Teacher() {
+
 	}
 
 	public int getCredits() {
@@ -29,11 +33,11 @@ public class Teacher extends Person {
 	}
 
 
-	public Double getSalary() {
+	public int getSalary() {
 		return salary;
 	}
 
-	public void setSalary(Double salary) {
+	public void setSalary(int salary) {
 		this.salary = salary;
 	}
 
