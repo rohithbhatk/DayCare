@@ -12,11 +12,9 @@ public class ClassRoomController {
     protected int groupSize; //max students per classroom
     protected int maxGroups; //max teachers per room
 
-    public Map<Teacher, ArrayList<Student>> createGroup(int groupSize, int maxGroups) {
+    public Map<Teacher, ArrayList<Student>> createGroup(int groupSize, int maxGroups, Queue<Teacher> teachers, Queue<Student> students) {
 
         Map<Teacher, ArrayList<Student>> classroom = new HashMap<Teacher, ArrayList<Student>>();
-        Queue<Teacher> teachers = new LinkedList<>(School.teacherRoster);
-        Queue<Student> students = new LinkedList<>(School.studentRoster);
 
         //Map<Object, Object> classroom = new HashMap<Object, Object>();
         //if (ageinMonths <= 12 || ageinMonths >= 6) {
@@ -44,8 +42,6 @@ public class ClassRoomController {
 					// Map of {groupTeacher, List[Students]}  --> {"Teacher1":["a", "b", "c"]}
 				}
 			}
-			System.out.println(groupTeacher);
-			System.out.println(list.size());
             classroom.put(groupTeacher, (ArrayList<Student>) list);
         }
         System.out.println("The classroom size is full. Please create a new classroom From GUI");

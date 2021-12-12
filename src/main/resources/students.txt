@@ -8,3 +8,9 @@
 8,36,Linda,Gibson,12/12/2018,F,Robert,Johnson,59 Court st,12/12/2021
 9,24,Markus,Chang,12/12/2018,M,John,Williams,101 Oak st,12/12/2020
 10,12,Jennie,Hung,12/12/2018,F,Richard,Brown,97 Hill st,12/12/2019
+11,12,Jenny,Brown,12/12/2018,F,Richard,Brown,97 Hill st,12/12/2019
+12,36,Tommy,Lin,12/12/2018,M,Daniel,Fellon,55 Court st,12/12/2021
+13,24,Sam,Smith,12/12/2018,M,Mary,Smith,31 Second st,12/12/2020
+14,36,Linda,Gibson,12/12/2018,F,Robert,Johnson,59 Court st,12/12/2021
+15,24,Markus,Chang,12/12/2018,M,John,Williams,101 Oak st,12/12/2020
+16,12,Jennie,Hung,12/12/2018,F,Richard,Brown,97 Hill st,12/12/2019

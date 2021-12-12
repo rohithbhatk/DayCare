@@ -110,32 +110,33 @@ public class ViewingPage extends GradientPanel {
             for (int i = 0; i < classrooms.length; i++) {
                 for (int j = 0; j < classrooms[i].length; j++) {
                     Map<Teacher, ArrayList<Student>> map = (Map<Teacher, ArrayList<Student>>) classrooms[i][j];
+                    String cr = Integer.toString(j);
                     if (map != null)
                         map.forEach((key, value) -> {
                             Teacher t = key;
-
                             for (Student s : value) {
                                 String[] row = new String[14];
-                                row[0] = Integer.toString(s.getId());
-                                row[1] = s.getFirst_Name() + " " + s.getLast_name();
-                                row[2] = s.getGender() == null ? "" : s.getGender();
-                                row[3] = Integer.toString(s.getAge());
-                                row[4] = s.getDate_of_joining() == null ? "" : s.getDate_of_joining();
-                                row[5] = t.getFirst_Name() + " " + t.getLast_name();
-                                row[6] = s.getParents_First_Name() + " " + s.getParents_Last_Name();
+                                row[0] = cr;
+                                row[1] = Integer.toString(s.getId());
+                                row[2] = s.getFirst_Name() + " " + s.getLast_name();
+                                row[3] = s.getGender() == null ? "" : s.getGender();
+                                row[4] = Integer.toString(s.getAge());
+                                row[5] = s.getDate_of_joining() == null ? "" : s.getDate_of_joining();
+                                row[6] = t.getFirst_Name() + " " + t.getLast_name();
+                                row[7] = s.getParents_First_Name() + " " + s.getParents_Last_Name();
 
                                 Vaccination v = s.getImmunization_Records();
-                                row[7] = v == null || v.getHib() == null ? ""
+                                row[8] = v == null || v.getHib() == null ? ""
                                         : String.join(",", (String[]) v.getHib().stream().map(d -> formatter.format(d)).toArray(String[]::new));
-                                row[8] = v == null || v.getdTaP() == null ? ""
+                                row[9] = v == null || v.getdTaP() == null ? ""
                                         : String.join(",", (String[]) v.getdTaP().stream().map(d -> formatter.format(d)).toArray(String[]::new));
-                                row[9] = v == null || v.getPolio() == null ? ""
+                                row[10] = v == null || v.getPolio() == null ? ""
                                         : String.join(",", (String[]) v.getPolio().stream().map(d -> formatter.format(d)).toArray(String[]::new));
-                                row[10] = v == null || v.getHepatitis_B() == null ? ""
+                                row[11] = v == null || v.getHepatitis_B() == null ? ""
                                         : String.join(",", (String[]) v.getHepatitis_B().stream().map(d -> formatter.format(d)).toArray(String[]::new));
-                                row[11] = v == null || v.getmMR() == null ? ""
+                                row[12] = v == null || v.getmMR() == null ? ""
                                         : String.join(",", (String[]) v.getmMR().stream().map(d -> formatter.format(d)).toArray(String[]::new));
-                                row[12] = v == null || v.getVaricella() == null ? ""
+                                row[13] = v == null || v.getVaricella() == null ? ""
                                         : String.join(",", (String[]) v.getVaricella().stream().map(d -> formatter.format(d)).toArray(String[]::new));
                                 list.add(row);
                             }
@@ -219,7 +220,7 @@ public class ViewingPage extends GradientPanel {
         }
     }
 
-    private final String[] columnNames = new String[]{"ID", "Name", "Gender", "Age", "Date of Joining", "Teacher", "Parent", "Hib", "DtaP", "Polio", "Hepatitis_B", "MMR", "Varicella"};
+    private final String[] columnNames = new String[]{"Classroom", "ID", "Name", "Gender", "Age", "Date of Joining", "Teacher", "Parent", "Hib", "DtaP", "Polio", "Hepatitis_B", "MMR", "Varicella"};
     private String[][] data;
     // Todo: add default student data for demo
     private final String[][] defaultData = new String[][]{
