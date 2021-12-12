@@ -25,14 +25,19 @@ public class ClassRoomController {
 		{
 			List<Student> list = new ArrayList<Student>();
 			this.groupSize = groupSize;
-			Teacher groupTeacher = (Teacher) School.teacherRoster.remove();
+			Teacher groupTeacher = (Teacher) School.teacherRoster.poll();
 			//Get the next teacher that will be that teacher for that classroom
 			for(int iter = 0;  iter < groupSize; iter++)
 				if (groupTeacher == null) {
-					list.add(School.studentRoster.remove());
+					// Todo: handle when teacher is null
+//					list.add(School.studentRoster.remove());
 				}
 				else{
-					list.add(School.studentRoster.remove());
+					Student stu = (Student) School.studentRoster.poll();
+					if(stu != null) list.add(stu);
+					else {
+						// Todo: handle when student is null
+					}
 					// pop students off the queue until the group is filled, will be for that teacher
 					// Teacher should be matched to a list of students
 					// This approach throws key already exists error

@@ -4,10 +4,10 @@ public class SchoolFactory {
     // private contructor to implement singleton design pattern (Design patterns)
     static School school = new School();
     private static SchoolFactory instance;
-    private SchoolFactory (){
-        instance = null;
-    }
-    public static SchoolFactory getInstance(){
+
+    private SchoolFactory() { instance = null; }
+
+    public static SchoolFactory getInstance() {
         if (instance == null) {
             //Lazy instantiation
             instance = new SchoolFactory();

@@ -1,4 +1,8 @@
 package edu.neu.csye6200.view;
+import edu.neu.csye6200.controller.SchoolHelper;
+import edu.neu.csye6200.models.Student;
+import edu.neu.csye6200.models.Teacher;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -9,6 +13,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Map;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -91,6 +97,16 @@ public class ViewingPage extends GradientPanel {
 
 	public void getTableData() {
 		// Todo: get table data from ClassRoom(?
+		Object[][] classrooms = SchoolHelper.getClassrooms();
+		for(int i = 0; i < classrooms.length; i++) {
+			for(int j = 0; j < classrooms[i].length; j++) {
+				System.out.println(i + " " + j);
+				Map<Teacher, ArrayList<Student>> map = (Map<Teacher, ArrayList<Student>>)classrooms[i][j];
+				map.forEach((key, value) -> {
+
+				});
+			}
+		}
 	};
 
 	public void createTable() {

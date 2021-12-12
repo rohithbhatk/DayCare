@@ -1,5 +1,7 @@
 package edu.neu.csye6200.view;
 
+import edu.neu.csye6200.controller.SchoolHelper;
+
 import java.awt.EventQueue;
 
 import javax.swing.*;
@@ -89,7 +91,10 @@ public class MainFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		// read default data from CSV (students, teachers)
+		SchoolHelper.demo();
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -443,10 +448,21 @@ public class MainFrame {
 	}
 
 	private void createButtonPressed() {
+		try {
+			SchoolHelper.setClassrooms();
+			System.out.println(SchoolHelper.getClassrooms());
+			successMessage("", "Create classrooms successfully!");
+		} catch (Exception e) {
+			// Todo: handle exception
+		}
 
 	}
 
 	private void errorMessage(String error){
 		JOptionPane.showMessageDialog(null,error,"Invalid Input",JOptionPane.WARNING_MESSAGE);
+	}
+
+	private void successMessage(String title, String msg) {
+		JOptionPane.showMessageDialog(null, msg, title, JOptionPane.PLAIN_MESSAGE);
 	}
 }

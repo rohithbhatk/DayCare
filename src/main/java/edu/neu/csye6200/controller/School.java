@@ -44,12 +44,10 @@ public class School {
 
 
 	public void addStudent(Student std) {
-
 		studentRoster.add(std);
 	}
 
 	public void addTeacher(Teacher tea) {
-
 		teacherRoster.add(tea);
 	}
 
