@@ -12,11 +12,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class SchoolHelper {
-	static School school = new School();
-	ClassRoomController classroom = new ClassRoomController();
+	private static School school = new School();
+	private static ClassRoomController classroom = new ClassRoomController();
+	private static Object[][] classrooms;
+
 	public static void demo() throws Exception {
-
-
 		String line = "";
 		String splitBy = ",";
 		String student_filename = "src/main/resources/students.txt";
@@ -52,7 +52,7 @@ public class SchoolHelper {
 
 				school.addTeacher(teacher);
 
-				System.out.println("Here 2 "+school);
+				System.out.println("Here 2 "+ school);
 
 			}
 			System.out.println(school);
@@ -65,9 +65,9 @@ public class SchoolHelper {
 		}
 	}
 
-	public void  setClassrooms()
+	public static void  setClassrooms()
 	{
-		Object[][] classrooms = new Object[6][];
+		classrooms = new Object[6][];
 		//if age in between 6 to 12
 		//classrooms [Freshman][section1]
 		classrooms[1][1] = classroom.createGroup(4, 3); //this will put all the classrooms of different age groups in an array
@@ -85,11 +85,11 @@ public class SchoolHelper {
 
 
 	}
-//	public void getClassrooms()
-//	{
-//		//return this.classrooms;
-//
-//	}
+	public static Object[][] getClassrooms()
+	{
+		return classrooms;
+
+	}
 
 
 
