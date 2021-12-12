@@ -420,26 +420,22 @@ public class MainFrame {
 		System.out.println(getMMR);
 		System.out.println(getVaricella);
 
-		// int id, int age, String first_Name, String last_name, String date, String gender, Vaccination immunization_Records,
-		//				   int grade, int groupId, String parents_first_name, String parents_last_name, String address,String date_of_joining
-		//private List<Date> Hib;
-		//	private List<Date> DtaP;
-		//	private List<Date> Polio;
-		//	private List<Date> Hepatitis_B;
-		//	private List<Date> MMR;
-		//	private List<Date> Varicella;
+		try {
+			int id = School.studentRoster.size();
+			Vaccination vaccination = new Vaccination();
+			vaccination.setHib(Hib);
+			vaccination.setPolio(Polio);
+			vaccination.setdTaP(DtaP);
+			vaccination.setHepatitis_B(Hepatitis_B);
+			vaccination.setmMR(MMR);
+			vaccination.setVaricella(Varicella);
+			Student student = new Student(id, age, getFirstName, getLastName, getDOB, getGender, vaccination, "1", getParentFirstName, getParentLastName, getAddress, getDOJ);
+			School.addStudent(student);
+			successMessage("", "Register successfully!");
+		} catch (Exception e) {
+			errorMessage("Registration Failed", "Please try again.");
+		}
 
-		int id = School.studentRoster.size();
-		Vaccination vaccination = new Vaccination();
-		vaccination.setHib(Hib);
-		vaccination.setPolio(Polio);
-		vaccination.setdTaP(DtaP);
-		vaccination.setHepatitis_B(Hepatitis_B);
-		vaccination.setmMR(MMR);
-		vaccination.setVaricella(Varicella);
-		System.out.println("vaccination size: " + vaccination.getdTaP().size());
-		Student student = new Student(id, age, getFirstName, getLastName, getDOB, getGender, vaccination, "1", getParentFirstName, getParentLastName, getAddress, getDOJ);
-		School.addStudent(student);
 
 	}
 
@@ -462,7 +458,6 @@ public class MainFrame {
 	private void createButtonPressed() {
 		try {
 			SchoolHelper.setClassrooms();
-			System.out.println(SchoolHelper.getClassrooms());
 			successMessage("", "Create classrooms successfully!");
 		} catch (Exception e) {
 			// Todo: handle exception
