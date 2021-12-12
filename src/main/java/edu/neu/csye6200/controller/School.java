@@ -20,8 +20,8 @@ import java.util.Vector;
 
 public class School {
 
-	public static Queue<Teacher> teacherRoster = new LinkedList<>();
-	public static Queue<Student> studentRoster = new LinkedList<>();
+	public static Queue<Teacher> teacherRoster;
+	public static Queue<Student> studentRoster;
 
 	public Queue<Teacher> getTeacher() {
 		return teacherRoster;
@@ -42,6 +42,7 @@ public class School {
 		this.teacherRoster=new LinkedList<>();
 	}
 
+
 	public void addStudent(Student std) {
 
 		studentRoster.add(std);
@@ -56,6 +57,7 @@ public class School {
 	public String toString() {
 		return "School lo teacher=" + teacherRoster + ", student=" + studentRoster + "]";
 	}
+
 	public School() {
 		// default constructor
 		this.studentRoster= new LinkedList<>();
