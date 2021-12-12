@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/ViewingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/ViewingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/Driver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/ClassGroupDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/ClassroomDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/DatabaseConnector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/StudentDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/TeacherDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/data/VaccineDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/ClassGroup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/EventRegistration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/models/Teacher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/utils/FileUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/utils/Utils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/CustomHeaderCellRenderer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/CustomTableCellRenderer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/GradientPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/HintTextField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/MainFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/RoundBtn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/neu/csye6200/view/ViewingPage.class" beforeDir="false" />
-    </list>
+    <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="login credentials" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,10 +33,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DayCare" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
-  <component name="RunManager" selected="Application.TeacherDAO">
+  <component name="RunManager" selected="Application.StudentDAO">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.neu.csye6200.Driver" />
       <module name="finalProject" />
@@ -106,9 +79,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StudentDAO" />
         <item itemvalue="Application.TeacherDAO" />
         <item itemvalue="Application.Driver" />
-        <item itemvalue="Application.StudentDAO" />
       </list>
     </recent_temporary>
   </component>
@@ -120,6 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639257991477</updated>
+      <workItem from="1639329586534" duration="4530000" />
     </task>
     <task id="LOCAL-00001" summary="Updated File structure">
       <created>1639259133764</created>
@@ -177,8 +151,32 @@
       <option name="project" value="LOCAL" />
       <updated>1639324756381</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updated immunization DAO">
+      <created>1639328284447</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639328284450</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Updated immunization DAO">
+      <created>1639332951245</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1639332951245</updated>
+    </task>
+    <task id="LOCAL-00011" summary="login credentials">
+      <created>1639333834545</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1639333834545</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -196,7 +194,8 @@
     <MESSAGE value="Working on DAO" />
     <MESSAGE value="Updated DAO" />
     <MESSAGE value="Updated immunization DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated immunization DAO" />
+    <MESSAGE value="login credentials" />
+    <option name="LAST_COMMIT_MESSAGE" value="login credentials" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

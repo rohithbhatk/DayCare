@@ -75,7 +75,7 @@ public class TeacherDAO extends DatabaseConnector{
         Vaccination vaccination = new Vaccination();
 //     public Teacher(int id, int age, String first_Name, String last_name,  String date, String gender, int credits, int salary, String track_Student_Record, String parents_first_name, String parents_last_name, String address) {
 
-            Teacher teacher = new Teacher(0, 25, "Akhil","Sirra","12/12/20","M", 4, 100, "A", "Sirra", "Akira", "100 Heath St");
+            Teacher teacher = new Teacher(0, 26, "Akhil","Sirra","12/12/20","M", 4, 100, "A", "Sirra", "Akira", "100 Heath St");
         teacherDAO.insertTeacher(teacher);
 //        List<Student>  student_list = studentDAO.get();
 //        for(int i=0;i<student_list.size();i++){
