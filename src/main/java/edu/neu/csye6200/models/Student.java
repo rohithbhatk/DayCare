@@ -41,6 +41,7 @@ public class Student extends Person{
 		super(id, age, first_Name, last_name, date, gender, parents_first_name, parents_last_name, address);
 		this.grade = grade;
 		this.date_of_joining = date_of_joining;
+		this.immunization_Records = immunization_Records;
 	}
 
 	public String getGrade() {

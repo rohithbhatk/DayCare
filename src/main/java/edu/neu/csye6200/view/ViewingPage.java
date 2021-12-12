@@ -124,21 +124,19 @@ public class ViewingPage extends GradientPanel {
 
                             Vaccination v = s.getImmunization_Records();
 
-                            System.out.println(v.getdTaP().size());
-                            System.out.println(v.getmMR().size());
-                            System.out.println(v.getHib().size());
-                            System.out.println(v.getmMR().size());
-                            System.out.println(v.getHepatitis_B().size());
-                            System.out.println(v.getVaricella().size());
-                            v.getHepatitis_B().stream().forEach(d -> {
-                                System.out.println(formatter.format(d));
-                            });
-                            row[8] = v == null ? "" : String.join(",", (String[])v.getHib().stream().map(d -> d.toString()).toArray());
-                            row[9] = v == null ? "" : String.join(",", (String[])v.getdTaP().stream().map(d -> d.toString()).toArray());
-                            row[10] = v == null ? "" : String.join(",", (String[])v.getPolio().stream().map(d -> d.toString()).toArray());
-                            row[11] = v == null ? "" : String.join(",", (String[])v.getHepatitis_B().stream().map(d -> d.toString()).toArray());
-                            row[12] = v == null ? "" : String.join(",", (String[])v.getmMR().stream().map(d -> d.toString()).toArray());
-                            row[13] = v == null ? "" : String.join(",", (String[])v.getVaricella().stream().map(d -> d.toString()).toArray());
+
+                            row[8] = v == null || v.getHib() == null  ? ""
+                                    : String.join(",", (String[])v.getHib().stream().map(d -> formatter.format(d)).toArray(String[]::new));
+                            row[9] = v == null || v.getdTaP() == null ? ""
+                                    : String.join(",", (String[])v.getdTaP().stream().map(d -> formatter.format(d)).toArray(String[]::new));
+                            row[10] = v == null || v.getPolio() == null ? ""
+                                    : String.join(",", (String[])v.getPolio().stream().map(d -> formatter.format(d)).toArray(String[]::new));
+                            row[11] = v == null || v.getHepatitis_B() == null ? ""
+                                    : String.join(",", (String[])v.getHepatitis_B().stream().map(d -> formatter.format(d)).toArray(String[]::new));
+                            row[12] = v == null || v.getmMR() == null ? ""
+                                    : String.join(",", (String[])v.getmMR().stream().map(d -> formatter.format(d)).toArray(String[]::new));
+                            row[13] = v == null || v.getVaricella() == null ? ""
+                                    : String.join(",", (String[])v.getVaricella().stream().map(d -> formatter.format(d)).toArray(String[]::new));
                             list.add(row);
                         }
                     });

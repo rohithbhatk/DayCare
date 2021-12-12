@@ -438,7 +438,7 @@ public class MainFrame {
 		vaccination.setmMR(MMR);
 		vaccination.setVaricella(Varicella);
 		System.out.println("vaccination size: " + vaccination.getdTaP().size());
-		Student student = new Student(id, age, getFirstName, getLastName, getDOB, getGender, vaccination, 0, 0, getParentFirstName, getParentLastName, getAddress, getDOJ);
+		Student student = new Student(id, age, getFirstName, getLastName, getDOB, getGender, vaccination, "1", getParentFirstName, getParentLastName, getAddress, getDOJ);
 		School.addStudent(student);
 
 	}
