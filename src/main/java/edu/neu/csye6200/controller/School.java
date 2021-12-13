@@ -1,5 +1,7 @@
 package edu.neu.csye6200.controller;
 
+import edu.neu.csye6200.data.StudentDAO;
+import edu.neu.csye6200.data.TeacherDAO;
 import edu.neu.csye6200.models.Student;
 import edu.neu.csye6200.models.Teacher;
 
@@ -23,6 +25,7 @@ public class School {
 	public static Queue<Teacher> teacherRoster = new LinkedList<>();
 	public static Queue<Student> studentRoster = new LinkedList<>();
 
+	/* -- Creating objects from csv
 	public Queue<Teacher> getTeacher() {
 		return teacherRoster;
 	}
@@ -34,6 +37,22 @@ public class School {
 	}
 	public void setStudent(Queue<Student> student) {
 		this.studentRoster = student;
+	}
+
+	 */
+	public Queue<Teacher> getTeacher() {
+		TeacherDAO teacherDAO= new TeacherDAO();
+		teacherRoster = teacherDAO.getQueue() ;
+		return teacherRoster;
+	}
+	public void setTeacher(Queue<Teacher> teacher) {
+		this.teacherRoster = teacher;
+	}
+	public Queue<Student> getStudent() {
+		StudentDAO studentDAO= new StudentDAO();
+		studentRoster = studentDAO.getQueue() ;
+
+		return studentRoster;
 	}
 
 //	public School(Vector<Teacher> teacher, Vector<Student> student) {

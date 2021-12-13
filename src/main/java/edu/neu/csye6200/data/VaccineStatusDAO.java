@@ -40,14 +40,37 @@ public class VaccineStatusDAO extends DatabaseConnector{
             while (resultSet.next()){
                 VaccineStatus vaccineStatus =  new VaccineStatus();
 
-                preparedStatement.setInt(1,vaccineStatus.getVaccineId());
-                preparedStatement.setInt(2,vaccineStatus.getStudentId());
-                preparedStatement.setString(3,vaccineStatus.getDate());
+
+                vaccineStatus.setId(resultSet.getInt(1));
+                vaccineStatus.setVaccineId(resultSet.getInt(2));
+                vaccineStatus.setStudentId(resultSet.getInt(3));
+                vaccineStatus.setDate(resultSet.getString(4));
+
+                list.add(vaccineStatus);
+            }
+            resultSet.close();
+            this.closeConnection();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<VaccineStatus> get(int studentId){
+        String sql = "Select * from "+ TABLE_NAME + " WHERE student_id = ?";
+        List<VaccineStatus> list = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
+            preparedStatement.setInt(1,studentId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                VaccineStatus vaccineStatus =  new VaccineStatus();
 
 
-                vaccineStatus.setVaccineId(resultSet.getInt(1));
-                vaccineStatus.setStudentId(resultSet.getInt(2));
-                vaccineStatus.setDate(resultSet.getString(3));
+                vaccineStatus.setId(resultSet.getInt(1));
+                vaccineStatus.setVaccineId(resultSet.getInt(2));
+                vaccineStatus.setStudentId(resultSet.getInt(3));
+                vaccineStatus.setDate(resultSet.getString(4));
 
                 list.add(vaccineStatus);
             }
@@ -109,7 +132,7 @@ public class VaccineStatusDAO extends DatabaseConnector{
     }
 
     public void updateStudentVaccinationStatus(int studentId, int vaccineId, String date){
-        String sql = "Update "+TABLE_NAME+" set date = ? where id = ? and student_id = ?";
+        String sql = "Update "+TABLE_NAME+" set date = ? where vaccine_id = ? and student_id = ?";
         try {
             PreparedStatement preparedStatement = this.openConnection().prepareStatement(sql);
             preparedStatement.setInt(2,vaccineId);

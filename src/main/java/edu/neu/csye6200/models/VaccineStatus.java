@@ -47,4 +47,14 @@ public class VaccineStatus {
     public void setDate(String date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "VaccineStatus{" +
+                "id=" + id +
+                ", vaccineId=" + vaccineId +
+                ", studentId=" + studentId +
+                ", date='" + date + '\'' +
+                '}';
+    }
 }

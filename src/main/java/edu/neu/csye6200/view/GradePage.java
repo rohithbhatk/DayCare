@@ -1,5 +1,7 @@
 package edu.neu.csye6200.view;
 
+import edu.neu.csye6200.data.StudentDAO;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -120,8 +122,11 @@ public class GradePage extends GradientPanel {
             errorMessage("Please enter Grade","Invalid Input");
             return;
         }
+
         System.out.println(grade);
         //todo: add code to set grades in database
+        StudentDAO studentDAO = new StudentDAO();
+        studentDAO.setGrade(Integer.parseInt(StudentID), grade);
     }
 
     private void errorMessage(String error,String errorType){

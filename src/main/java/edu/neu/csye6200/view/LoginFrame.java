@@ -1,5 +1,7 @@
 package edu.neu.csye6200.view;
 
+import edu.neu.csye6200.controller.LoginCredentials;
+import edu.neu.csye6200.controller.School;
 import edu.neu.csye6200.controller.SchoolHelper;
 
 import java.awt.EventQueue;
@@ -18,8 +20,11 @@ import java.awt.Dimension;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Queue;
 
 public class LoginFrame {
+
+    public static int id;
 
     private static JFrame frame;
     private GradientPanel gradientPanel;
@@ -89,6 +94,9 @@ public class LoginFrame {
      * Launch the application.
      */
     public static void main(String[] args) {
+
+
+
         try {
             SchoolHelper.demo();
         } catch (Exception e) {
@@ -191,6 +199,8 @@ public class LoginFrame {
     }
 
     private void loginButtonPressed() {
+
+//        school = new School();
         // TODO Auto-generated method stub
 //        formatter=new SimpleDateFormat("MM/dd/yyyy");
         getUsername = textField_Username.getText();
@@ -203,15 +213,20 @@ public class LoginFrame {
             errorMessage("Please enter Password","Invalid Input");
             return;
         }
-        if(getUsername.equals("teacher") && getPassword.equals("password")){
+        School school = new School() ;
+        if(LoginCredentials.isValidTeacherLogin(school.getTeacher(), getUsername, getPassword)){
             // todo: compare with username = teacher first and password = date of birth from the database
             // open new teacher frame
+            id = LoginCredentials.getidTeacher(school.getTeacher(),getUsername, getPassword);
+
             System.out.println("Teacher");
             teacherPressed();
         }
-        else if(getUsername.equals("student") && getPassword.equals("password")){
+        else if(LoginCredentials.isValidStudentLogin(school.getStudent(), getUsername, getPassword)){
             // todo: compare with username = student first and password = date of birth from the database
             // open new student frame
+            id = LoginCredentials.getidStudent(school.getStudent(),getUsername, getPassword);
+
             System.out.println("Student");
             studentPressed();
         }

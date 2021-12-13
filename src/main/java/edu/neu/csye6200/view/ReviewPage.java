@@ -1,5 +1,7 @@
 package edu.neu.csye6200.view;
 
+import edu.neu.csye6200.data.TeacherDAO;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -116,6 +118,9 @@ public class ReviewPage extends GradientPanel {
         try{
             intRating = Integer.parseInt(rating);
             //todo: store in backend
+            TeacherDAO teacherDAO = new TeacherDAO();
+            teacherDAO.setReview(2,intRating);
+            JOptionPane.showMessageDialog(null,"Teacher Review Submitted");
         }
         catch (Exception e){
             errorMessage("Please input valid Rating","Invalid Input");

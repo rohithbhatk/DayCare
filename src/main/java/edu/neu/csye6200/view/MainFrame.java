@@ -3,7 +3,10 @@ package edu.neu.csye6200.view;
 import edu.neu.csye6200.controller.School;
 import edu.neu.csye6200.controller.SchoolHelper;
 import edu.neu.csye6200.controller.Vaccination;
+import edu.neu.csye6200.data.StudentDAO;
+import edu.neu.csye6200.data.VaccineStatusDAO;
 import edu.neu.csye6200.models.Student;
+import edu.neu.csye6200.models.VaccineStatus;
 
 import java.awt.EventQueue;
 
@@ -28,7 +31,7 @@ import java.util.List;
 
 public class MainFrame {
 
-	private JFrame frame;	
+	private JFrame frame;
 	private GradientPanel gradientPanel;
 
 	private JPanel panel_1;
@@ -37,7 +40,7 @@ public class MainFrame {
 	private JPanel panel_4;
 	private JPanel panel_5;
 	private JPanel panel_6;
-	
+
 	private JTextField textField_FirstName;
 	private JTextField textField_LastName;
 	private JTextField textField_Gender;
@@ -53,11 +56,11 @@ public class MainFrame {
 	private JTextField textField_Polio;
 	private JTextField textField_Age;
 	private JTextField textField_Hib;
-	
+
 	private JButton btnRegister;
 	private JButton btnView;
 	private JButton btnCreate;
-	
+
 	private String getFirstName;
 	private String getLastName;
 	private String getGender;
@@ -120,7 +123,7 @@ public class MainFrame {
 		frame = new JFrame();
 		frame.setAutoRequestFocus(false);
 		frame.getContentPane().setFont(new Font("Roboto Condensed", Font.PLAIN, 13));
-		
+
 		gradientPanel = new GradientPanel();
 		frame.getContentPane().add(gradientPanel, BorderLayout.CENTER);
 		frame.setBounds(100, 100, 1280, 720);
@@ -130,7 +133,7 @@ public class MainFrame {
 		gbl_gradientPanel.columnWeights = new double[]{1.0, Double.MIN_VALUE};
 		gbl_gradientPanel.rowWeights = new double[]{1.0, 0.1, 0.1, 0.1, 0.1, 0.1, 1.0, Double.MIN_VALUE};
 		gradientPanel.setLayout(gbl_gradientPanel);
-		
+
 		JLabel lblStudentRegistration = new JLabel("STUDENT REGISTRATION");
 		lblStudentRegistration.setHorizontalAlignment(SwingConstants.CENTER);
 		lblStudentRegistration.setForeground(new Color(255, 255, 255));
@@ -141,7 +144,7 @@ public class MainFrame {
 		gbc_lblStudentRegistration.gridx = 0;
 		gbc_lblStudentRegistration.gridy = 0;
 		gradientPanel.add(lblStudentRegistration, gbc_lblStudentRegistration);
-		
+
 		panel_1 = new JPanel();
 		panel_1.setOpaque(false);
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
@@ -151,7 +154,7 @@ public class MainFrame {
 		gbc_panel_1.gridy = 1;
 		gradientPanel.add(panel_1, gbc_panel_1);
 		panel_1.setLayout(new GridLayout(0, 3, 0, 0));
-		
+
 		panel_2 = new JPanel();
 		panel_2.setOpaque(false);
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
@@ -161,7 +164,7 @@ public class MainFrame {
 		gbc_panel_2.gridy = 2;
 		gradientPanel.add(panel_2, gbc_panel_2);
 		panel_2.setLayout(new GridLayout(0, 3, 0, 0));
-		
+
 		panel_3 = new JPanel();
 		panel_3.setOpaque(false);
 		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
@@ -171,7 +174,7 @@ public class MainFrame {
 		gbc_panel_3.gridy = 3;
 		gradientPanel.add(panel_3, gbc_panel_3);
 		panel_3.setLayout(new GridLayout(0, 3, 0, 0));
-		
+
 		panel_4 = new JPanel();
 		panel_4.setOpaque(false);
 		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
@@ -181,7 +184,7 @@ public class MainFrame {
 		gbc_panel_4.gridy = 4;
 		gradientPanel.add(panel_4, gbc_panel_4);
 		panel_4.setLayout(new GridLayout(0, 3, 0, 0));
-		
+
 		panel_5 = new JPanel();
 		panel_5.setOpaque(false);
 		GridBagConstraints gbc_panel_5 = new GridBagConstraints();
@@ -191,13 +194,13 @@ public class MainFrame {
 		gbc_panel_5.gridy = 5;
 		gradientPanel.add(panel_5, gbc_panel_5);
 		panel_5.setLayout(new GridLayout(0, 3, 0, 0));
-		
+
 		textField_FirstName = new HintTextField("First Name");
 		panel_1.add(textField_FirstName);
-		
+
 		textField_LastName = new HintTextField("Last Name");
 		panel_1.add(textField_LastName);
-		
+
 		textField_Gender = new HintTextField("Gender");
 		panel_1.add(textField_Gender);
 
@@ -209,13 +212,13 @@ public class MainFrame {
 
 		textField_Age = new HintTextField("Age (Months)");
 		panel_2.add(textField_Age);
-		
+
 		textField_DOB = new HintTextField("Date of Birth (MM/DD/YYYY)");
 		panel_3.add(textField_DOB);
-		
+
 		textField_DOJ = new HintTextField("Date of Joining (MM/DD/YYYY)");
 		panel_3.add(textField_DOJ);
-		
+
 		textField_Address = new HintTextField("Address");
 		panel_3.add(textField_Address);
 
@@ -236,8 +239,8 @@ public class MainFrame {
 
 		textField_Varicella = new HintTextField("Varicella");
 		panel_5.add(textField_Varicella);
-		  
-		
+
+
 		panel_6 = new JPanel();
 		panel_6.setOpaque(false);
 		GridBagConstraints gbc_panel_6 = new GridBagConstraints();
@@ -245,12 +248,12 @@ public class MainFrame {
 		gbc_panel_6.gridx = 0;
 		gbc_panel_6.gridy = 6;
 		gradientPanel.add(panel_6, gbc_panel_6);
-		
+
 		btnRegister = new JButton("REGISTER");
 		btnRegister.setPreferredSize(new Dimension(160, 40));
 		btnRegister.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
 		btnRegister.setForeground(Color.white);
-		btnRegister.setBorder(new RoundBtn(20)); 
+		btnRegister.setBorder(new RoundBtn(20));
 		panel_6.add(btnRegister);
 
 		btnCreate = new JButton("CREATE CLASSROOMS");
@@ -265,16 +268,16 @@ public class MainFrame {
 		btnView.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
 		btnView.setForeground(Color.white);
 		btnView.setBorder(new LineBorder(Color.white));
-		btnView.setBorder(new RoundBtn(20));  
+		btnView.setBorder(new RoundBtn(20));
 		panel_6.add(btnView);
-		
+
 		btnRegister.addActionListener(e -> registerButtonPressed());
 		btnView.addActionListener(e -> viewButtonPressed());
 //		btnCreate.addActionListener(e -> createButtonPressed());
 
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
-	
+
 	private void registerButtonPressed() {
 		formatter=new SimpleDateFormat("MM/dd/yyyy");
 		getFirstName = textField_FirstName.getText();
@@ -429,6 +432,31 @@ public class MainFrame {
 			vaccination.setVaricella(Varicella);
 			Student student = new Student(id, age, getFirstName, getLastName, getDOB, getGender, vaccination, "1", getParentFirstName, getParentLastName, getAddress, getDOJ);
 			School.addStudent(student);
+
+			StudentDAO studentDAO = new StudentDAO();
+			studentDAO.insertStudent(student);
+			List<String> list = studentDAO.getStudentString(student.getFirst_Name());
+
+
+
+			VaccineStatusDAO vaccineStatusDAO = new VaccineStatusDAO();
+
+			VaccineStatus v1 = new VaccineStatus(1, student.getId(), getHib);
+			VaccineStatus v2 = new VaccineStatus(2, student.getId(), getPolio);
+			VaccineStatus v3 = new VaccineStatus(3, student.getId(), getDtaP);
+			VaccineStatus v4 = new VaccineStatus(4, student.getId(), getHepatitis_B);
+			VaccineStatus v5 = new VaccineStatus(5, student.getId(), getMMR);
+			VaccineStatus v6 = new VaccineStatus(6, student.getId(), getVaricella);
+			vaccineStatusDAO.insertStudentVaccine(v1);
+			vaccineStatusDAO.insertStudentVaccine(v2);
+			vaccineStatusDAO.insertStudentVaccine(v3);
+			vaccineStatusDAO.insertStudentVaccine(v4);
+			vaccineStatusDAO.insertStudentVaccine(v5);
+			vaccineStatusDAO.insertStudentVaccine(v6);
+
+			//todo : write to csv
+
+
 			successMessage("", "Register successfully!");
 		} catch (Exception e) {
 			errorMessage("Registration Failed", "Please try again.");
@@ -448,7 +476,7 @@ public class MainFrame {
 			}
 			viewingPage.rerender();
 		}
-		
+
 		viewingPage.setVisible(true);
 		gradientPanel.setVisible(false);
 		frame.getContentPane().removeAll();

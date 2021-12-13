@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="updated student and teacher dao">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/LoginCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/LoginCredentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/School.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineStatusDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineStatusDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/VaccineStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/VaccineStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/GradePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/GradePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/ReviewPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/ReviewPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/SetImmunizationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/SetImmunizationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/TrackImmunizationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/TrackImmunizationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/students.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/teachers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/teachers.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,11 +34,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="229m4tRKcHKGL6B0Z66hWFc8Hk4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -42,13 +62,26 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DayCare" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
-  <component name="RunManager" selected="Application.TeacherDAO">
+  <component name="RunManager" selected="Application.LoginFrame">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.neu.csye6200.Driver" />
       <module name="finalProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.neu.csye6200.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.neu.csye6200.view.LoginFrame" />
+      <module name="finalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.neu.csye6200.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,6 +117,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LoginFrame" />
         <item itemvalue="Application.TeacherDAO" />
         <item itemvalue="Application.StudentDAO" />
         <item itemvalue="Application.Driver" />
@@ -98,7 +132,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639257991477</updated>
-      <workItem from="1639329586534" duration="13165000" />
+      <workItem from="1639329586534" duration="29139000" />
     </task>
     <task id="LOCAL-00001" summary="Updated File structure">
       <created>1639259133764</created>
@@ -198,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639346193683</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updated student and teacher dao">
+      <created>1639346641527</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1639346641527</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +272,11 @@
           <properties class="java.sql.SQLException" package="java.sql" />
           <option name="timeStamp" value="15" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/TrackImmunizationPage.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

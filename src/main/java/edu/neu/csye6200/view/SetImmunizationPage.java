@@ -1,5 +1,8 @@
 package edu.neu.csye6200.view;
 
+import edu.neu.csye6200.data.VaccineStatusDAO;
+import edu.neu.csye6200.models.VaccineStatus;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -108,7 +111,7 @@ public class SetImmunizationPage extends GradientPanel {
         gbc_button2.gridx = 1;
         gbc_button2.gridy = 5;
 
-        textField_VaccineName = new HintTextField("Enter Vaccine Name");
+        textField_VaccineName = new HintTextField("Enter Vaccine ID");
         textField_DoseDate = new HintTextField("Enter Dose Date");
         textField_StudentID = new HintTextField("Enter Student ID");
         //textField_Rating.setColumns(50);
@@ -162,6 +165,10 @@ public class SetImmunizationPage extends GradientPanel {
         }
         System.out.println(dose);
         //todo: Store date in database
+
+        VaccineStatusDAO vaccineStatusDAO = new VaccineStatusDAO();
+        vaccineStatusDAO.updateStudentVaccinationStatus(Integer.parseInt(studentID), Integer.parseInt(dose), doseDate);
+
     }
 
     private void errorMessage(String error,String errorType){

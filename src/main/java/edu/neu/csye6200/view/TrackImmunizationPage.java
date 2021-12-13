@@ -1,8 +1,15 @@
 package edu.neu.csye6200.view;
 
+import edu.neu.csye6200.data.VaccineDAO;
+import edu.neu.csye6200.data.VaccineStatusDAO;
+import edu.neu.csye6200.models.VaccineStatus;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -65,6 +72,34 @@ public class TrackImmunizationPage extends GradientPanel {
         gbc_label.insets = new Insets(50, 0, 5, 0);
         gbc_label.gridx = 1;
         gbc_label.gridy = 0;
+
+//        private String[][] data = new String[][] {
+//                { "15/11/2020", "16/11/2022", "16/11/2020", "17/11/2022","18/11/2020", "19/11/2022", },
+//        };
+
+        VaccineStatusDAO vaccineStatusDAO = new VaccineStatusDAO();
+        List<VaccineStatus> list =  vaccineStatusDAO.get(LoginFrame.id);
+
+      data = new String[list.size()];
+      for(int i = 0; i<list.size();i++){
+          if(list.get(i).getStudentId()==LoginFrame.id) {
+              System.out.println(list.get(i).getDate());
+              data[i] = list.get(i).getDate();
+          }
+      }
+
+//        for(int i=0;i<list.size();i++){
+//            VaccineStatus v = list.get(i);
+//            if(v.getStudentId()==LoginFrame.id){
+//                v = list.get(i);
+//                data.add(v.getDate());
+//            }
+//
+//            System.out.println(data);
+//
+//        }
+
+
     }
     public void createScrollPane() {
         scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
@@ -79,11 +114,13 @@ public class TrackImmunizationPage extends GradientPanel {
 
     public void getTableData() {
         // Todo: get table data from ClassRoom(?
+        dataList[0]=data;
+        System.out.println(Arrays.toString(dataList[0]));
     };
 
     public void createTable() {
         getTableData();
-        table = new JTable(data, columnNames){
+        table = new JTable(dataList, columnNames){
             public boolean isCellEditable(int data,int columns) {
                 return false;
             }
@@ -148,10 +185,12 @@ public class TrackImmunizationPage extends GradientPanel {
         }
     }
 
-    private String[] columnNames = new String[] {"Hib", "DtaP", "Polio", "Hepatitis_B", "MMR", "Varicella" };
-    private String[][] data = new String[][] {
-            { "15/11/2020", "16/11/2022", "16/11/2020", "17/11/2022","18/11/2020", "19/11/2022", },
-    };
+
+//    private String[][] data = new String[][]{
+//            { "15/11/2020", "16/11/2022", "16/11/2020", "17/11/2022","18/11/2020", "19/11/2022", },
+//    };
+
+
 
     private JScrollPane scrollPane;
     private JTable table;
@@ -160,7 +199,10 @@ public class TrackImmunizationPage extends GradientPanel {
     private GridBagConstraints gbc_label;
     private GridBagConstraints gbc_scrollPane;
     private GridBagConstraints gbc_button;
+    private String[] data;
 
     private JFrame frame;
     private GradientPanel gradientPanel;
+    String[] columnNames = new String[] {"Hib", "DtaP", "Polio", "Hepatitis_B", "MMR", "Varicella" };
+    String[][] dataList =new String[1][columnNames.length];
 }
