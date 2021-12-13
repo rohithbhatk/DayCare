@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="updated student and teacher dao">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/LoginCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/LoginCredentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/School.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineStatusDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/VaccineStatusDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/VaccineStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/models/VaccineStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/GradePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/GradePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/ReviewPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/ReviewPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/SetImmunizationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/SetImmunizationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/TrackImmunizationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/TrackImmunizationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/students.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/teachers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/teachers.txt" afterDir="false" />
-    </list>
+    <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="updated student and teacher dao" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -132,7 +118,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639257991477</updated>
-      <workItem from="1639329586534" duration="29139000" />
+      <workItem from="1639329586534" duration="29603000" />
     </task>
     <task id="LOCAL-00001" summary="Updated File structure">
       <created>1639259133764</created>
@@ -239,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639346641527</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="updated student and teacher dao">
+      <created>1639363468312</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1639363468322</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +267,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/TrackImmunizationPage.java</url>
-          <line>116</line>
+          <line>115</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>

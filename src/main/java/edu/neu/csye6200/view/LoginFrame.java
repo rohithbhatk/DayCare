@@ -22,6 +22,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Queue;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.sym.error;
+
 public class LoginFrame {
 
     public static int id;
@@ -91,7 +93,6 @@ public class LoginFrame {
      * Launch the application.
      */
     public static void main(String[] args) {
-
 
 
         try {
@@ -197,34 +198,32 @@ public class LoginFrame {
 
     private void loginButtonPressed() {
         getUsername = textField_Username.getText();
-        if(getUsername.isEmpty()){
-            errorMessage("Please enter Username","Invalid Input");
+        if (getUsername.isEmpty()) {
+            errorMessage("Please enter Username", "Invalid Input");
             return;
         }
         getPassword = textField_Password.getText();
-        if(getPassword.isEmpty()){
-            errorMessage("Please enter Password","Invalid Input");
+        if (getPassword.isEmpty()) {
+            errorMessage("Please enter Password", "Invalid Input");
             return;
         }
-        School school = new School() ;
-        if(LoginCredentials.isValidTeacherLogin(school.getTeacher(), getUsername, getPassword)){
+        School school = new School();
+        if (LoginCredentials.isValidTeacherLogin(school.getTeacher(), getUsername, getPassword)) {
             // todo: compare with username = teacher first and password = date of birth from the database
             // open new teacher frame
-            id = LoginCredentials.getidTeacher(school.getTeacher(),getUsername, getPassword);
+            id = LoginCredentials.getidTeacher(school.getTeacher(), getUsername, getPassword);
 
             System.out.println("Teacher");
             teacherPressed();
-        }
-        else if(LoginCredentials.isValidStudentLogin(school.getStudent(), getUsername, getPassword)){
+        } else if (LoginCredentials.isValidStudentLogin(school.getStudent(), getUsername, getPassword)) {
             // todo: compare with username = student first and password = date of birth from the database
             // open new student frame
-            id = LoginCredentials.getidStudent(school.getStudent(),getUsername, getPassword);
+            id = LoginCredentials.getidStudent(school.getStudent(), getUsername, getPassword);
 
             System.out.println("Student");
             studentPressed();
-        }
-        else{
-            errorMessage("Username or Password is incorrect","Invalid Credentials");
+        } else {
+            errorMessage("Username or Password is incorrect", "Invalid Credentials");
             return;
         }
 
@@ -233,24 +232,24 @@ public class LoginFrame {
     }
 
     private void studentPressed() {
-        if(!StudentPage.isInitialized()) {
+        if (!StudentPage.isInitialized()) {
             studentPage = StudentPage.getInstance();
-            studentPage.initialize(frame,gradientPanel);
+            studentPage.initialize(frame, gradientPanel);
             studentPage.addBtnListener(frame, gradientPanel);
-        } else {
-            studentPage.rerender();
+//        } else {
+//            studentPage.rerender();
+//        }
+
+            studentPage.setVisible(true);
+            gradientPanel.setVisible(false);
+            frame.getContentPane().removeAll();
+            frame.getContentPane().add(studentPage, BorderLayout.CENTER);
         }
-
-        studentPage.setVisible(true);
-        gradientPanel.setVisible(false);
-        frame.getContentPane().removeAll();
-        frame.getContentPane().add(studentPage, BorderLayout.CENTER);
     }
-
-    private void teacherPressed() {
-        if(!TeacherPage.isInitialized()) {
+    private void teacherPressed(){
+        if (!TeacherPage.isInitialized()) {
             teacherPage = TeacherPage.getInstance();
-            teacherPage.initialize(frame,gradientPanel);
+            teacherPage.initialize(frame, gradientPanel);
             teacherPage.addBtnListener(frame, gradientPanel);
         }
 
@@ -260,8 +259,7 @@ public class LoginFrame {
         frame.getContentPane().removeAll();
         frame.getContentPane().add(teacherPage, BorderLayout.CENTER);
     }
-
-    private void errorMessage(String error,String errorType){
-        JOptionPane.showMessageDialog(null,error,errorType,JOptionPane.WARNING_MESSAGE);
+    private void errorMessage (String error, String errorType){
+        JOptionPane.showMessageDialog(null, error, errorType, JOptionPane.WARNING_MESSAGE);
     }
 }
