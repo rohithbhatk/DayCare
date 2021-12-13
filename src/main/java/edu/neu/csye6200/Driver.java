@@ -1,10 +1,7 @@
 package edu.neu.csye6200;
 
-import edu.neu.csye6200.controller.SchoolHelper;
 import edu.neu.csye6200.view.LoginFrame;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Driver {
 
@@ -23,5 +20,5 @@ public class Driver {
 //		ClassRoom classroom = new ClassRoom();
 //		classroom.classroom();
 	}
-
 }
+
