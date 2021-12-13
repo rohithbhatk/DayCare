@@ -92,9 +92,7 @@ public class LoginFrame {
     /**
      * Launch the application.
      */
-    public static void main(String[] args) {
-
-
+    public static void demo() {
         try {
             SchoolHelper.demo();
         } catch (Exception e) {
