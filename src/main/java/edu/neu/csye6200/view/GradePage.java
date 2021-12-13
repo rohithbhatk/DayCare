@@ -25,10 +25,9 @@ public class GradePage extends GradientPanel {
         return instance;
     }
 
-    public void initialize(JFrame frame, GradientPanel gradientPanel) {
+    public void initialize() {
         isInitialized = true;
-        this.frame=frame;
-        this.gradientPanel=gradientPanel;
+
         GridBagLayout gbl_gradientPanel = new GridBagLayout();
         gbl_gradientPanel.columnWidths = new int[]{0, 0, 0, 0};
         gbl_gradientPanel.rowHeights = new int[]{0, 0, 0, 0, 0};
@@ -68,7 +67,7 @@ public class GradePage extends GradientPanel {
     }
 
     public void createButton() {
-        btnBack = new JButton("LOGOUT");
+        btnBack = new JButton("BACK");
         btnBack.setPreferredSize(new Dimension(160, 40));
         btnBack.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
         btnBack.setForeground(Color.white);
@@ -133,14 +132,14 @@ public class GradePage extends GradientPanel {
         JOptionPane.showMessageDialog(null,error,errorType,JOptionPane.WARNING_MESSAGE);
     }
 
-    public void addBtnListener(JFrame frame, GradientPanel gradientPanel) {
+    public void addBtnListener(JFrame frame, GradientPanel gradientPanelTeacherPage) {
         btnBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 instance.setVisible(false);
                 frame.getContentPane().removeAll();
-                gradientPanel.setVisible(true);
-                frame.getContentPane().add(gradientPanel, BorderLayout.CENTER);
+                gradientPanelTeacherPage.setVisible(true);
+                frame.getContentPane().add(gradientPanelTeacherPage, BorderLayout.CENTER);
             }
         });
     }
@@ -153,8 +152,6 @@ public class GradePage extends GradientPanel {
     private GridBagConstraints gbc_Options;
     private GridBagConstraints gbc_Options2;
 
-    private JFrame frame;
-    private GradientPanel gradientPanel;
     private JTextField textField_Grade;
     private JTextField textField_StudentID;
 

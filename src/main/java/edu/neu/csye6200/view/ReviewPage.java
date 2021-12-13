@@ -25,10 +25,9 @@ public class ReviewPage extends GradientPanel {
         return instance;
     }
 
-    public void initialize(JFrame frame, GradientPanel gradientPanel) {
+    public void initialize() {
         isInitialized = true;
-        this.frame=frame;
-        this.gradientPanel=gradientPanel;
+
         GridBagLayout gbl_gradientPanel = new GridBagLayout();
         gbl_gradientPanel.columnWidths = new int[]{0, 0, 0, 0};
         gbl_gradientPanel.rowHeights = new int[]{0, 0, 0, 0};
@@ -73,7 +72,7 @@ public class ReviewPage extends GradientPanel {
 
 
     public void createButton() {
-        btnBack = new JButton("LOGOUT");
+        btnBack = new JButton("BACK");
         btnBack.setPreferredSize(new Dimension(160, 40));
         btnBack.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
         btnBack.setForeground(Color.white);

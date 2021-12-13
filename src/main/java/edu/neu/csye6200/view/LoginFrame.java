@@ -31,9 +31,6 @@ public class LoginFrame {
 
     private JPanel panel_1;
     private JPanel panel_2;
-    private JPanel panel_3;
-    private JPanel panel_4;
-    private JPanel panel_5;
     private JPanel panel_6;
 
     private JTextField textField_Username;
@@ -199,10 +196,6 @@ public class LoginFrame {
     }
 
     private void loginButtonPressed() {
-
-//        school = new School();
-        // TODO Auto-generated method stub
-//        formatter=new SimpleDateFormat("MM/dd/yyyy");
         getUsername = textField_Username.getText();
         if(getUsername.isEmpty()){
             errorMessage("Please enter Username","Invalid Input");
@@ -259,8 +252,6 @@ public class LoginFrame {
             teacherPage = TeacherPage.getInstance();
             teacherPage.initialize(frame,gradientPanel);
             teacherPage.addBtnListener(frame, gradientPanel);
-        } else {
-//            teacherPage.rerender();
         }
 
         teacherPage.setVisible(true);

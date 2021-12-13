@@ -38,16 +38,11 @@ public class StudentPage extends GradientPanel {
         createLabel();
         createButton();
 
-
         instance.setLayout(gbl_gradientPanel);
         instance.add(lblRecords, gbc_label);
         instance.add(btnBack, gbc_button);
         instance.add(btnTeacherReview, gbc_Options);
         instance.add(btnTrackImmunization,gbc_Options2);
-    }
-
-    public void rerender() {
-
     }
 
     public void createLabel() {
@@ -63,15 +58,8 @@ public class StudentPage extends GradientPanel {
         gbc_label.gridy = 0;
     }
 
-
-    public void getTableData() {
-        // Todo: get table data from ClassRoom(?
-    };
-
-
     public void createButton() {
-
-        btnBack = new JButton("BACK");
+        btnBack = new JButton("LOGOUT");
         btnBack.setPreferredSize(new Dimension(160, 40));
         btnBack.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
         btnBack.setForeground(Color.white);
@@ -115,12 +103,10 @@ public class StudentPage extends GradientPanel {
 
     private void teacherReviewButtonPressed() {
         if(!ReviewPage.isInitialized()) {
-            System.out.println("Review");
+//            System.out.println("Review");
             reviewPage = ReviewPage.getInstance();
-            reviewPage.initialize(frame,gradientPanel);
-            reviewPage.addBtnListener(frame, gradientPanel);
-        } else {
-            reviewPage.rerender();
+            reviewPage.initialize();
+            reviewPage.addBtnListener(frame, instance);
         }
 
         reviewPage.setVisible(true);
@@ -132,13 +118,14 @@ public class StudentPage extends GradientPanel {
 
     private void trackImmunizationButtonPressed() {
         if(!TrackImmunizationPage.isInitialized()) {
-            System.out.println("Review");
+//            System.out.println("Review");
             trackImmunizationPage = TrackImmunizationPage.getInstance();
-            trackImmunizationPage.initialize(frame,gradientPanel);
-            trackImmunizationPage.addBtnListener(frame, gradientPanel);
-        } else {
-            trackImmunizationPage.rerender();
+            trackImmunizationPage.initialize();
+            trackImmunizationPage.addBtnListener(frame, instance);
         }
+//        else {
+//            trackImmunizationPage.rerender();
+//        }
 
         trackImmunizationPage.setVisible(true);
         instance.setVisible(false);

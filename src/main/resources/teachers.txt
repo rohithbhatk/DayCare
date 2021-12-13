@@ -4,3 +4,9 @@
 4,30,Brian,Allen,M
 5,40,Paul,Young,F
 6,50,Scarlett,King,F
+7,30,John,Miller,M
+8,40,Ken,Lopez,F
+9,50,Hilary,Lee,F
+10,30,Shawn,Allen,M
+11,40,Shrusti,Young,F
+12,50,Ron,King,F
