@@ -25,10 +25,9 @@ public class TrackImmunizationPage extends GradientPanel {
         return instance;
     }
 
-    public void initialize(JFrame frame, GradientPanel gradientPanel) {
+    public void initialize() {
         isInitialized = true;
-        this.frame=frame;
-        this.gradientPanel=gradientPanel;
+
         GridBagLayout gbl_gradientPanel = new GridBagLayout();
         gbl_gradientPanel.columnWidths = new int[]{0, 0, 0, 0};
         gbl_gradientPanel.rowHeights = new int[]{0, 0, 0};

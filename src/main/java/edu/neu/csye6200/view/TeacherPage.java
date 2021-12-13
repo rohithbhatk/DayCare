@@ -64,7 +64,6 @@ public class TeacherPage extends GradientPanel {
     }
 
     public void createButton() {
-
         btnBack = new JButton("LOGOUT");
         btnBack.setPreferredSize(new Dimension(160, 40));
         btnBack.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));

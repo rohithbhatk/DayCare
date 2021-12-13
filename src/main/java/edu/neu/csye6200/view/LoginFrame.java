@@ -26,65 +26,18 @@ public class LoginFrame {
 
     private JPanel panel_1;
     private JPanel panel_2;
-    private JPanel panel_3;
-    private JPanel panel_4;
-    private JPanel panel_5;
     private JPanel panel_6;
 
     private JTextField textField_Username;
-    private JTextField textField_LastName;
-    private JTextField textField_Gender;
     private JTextField textField_Password;
-    private JTextField textField_ParentLastName;
-    private JTextField textField_Address;
-    private JTextField textField_DOB;
-    private JTextField textField_DOJ;
-    private JTextField textField_Varicella;
-    private JTextField textField_Hepatitis_B;
-    private JTextField textField_MMR;
-    private JTextField textField_DtaP;
-    private JTextField textField_Polio;
-    private JTextField textField_Age;
-    private JTextField textField_Hib;
 
     private JButton btnLogin;
-    private JButton btnView;
-//    private JButton btnCreate;
 
     private String getUsername;
     private String getPassword;
-    private String getGender;
-    private String getVaricella;
-    private String getDOB;
-    private String getDOJ;
-    private String getParentFirstName;
-    private String getParentLastName;
-    private String getAddress;
-    private String getHib;
-    private String getDtaP;
-    private String getPolio;
-    private String getHepatitis_B;
-    private String getMMR;
-    private String getAge;
 
     private StudentPage studentPage;
     private TeacherPage teacherPage;
-
-    private int age;
-    private SimpleDateFormat formatter;
-
-    private Date DOB;
-    private Date DOJ;
-
-    private List<Date> Hib;
-    private List<Date> DtaP;
-    private List<Date> Polio;
-    private List<Date> Hepatitis_B;
-    private List<Date> MMR;
-    private List<Date> Varicella;
-
-//	private ViewingPage viewingPage = ViewingPage.getInstance();
-
     /**
      * Launch the application.
      */
@@ -191,8 +144,6 @@ public class LoginFrame {
     }
 
     private void loginButtonPressed() {
-        // TODO Auto-generated method stub
-//        formatter=new SimpleDateFormat("MM/dd/yyyy");
         getUsername = textField_Username.getText();
         if(getUsername.isEmpty()){
             errorMessage("Please enter Username","Invalid Input");
@@ -229,8 +180,6 @@ public class LoginFrame {
             studentPage = StudentPage.getInstance();
             studentPage.initialize(frame,gradientPanel);
             studentPage.addBtnListener(frame, gradientPanel);
-        } else {
-            studentPage.rerender();
         }
 
         studentPage.setVisible(true);
@@ -244,8 +193,6 @@ public class LoginFrame {
             teacherPage = TeacherPage.getInstance();
             teacherPage.initialize(frame,gradientPanel);
             teacherPage.addBtnListener(frame, gradientPanel);
-        } else {
-//            teacherPage.rerender();
         }
 
         teacherPage.setVisible(true);

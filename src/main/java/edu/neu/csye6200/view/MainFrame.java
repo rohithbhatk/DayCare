@@ -1,7 +1,6 @@
 package edu.neu.csye6200.view;
 
 import edu.neu.csye6200.controller.School;
-import edu.neu.csye6200.controller.SchoolHelper;
 import edu.neu.csye6200.controller.Vaccination;
 import edu.neu.csye6200.models.Student;
 
@@ -12,7 +11,6 @@ import java.awt.Font;
 import java.awt.BorderLayout;
 
 import java.awt.Color;
-;
 import javax.swing.border.LineBorder;
 
 import java.awt.GridBagLayout;
