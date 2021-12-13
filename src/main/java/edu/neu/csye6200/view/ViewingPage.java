@@ -16,19 +16,10 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
@@ -41,6 +32,12 @@ public class ViewingPage extends GradientPanel {
 
     private ViewingPage() {
         super();
+        ageGroup.put(0, "6-12");
+        ageGroup.put(1, "13-24");
+        ageGroup.put(2, "25-35");
+        ageGroup.put(3, "36-47");
+        ageGroup.put(4, "48-59");
+        ageGroup.put(5, "60");
     }
 
     public static boolean isInitialized() {
@@ -103,14 +100,20 @@ public class ViewingPage extends GradientPanel {
     }
 
     public void getTableData() {
-        SchoolHelper.setClassrooms();
+        try {
+            SchoolHelper.setClassrooms();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            errorMessage("Alert", e.getMessage());
+        }
+
         Object[][] classrooms = SchoolHelper.getClassrooms();
         List<String[]> list = new ArrayList<>();
         if (classrooms != null)
             for (int i = 0; i < classrooms.length; i++) {
                 for (int j = 0; j < classrooms[i].length; j++) {
                     Map<Teacher, ArrayList<Student>> map = (Map<Teacher, ArrayList<Student>>) classrooms[i][j];
-                    String cr = Integer.toString(i) + "-" + Integer.toString(j);
+                    String cr = ageGroup.get(i) + "_" + j;
                     if (map != null)
                         map.forEach((key, value) -> {
                             Teacher t = key;
@@ -220,6 +223,10 @@ public class ViewingPage extends GradientPanel {
         }
     }
 
+    private void errorMessage(String title, String error){
+        JOptionPane.showMessageDialog(null, error, title, JOptionPane.WARNING_MESSAGE);
+    }
+
     private final String[] columnNames = new String[]{"Classroom", "ID", "Name", "Gender", "Age", "Date of Joining", "Teacher", "Parent", "Hib", "DtaP", "Polio", "Hepatitis_B", "MMR", "Varicella"};
     private String[][] data;
     // Todo: add default student data for demo
@@ -253,4 +260,5 @@ public class ViewingPage extends GradientPanel {
     private GridBagConstraints gbc_scrollPane;
     private GridBagConstraints gbc_button;
     private final SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+    private Map<Integer, String> ageGroup = new HashMap<>();
 }
