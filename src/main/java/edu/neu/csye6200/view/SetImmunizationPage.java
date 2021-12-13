@@ -27,10 +27,9 @@ public class SetImmunizationPage extends GradientPanel {
         return instance;
     }
 
-    public void initialize(JFrame frame, GradientPanel gradientPanel) {
+    public void initialize() {
         isInitialized = true;
-        this.frame=frame;
-        this.gradientPanel=gradientPanel;
+
         GridBagLayout gbl_gradientPanel = new GridBagLayout();
         gbl_gradientPanel.columnWidths = new int[]{0, 0, 0, 0};
         gbl_gradientPanel.rowHeights = new int[]{0, 0, 0, 0, 0};
@@ -38,14 +37,11 @@ public class SetImmunizationPage extends GradientPanel {
         gbl_gradientPanel.rowWeights = new double[]{1.0, 0.1, 0.1, 0.1, 0.1, 1.0};
 
         createLabel();
-//        createTable();
-//        createScrollPane();
         createButton();
 
 
         instance.setLayout(gbl_gradientPanel);
         instance.add(lblRecords, gbc_label);
-        //instance.add(scrollPane, gbc_scrollPane);
         instance.add(btnSubmit, gbc_button);
         instance.add(btnBack, gbc_button2);
 
@@ -53,8 +49,6 @@ public class SetImmunizationPage extends GradientPanel {
         instance.add(textField_VaccineName, gbc_Options2);
         instance.add(textField_DoseDate,gbc_Options3);
 
-        //instance.add(btnTrackImmunization,gbc_Options2);
-//        instance.add(panel, gbc_Options);
     }
 
     public void rerender() {
@@ -77,14 +71,8 @@ public class SetImmunizationPage extends GradientPanel {
         gbc_label.gridy = 0;
     }
 
-
-    public void getTableData() {
-        // Todo: get table data from ClassRoom(?
-    };
-
-
     public void createButton() {
-        btnBack = new JButton("LOGOUT");
+        btnBack = new JButton("BACK");
         btnBack.setPreferredSize(new Dimension(160, 40));
         btnBack.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
         btnBack.setForeground(Color.white);
@@ -189,8 +177,6 @@ public class SetImmunizationPage extends GradientPanel {
     private GridBagConstraints gbc_Options2;
     private GridBagConstraints gbc_Options3;
 
-    private JFrame frame;
-    private GradientPanel gradientPanel;
     private JTextField textField_VaccineName;
     private JTextField textField_DoseDate;
     private JTextField textField_StudentID;

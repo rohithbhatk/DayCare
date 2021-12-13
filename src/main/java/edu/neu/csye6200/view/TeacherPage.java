@@ -65,7 +65,7 @@ public class TeacherPage extends GradientPanel {
 
     public void createButton() {
 
-        btnBack = new JButton("BACK");
+        btnBack = new JButton("LOGOUT");
         btnBack.setPreferredSize(new Dimension(160, 40));
         btnBack.setFont(new Font("Roboto Condensed", Font.PLAIN, 16));
         btnBack.setForeground(Color.white);
@@ -143,15 +143,13 @@ public class TeacherPage extends GradientPanel {
         if(!GradePage.isInitialized()) {
             System.out.println("Review");
             gradePage = GradePage.getInstance();
-            gradePage.initialize(frame,gradientPanel);
-            gradePage.addBtnListener(frame, gradientPanel);
-        } else {
-            gradePage.rerender();
+            gradePage.initialize();
+            gradePage.addBtnListener(frame, instance);
         }
 
         gradePage.setVisible(true);
         instance.setVisible(false);
-        System.out.println(frame.getContentPane());
+
         frame.getContentPane().removeAll();
         frame.getContentPane().add(gradePage, BorderLayout.CENTER);
     }
@@ -169,15 +167,13 @@ public class TeacherPage extends GradientPanel {
         if(!SetImmunizationPage.isInitialized()) {
             System.out.println("Review");
             setImmunizationPage = SetImmunizationPage.getInstance();
-            setImmunizationPage.initialize(frame,gradientPanel);
-            setImmunizationPage.addBtnListener(frame, gradientPanel);
-        } else {
-            setImmunizationPage.rerender();
+            setImmunizationPage.initialize();
+            setImmunizationPage.addBtnListener(frame, instance);
         }
 
         setImmunizationPage.setVisible(true);
         instance.setVisible(false);
-        System.out.println(frame.getContentPane());
+
         frame.getContentPane().removeAll();
         frame.getContentPane().add(setImmunizationPage, BorderLayout.CENTER);
     }
