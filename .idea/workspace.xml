@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="updated student and teacher dao">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/data/StudentDAO.java" afterDir="false" />
+    <list default="true" id="7b55401d-902b-4cd9-a1f9-2af3e84b0502" name="Default Changelist" comment="Updated File structure">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/ClassRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/ClassRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/SchoolHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/controller/SchoolHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/ViewingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/neu/csye6200/view/ViewingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/students.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/teachers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/teachers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/students.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/teachers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/teachers.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +46,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DayCare" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
-  <component name="RunManager" selected="Application.TeacherDAO">
+  <component name="RunManager" selected="Application.LoginFrame">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.neu.csye6200.Driver" />
       <module name="finalProject" />
@@ -52,6 +59,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginFrame" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="edu.neu.csye6200.view.LoginFrame" />
+      <module name="finalProject" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -82,6 +96,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.LoginFrame" />
+      <item itemvalue="Application.TeacherDAO" />
+      <item itemvalue="Application.StudentDAO" />
+      <item itemvalue="Application.Driver" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TeacherDAO" />
@@ -214,6 +234,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated File structure" />

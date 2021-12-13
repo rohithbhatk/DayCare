@@ -110,7 +110,7 @@ public class ViewingPage extends GradientPanel {
             for (int i = 0; i < classrooms.length; i++) {
                 for (int j = 0; j < classrooms[i].length; j++) {
                     Map<Teacher, ArrayList<Student>> map = (Map<Teacher, ArrayList<Student>>) classrooms[i][j];
-                    String cr = Integer.toString(j);
+                    String cr = Integer.toString(i) + "-" + Integer.toString(j);
                     if (map != null)
                         map.forEach((key, value) -> {
                             Teacher t = key;
